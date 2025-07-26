@@ -1,0 +1,25 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "wheel": "create_bb:block/bogie/wheel",
+    "axis": "create:block/axis",
+    "axis_top": "create:block/axis_top",
+    "belt": "create:block/bogey/belt",
+    "frame4":"create_bb:block/bogie/frame4",
+    "frame2":"create_bb:block/bogie/frame2",
+    "frame":"create_bb:block/bogie/frame",
+    "extras":"create_bb:block/bogie/extras",
+    "single_axle_body":"create_bb:block/bogie/single_axle_body",
+    "small_trailing_bogey_outer":"create_bb:block/bogie/small_trailing_bogey_outer",
+    "trailing_bogey_base":"create_bb:block/bogie/trailing_bogey_base",
+    "piston": "create_bb:block/bogie/piston",
+    "xl_textures": "create_bb:block/bogie/xl_textures",
+    "32x32": "create_bb:block/bogie/32x32",
+    "32x32_single": "create_bb:block/bogie/32x32_single",
+    "single": "create_bb:block/bogie/single",
+    "support": "create_bb:block/bogie/support",
+    "small_frame": "create_bb:block/bogie/small_frame",
+    "create_rods": "create_bb:block/bogie/create_rods",
+    "broad_piston": "create_bb:block/bogie/broad_piston"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "create_bb:block/bogie/textures",
+    "loader": "neoforge:obj",
+    "flip_v": true,
+    "model": "create_bb:models/block/bogie/extra_large/xl6lw/frame.obj",
+    "mtl_override": "create_bb:models/block/bogie/textures.mtl"
+}

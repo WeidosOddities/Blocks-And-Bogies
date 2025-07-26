@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "axis=x,waterlogged=false": {
+      "model": "create_bb:block/bogie/top",
+      "y": 90
+    },
+    "axis=x,waterlogged=true": {
+      "model": "create_bb:block/bogie/top",
+      "y": 90
+    },
+    "axis=z,waterlogged=false": {
+      "model": "create_bb:block/bogie/top",
+        "y": 0
+    },
+    "axis=z,waterlogged=true": {
+      "model": "create_bb:block/bogie/top",
+        "y": 0
+    }
+  }
+}

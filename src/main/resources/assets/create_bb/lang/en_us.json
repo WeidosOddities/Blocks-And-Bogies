@@ -1,0 +1,94 @@
+{
+  "create_bb.menu.title": "Bogie Customisation",
+
+  "create_bb.tooltips.rotation": "Bogie Rotated!",
+
+  "create_bb.menu.bogie_style": "Bogie Style Selection",
+  "create_bb.menu.selected_bogie": "Selected Bogie: %s",
+
+  "create_bb.menu.scroll_selection": "Scroll to Select",
+  "create_bb.menu.no_options_available": "No Options Available",
+  "create_bb.menu.scroll_change_speed": "Scroll to Change Speed",
+
+  "create_bb.menu.type": "Bogie: ",
+  "create_bb.menu.variant": "Style: ",
+  "create_bb.menu.valve_gear": "Valve Gear: ",
+  "create_bb.menu.axle_count": "Axle Count: ",
+  "create_bb.menu.size": "Size: ",
+  "create_bb.menu.length": "Variant: ",
+  "create_bb.menu.speed": "Speed: ",
+
+  "create_bb.menu.size.large": "Large",
+  "create_bb.menu.size.small": "Small",
+  "create_bb.menu.size.extra_large": "X-Large",
+
+  "create_bb.variant.long": "Long",
+  "create_bb.variant.short": "Short",
+  "create_bb.variant.standard": "Standard",
+  "create_bb.variant.trailing": "Trailing",
+  "create_bb.variant.pistonless": "Pistonless",
+
+  "create_bb.type.driver": "Driver",
+  "create_bb.type.truck": "Truck",
+
+  "create_bb.valve_gear.none": "None",
+  "create_bb.valve_gear.walschaerts": "Walschaerts",
+  "create_bb.valve_gear.rotary_poppet": "Rotary Poppet",
+  "create_bb.valve_gear.scotch_yoke": "Scotch Yoke",
+  "create_bb.valve_gear.southern": "Southern",
+
+  "create_bb.length.standard": "Default",
+  "create_bb.length.extended": "Extended",
+  "create_bb.length.offset": "Offset",
+
+  "create_bb.bogies.style.single_axle_trailing": "Small 0-2-0 Trailing Bogie",
+  "create_bb.bogies.style.double_axle_trailing": "Small 0-4-0 Trailing Bogie",
+  "create_bb.bogies.style.triple_axle_trailing": "Small 0-6-0 Trailing Bogie",
+  "create_bb.bogies.style.quadruple_axle_trailing": "Small 0-8-0 Trailing Bogie",
+
+  "create_bb.bogies.style.single_axle_offset": "Small Single Axle Offset",
+
+  "create_bb.bogies.style.single_axle_bogie": "Small Single Axle Standard",
+  "create_bb.bogies.style.triple_axle_bogie": "Small 0-6-0 Standard",
+  "create_bb.bogies.style.quadruple_axle_bogie": "Small 0-8-0 Standard",
+  "create_bb.bogies.style.quintuple_axle_bogie": "Small 0-10-0 Standard",
+
+  "create_bb.bogies.style.single_axle_pistonless": "0-2-0 Pistonless",
+  "create_bb.bogies.style.double_axle_pistonless": "0-4-0 Pistonless",
+  "create_bb.bogies.style.triple_axle_extended_pistonless": "0-6-0 Extended Pistonless",
+  "create_bb.bogies.style.triple_axle_pistonless": "0-6-0 Pistonless",
+  "create_bb.bogies.style.quadruple_axle_pistonless": "0-8-0 Pistonless",
+  "create_bb.bogies.style.quintuple_axle_pistonless": "0-10-0 Pistonless",
+
+  "create_bb.bogies.style.single_axle_scotch_yoke": "0-2-0 Scotch Yoke",
+  "create_bb.bogies.style.double_axle_scotch_yoke": "0-4-0 Scotch Yoke",
+  "create_bb.bogies.style.triple_axle_scotch_yoke": "0-6-0 Scotch Yoke",
+  "create_bb.bogies.style.quadruple_axle_scotch_yoke": "0-8-0 Scotch Yoke",
+  "create_bb.bogies.style.quintuple_axle_scotch_yoke": "0-10-0 Scotch Yoke",
+
+  "create_bb.bogies.style.single_axle_long": "0-2-0 Gearless Long",
+  "create_bb.bogies.style.double_axle_long": "0-4-0 Gearless Long",
+  "create_bb.bogies.style.triple_axle_extended_long": "0-6-0 Gearless Extended Long",
+  "create_bb.bogies.style.triple_axle_long": "0-6-0 Gearless Long",
+  "create_bb.bogies.style.quadruple_axle_long": "0-8-0 Gearless Long",
+  "create_bb.bogies.style.quintuple_axle_long": "0-10-0 Gearless Long",
+
+  "create_bb.bogies.style.double_axle_short": "0-4-0 Gearless Short",
+  "create_bb.bogies.style.triple_axle_short": "0-6-0 Gearless Short",
+  "create_bb.bogies.style.triple_axle_extended_short": "0-6-0 Gearless Extended Short",
+  "create_bb.bogies.style.quadruple_axle_short": "0-8-0 Gearless Short",
+  "create_bb.bogies.style.quintuple_axle_short": "0-10-0 Gearless Short",
+
+  "create_bb.bogies.style.single_axle_walschaerts_long": "0-2-0 Walschaerts Long",
+  "create_bb.bogies.style.double_axle_walschaerts_long": "0-4-0 Walschaerts Long",
+  "create_bb.bogies.style.triple_axle_walschaerts_extended_long": "0-6-0 Walschaerts Extended Long",
+  "create_bb.bogies.style.triple_axle_walschaerts_long": "0-6-0 Walschaerts Long",
+  "create_bb.bogies.style.quadruple_axle_walschaerts_long": "0-8-0 Walschaerts Long",
+  "create_bb.bogies.style.quintuple_axle_walschaerts_long": "0-10-0 Walschaerts Long",
+
+  "create_bb.bogies.style.double_axle_walschaerts_short": "0-4-0 Walschaerts Short",
+  "create_bb.bogies.style.triple_axle_walschaerts_extended_short": "0-6-0 Walschaerts Extended Short",
+  "create_bb.bogies.style.triple_axle_walschaerts_short": "0-6-0 Walschaerts Short",
+  "create_bb.bogies.style.quadruple_axle_walschaerts_short": "0-8-0 Walschaerts Short",
+  "create_bb.bogies.style.quintuple_axle_walschaerts_short": "0-10-0 Walschaerts Short"
+}
