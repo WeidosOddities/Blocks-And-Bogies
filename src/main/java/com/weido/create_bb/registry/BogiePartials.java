@@ -108,6 +108,10 @@ public class BogiePartials {
     EXTRA_LARGE_10P_L_C_ROD                 = block("bogie/extra_large/xl10p/left_c_rod"),
     EXTRA_LARGE_10P_R_C_ROD                 = block("bogie/extra_large/xl10p/right_c_rod"),
 
+    LARGE_12P_FRAME                         = block("bogie/large/l12p/frame"),
+    LARGE_12P_L_C_ROD                       = block("bogie/large/l12p/left_c_rod"),
+    LARGE_12P_R_C_ROD                       = block("bogie/large/l12p/right_c_rod"),
+
     LARGE_4C_FRAME                          = block("bogie/large/l4c/frame"),
     LARGE_4C_L_SLIDER                       = block("bogie/large/l4c/l_slider"),
     LARGE_4C_R_SLIDER                       = block("bogie/large/l4c/r_slider"),
@@ -131,6 +135,12 @@ public class BogiePartials {
     LARGE_10C_R_SLIDER                      = block("bogie/large/l10c/r_slider"),
     LARGE_10C_L_PIN                         = block("bogie/large/l10c/l_pin"),
     LARGE_10C_R_PIN                         = block("bogie/large/l10c/r_pin"),
+
+    LARGE_12C_FRAME                         = block("bogie/large/l12c/frame"),
+    LARGE_12C_L_SLIDER                      = block("bogie/large/l12c/l_slider"),
+    LARGE_12C_R_SLIDER                      = block("bogie/large/l12c/r_slider"),
+    LARGE_12C_L_PIN                         = block("bogie/large/l12c/l_pin"),
+    LARGE_12C_R_PIN                         = block("bogie/large/l12c/r_pin"),
 
     EXTRA_LARGE_2C_FRAME                    = block("bogie/extra_large/xl2c/frame"),
     EXTRA_LARGE_2C_L_SLIDER                 = block("bogie/extra_large/xl2c/l_slider"),
@@ -170,6 +180,10 @@ public class BogiePartials {
     LARGE_4L_L_C_ROD                        = block("bogie/large/l4l/left_c_rod"),
     LARGE_4L_R_C_ROD                        = block("bogie/large/l4l/right_c_rod"),
 
+    LARGE_4LE_FRAME                          = block("bogie/large/l4le/frame"),
+    LARGE_4LE_L_C_ROD                        = block("bogie/large/l4le/left_c_rod"),
+    LARGE_4LE_R_C_ROD                        = block("bogie/large/l4le/right_c_rod"),
+
     LARGE_6L_FRAME                          = block("bogie/large/l6l/frame"),
     LARGE_6L_L_C_ROD                        = block("bogie/large/l6l/left_c_rod"),
     LARGE_6L_R_C_ROD                        = block("bogie/large/l6l/right_c_rod"),
@@ -186,11 +200,19 @@ public class BogiePartials {
     LARGE_10L_L_C_ROD                       = block("bogie/large/l10l/left_c_rod"),
     LARGE_10L_R_C_ROD                       = block("bogie/large/l10l/right_c_rod"),
 
+    LARGE_12L_FRAME                         = block("bogie/large/l12l/frame"),
+    LARGE_12L_L_C_ROD                       = block("bogie/large/l12l/left_c_rod"),
+    LARGE_12L_R_C_ROD                       = block("bogie/large/l12l/right_c_rod"),
+
     EXTRA_LARGE_2L_FRAME                    = block("bogie/extra_large/xl2l/frame"),
 
     EXTRA_LARGE_4L_FRAME                    = block("bogie/extra_large/xl4l/frame"),
     EXTRA_LARGE_4L_L_C_ROD                  = block("bogie/extra_large/xl4l/left_c_rod"),
     EXTRA_LARGE_4L_R_C_ROD                  = block("bogie/extra_large/xl4l/right_c_rod"),
+
+    EXTRA_LARGE_4LE_FRAME                    = block("bogie/extra_large/xl4le/frame"),
+    EXTRA_LARGE_4LE_L_C_ROD                  = block("bogie/extra_large/xl4le/left_c_rod"),
+    EXTRA_LARGE_4LE_R_C_ROD                  = block("bogie/extra_large/xl4le/right_c_rod"),
 
     EXTRA_LARGE_6L_FRAME                    = block("bogie/extra_large/xl6l/frame"),
     EXTRA_LARGE_6L_L_C_ROD                  = block("bogie/extra_large/xl6l/left_c_rod"),
@@ -228,6 +250,10 @@ public class BogiePartials {
     LARGE_10S_L_C_ROD                       = block("bogie/large/l10s/left_c_rod"),
     LARGE_10S_R_C_ROD                       = block("bogie/large/l10s/right_c_rod"),
 
+    LARGE_12S_FRAME                         = block("bogie/large/l12s/frame"),
+    LARGE_12S_L_C_ROD                       = block("bogie/large/l12s/left_c_rod"),
+    LARGE_12S_R_C_ROD                       = block("bogie/large/l12s/right_c_rod"),
+
     EXTRA_LARGE_4S_FRAME                    = block("bogie/extra_large/xl4s/frame"),
     EXTRA_LARGE_4S_L_C_ROD                  = block("bogie/extra_large/xl4s/left_c_rod"),
     EXTRA_LARGE_4S_R_C_ROD                  = block("bogie/extra_large/xl4s/right_c_rod"),
@@ -261,6 +287,16 @@ public class BogiePartials {
     LARGE_4LW_R_R_ROD                       = block("bogie/large/l4lw/right_r_rod"),
     LARGE_4LW_L_E_ROD                       = block("bogie/large/l4lw/left_e_rod"),
     LARGE_4LW_R_E_ROD                       = block("bogie/large/l4lw/right_e_rod"),
+
+    LARGE_4LEW_FRAME                        = block("bogie/large/l4lew/frame"),
+    LARGE_4LEW_L_C_ROD                      = block("bogie/large/l4lew/left_c_rod"),
+    LARGE_4LEW_R_C_ROD                      = block("bogie/large/l4lew/right_c_rod"),
+    LARGE_4LEW_L_M_ROD                      = block("bogie/large/l4lew/left_m_rod"),
+    LARGE_4LEW_R_M_ROD                      = block("bogie/large/l4lew/right_m_rod"),
+    LARGE_4LEW_L_R_ROD                      = block("bogie/large/l4lew/left_r_rod"),
+    LARGE_4LEW_R_R_ROD                      = block("bogie/large/l4lew/right_r_rod"),
+    LARGE_4LEW_L_E_ROD                      = block("bogie/large/l4lew/left_e_rod"),
+    LARGE_4LEW_R_E_ROD                      = block("bogie/large/l4lew/right_e_rod"),
 
     LARGE_6LW_FRAME                         = block("bogie/large/l6lw/frame"),
     LARGE_6LW_L_C_ROD                       = block("bogie/large/l6lw/left_c_rod"),
@@ -297,6 +333,17 @@ public class BogiePartials {
     LARGE_10LW_L_E_ROD                      = block("bogie/large/l10lw/left_e_rod"),
     LARGE_10LW_R_E_ROD                      = block("bogie/large/l10lw/right_e_rod"),
 
+    LARGE_12LW_FRAME                        = block("bogie/large/l12lw/frame"),
+    LARGE_12LW_BELTS                        = block("bogie/large/l12lw/belts"),
+    LARGE_12LW_L_C_ROD                      = block("bogie/large/l12lw/left_c_rod"),
+    LARGE_12LW_R_C_ROD                      = block("bogie/large/l12lw/right_c_rod"),
+    LARGE_12LW_L_M_ROD                      = block("bogie/large/l12lw/left_m_rod"),
+    LARGE_12LW_R_M_ROD                      = block("bogie/large/l12lw/right_m_rod"),
+    LARGE_12LW_L_R_ROD                      = block("bogie/large/l12lw/left_r_rod"),
+    LARGE_12LW_R_R_ROD                      = block("bogie/large/l12lw/right_r_rod"),
+    LARGE_12LW_L_E_ROD                      = block("bogie/large/l12lw/left_e_rod"),
+    LARGE_12LW_R_E_ROD                      = block("bogie/large/l12lw/right_e_rod"),
+
     EXTRA_LARGE_2LW_FRAME                   = block("bogie/extra_large/xl2lw/frame"),
 
     EXTRA_LARGE_4LW_FRAME                   = block("bogie/extra_large/xl4lw/frame"),
@@ -308,6 +355,16 @@ public class BogiePartials {
     EXTRA_LARGE_4LW_R_R_ROD                 = block("bogie/extra_large/xl4lw/right_r_rod"),
     EXTRA_LARGE_4LW_L_E_ROD                 = block("bogie/extra_large/xl4lw/left_e_rod"),
     EXTRA_LARGE_4LW_R_E_ROD                 = block("bogie/extra_large/xl4lw/right_e_rod"),
+
+    EXTRA_LARGE_4LEW_FRAME                   = block("bogie/extra_large/xl4lew/frame"),
+    EXTRA_LARGE_4LEW_L_C_ROD                 = block("bogie/extra_large/xl4lew/left_c_rod"),
+    EXTRA_LARGE_4LEW_R_C_ROD                 = block("bogie/extra_large/xl4lew/right_c_rod"),
+    EXTRA_LARGE_4LEW_L_M_ROD                 = block("bogie/extra_large/xl4lew/left_m_rod"),
+    EXTRA_LARGE_4LEW_R_M_ROD                 = block("bogie/extra_large/xl4lew/right_m_rod"),
+    EXTRA_LARGE_4LEW_L_R_ROD                 = block("bogie/extra_large/xl4lew/left_r_rod"),
+    EXTRA_LARGE_4LEW_R_R_ROD                 = block("bogie/extra_large/xl4lew/right_r_rod"),
+    EXTRA_LARGE_4LEW_L_E_ROD                 = block("bogie/extra_large/xl4lew/left_e_rod"),
+    EXTRA_LARGE_4LEW_R_E_ROD                 = block("bogie/extra_large/xl4lew/right_e_rod"),
 
     EXTRA_LARGE_6LW_FRAME                   = block("bogie/extra_large/xl6lw/frame"),
     EXTRA_LARGE_6LW_L_C_ROD                 = block("bogie/extra_large/xl6lw/left_c_rod"),
@@ -387,6 +444,16 @@ public class BogiePartials {
     LARGE_10SW_R_R_ROD                      = block("bogie/large/l10sw/right_r_rod"),
     LARGE_10SW_L_E_ROD                      = block("bogie/large/l10sw/left_e_rod"),
     LARGE_10SW_R_E_ROD                      = block("bogie/large/l10sw/right_e_rod"),
+
+    LARGE_12SW_FRAME                        = block("bogie/large/l12sw/frame"),
+    LARGE_12SW_L_C_ROD                      = block("bogie/large/l12sw/left_c_rod"),
+    LARGE_12SW_R_C_ROD                      = block("bogie/large/l12sw/right_c_rod"),
+    LARGE_12SW_L_M_ROD                      = block("bogie/large/l12sw/left_m_rod"),
+    LARGE_12SW_R_M_ROD                      = block("bogie/large/l12sw/right_m_rod"),
+    LARGE_12SW_L_R_ROD                      = block("bogie/large/l12sw/left_r_rod"),
+    LARGE_12SW_R_R_ROD                      = block("bogie/large/l12sw/right_r_rod"),
+    LARGE_12SW_L_E_ROD                      = block("bogie/large/l12sw/left_e_rod"),
+    LARGE_12SW_R_E_ROD                      = block("bogie/large/l12sw/right_e_rod"),
 
     EXTRA_LARGE_4SW_FRAME                   = block("bogie/extra_large/xl4sw/frame"),
     EXTRA_LARGE_4SW_L_C_ROD                 = block("bogie/extra_large/xl4sw/left_c_rod"),

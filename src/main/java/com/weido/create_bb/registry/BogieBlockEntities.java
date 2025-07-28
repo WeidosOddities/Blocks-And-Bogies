@@ -18,12 +18,14 @@ public class BogieBlockEntities {
             BogieBlocks.L_060_ROT, BogieBlocks.XL_060_ROT,
             BogieBlocks.L_080_ROT, BogieBlocks.XL_080_ROT,
             BogieBlocks.L_0100_ROT, BogieBlocks.XL_0100_ROT,
+            BogieBlocks.L_0120_ROT,
 
             BogieBlocks.L_020, BogieBlocks.XL_020,
             BogieBlocks.L_040, BogieBlocks.XL_040,
             BogieBlocks.L_060, BogieBlocks.XL_060,
             BogieBlocks.L_080, BogieBlocks.XL_080,
             BogieBlocks.L_0100, BogieBlocks.XL_0100,
+            BogieBlocks.L_0120,
 
             BogieBlocks.S_020_TRAILING, BogieBlocks.S_040_TRAILING, BogieBlocks.S_060_TRAILING, BogieBlocks.S_080_TRAILING, BogieBlocks.S_0100_STANDARD,
             BogieBlocks.S_020_OFFSET, BogieBlocks.S_020_STANDARD, BogieBlocks.S_060_STANDARD, BogieBlocks.S_080_STANDARD)

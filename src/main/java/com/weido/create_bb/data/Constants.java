@@ -42,7 +42,7 @@ public class Constants {
     public static final float LARGE_4XL_MAIN_ROD_LENGTH = 28/16f;
     public static final float LARGE_4XL_PISTON_DISTANCE = 42/16f;
     public static final float LARGE_4XL_RADIUS_ROD = 19/16f;
-    public static final float LARGE_4XL_EXPANSION_LINK_X = 30/16f;
+    public static final float LARGE_4XL_EXPANSION_LINK_X = 16/16f;
     public static final float LARGE_4XL_ECCENTRIC_ROD = 16/16f;
     public static final float LARGE_4XL_OFFSET = -14/16f;
 
@@ -67,12 +67,26 @@ public class Constants {
     public static final float LARGE_10L_ECCENTRIC_ROD = 41/16f;
     public static final float LARGE_10L_OFFSET = 0;
 
+    public static final float LARGE_12L_MAIN_ROD_LENGTH = 76/16f;
+    public static final float LARGE_12L_PISTON_DISTANCE = 76/16f;
+    public static final float LARGE_12L_RADIUS_ROD = 33/16f;
+    public static final float LARGE_12L_EXPANSION_LINK_X = 49/16f;
+    public static final float LARGE_12L_ECCENTRIC_ROD = 49/16f;
+    public static final float LARGE_12L_OFFSET = -14/16f;
+
     public static final float EXTRA_LARGE_4L_MAIN_ROD_LENGTH = 58/16f;
     public static final float EXTRA_LARGE_4L_PISTON_DISTANCE = 40/16f;
     public static final float EXTRA_LARGE_4L_RADIUS_ROD = 33/16f;
     public static final float EXTRA_LARGE_4L_EXPANSION_LINK_X = 32/16f;
     public static final float EXTRA_LARGE_4L_ECCENTRIC_ROD = 32/16f;
     public static final float EXTRA_LARGE_4L_OFFSET = 18/16f;
+
+    public static final float EXTRA_LARGE_4XL_MAIN_ROD_LENGTH = 39/16f;
+    public static final float EXTRA_LARGE_4XL_PISTON_DISTANCE = 39/16f;
+    public static final float EXTRA_LARGE_4XL_RADIUS_ROD = 23/16f;
+    public static final float EXTRA_LARGE_4XL_EXPANSION_LINK_X = 23/16f;
+    public static final float EXTRA_LARGE_4XL_ECCENTRIC_ROD = 23/16f;
+    public static final float EXTRA_LARGE_4XL_OFFSET = -18/16f;
 
     public static final float EXTRA_LARGE_6L_MAIN_ROD_LENGTH = 55/16f;
     public static final float EXTRA_LARGE_6L_PISTON_DISTANCE = 55/16f;
@@ -122,6 +136,13 @@ public class Constants {
     public static final float LARGE_10S_EXPANSION_LINK_X = 40/16f;
     public static final float LARGE_10S_ECCENTRIC_ROD = 40/16f;
     public static final float LARGE_10S_OFFSET = 0;
+
+    public static final float LARGE_12S_MAIN_ROD_LENGTH = 88/16f;
+    public static final float LARGE_12S_PISTON_DISTANCE = 88/16f;
+    public static final float LARGE_12S_RADIUS_ROD = 41/16f;
+    public static final float LARGE_12S_EXPANSION_LINK_X = 53/16f;
+    public static final float LARGE_12S_ECCENTRIC_ROD = 53/16f;
+    public static final float LARGE_12S_OFFSET = 14/16f;
 
     public static final float EXTRA_LARGE_4S_MAIN_ROD_LENGTH = 42/16f;
     public static final float EXTRA_LARGE_4S_PISTON_DISTANCE = 24/16f;

@@ -107,6 +107,11 @@ public class BogieStyles {
         .size(BogeySizes.SMALL, BogieBlocks.L_0100, () -> () -> new SizeRenderer(new QuintupleAxlePistonlessRenderer.QuintupleAxleLargePistonless(), QuintupleAxlePistonlessVisual.QuintupleAxleLargePistonless::new))
         .build();
 
+    public static final BogeyStyle SEXTUPLE_AXLE_PISTONLESS
+        = builder("sextuple_axle_pistonless_l").displayName(Component.translatable("create_bb.bogies.style.sextuple_axle_pistonless"))
+        .size(BogeySizes.SMALL, BogieBlocks.L_0120, () -> () -> new SizeRenderer(new SextupleAxlePistonlessRenderer.SextuplesAxleLargePistonless(), SextupleAxlePistonlessVisual.SextupleAxleLargePistonless::new))
+        .build();
+
 //Scotch Yoke
     public static final BogeyStyle SINGLE_AXLE_SCOTCH_YOKE
         = builder("single_axle_scotch_yoke").displayName(Component.translatable("create_bb.bogies.style.single_axle_scotch_yoke"))
@@ -137,6 +142,11 @@ public class BogieStyles {
         .size(BogeySizes.LARGE, BogieBlocks.XL_0100, () -> () -> new SizeRenderer(new QuintupleAxleScotchYokeRenderer.QuintupleAxleExtraLargeScotchYoke(), QuintupleAxleScotchYokeVisual.QuintupleAxleExtraLargeScotchYoke::new))
         .size(BogeySizes.SMALL, BogieBlocks.L_0100, () -> () -> new SizeRenderer(new QuintupleAxleScotchYokeRenderer.QuintupleAxleLargeScotchYoke(), QuintupleAxleScotchYokeVisual.QuintupleAxleLargeScotchYoke::new))
         .build();
+
+    public static final BogeyStyle SEXTUPLE_AXLE_SCOTCH_YOKE
+        = builder("sextuple_axle_scotch_yoke").displayName(Component.translatable("create_bb.bogies.style.sextuple_axle_scotch_yoke"))
+        .size(BogeySizes.SMALL, BogieBlocks.L_0120, () -> () -> new SizeRenderer(new SextupleAxleScotchYokeRenderer.SextuplesAxleLargeScotchYoke(), SextupleAxleScotchYokeVisual.SextupleAxleLargeScotchYoke::new))
+        .build();
 //Long Gearless
     public static final BogeyStyle SINGLE_AXLE_LONG
         = builder("single_axle_long").displayName(Component.translatable("create_bb.bogies.style.single_axle_long"))
@@ -150,11 +160,17 @@ public class BogieStyles {
         .size(BogeySizes.SMALL, BogieBlocks.L_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleLongRenderer.DoubleAxleLargeLong(), DoubleAxleLongVisual.DoubleAxleLargeLong::new))
         .build();
 
+    public static final BogeyStyle DOUBLE_AXLE_EXTRA_LONG
+        = builder("double_axle_extra_long").displayName(Component.translatable("create_bb.bogies.style.double_axle_extra_long"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleExtraLongRenderer.DoubleAxleExtraLargeExtraLong(), DoubleAxleExtraLongVisual.DoubleAxleExtraLargeExtraLong::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleExtraLongRenderer.DoubleAxleLargeExtraLong(), DoubleAxleExtraLongVisual.DoubleAxleLargeExtraLong::new))
+        .build();
+
     public static final BogeyStyle TRIPLE_AXLE_EXTENDED_LONG
-            = builder("triple_axle_extended_long").displayName(Component.translatable("create_bb.bogies.style.triple_axle_extended_long"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedLongRenderer.TripleAxleExtraLargeExtendedLong(), TripleAxleExtendedLongVisual.TripleAxleExtraLargeExtendedLong::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedLongRenderer.TripleAxleLargeExtendedLong(), TripleAxleExtendedLongVisual.TripleAxleLargeExtendedLong::new))
-            .build();
+        = builder("triple_axle_extended_long").displayName(Component.translatable("create_bb.bogies.style.triple_axle_extended_long"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedLongRenderer.TripleAxleExtraLargeExtendedLong(), TripleAxleExtendedLongVisual.TripleAxleExtraLargeExtendedLong::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedLongRenderer.TripleAxleLargeExtendedLong(), TripleAxleExtendedLongVisual.TripleAxleLargeExtendedLong::new))
+        .build();
 
     public static final BogeyStyle TRIPLE_AXLE_LONG
         = builder("triple_axle_long").displayName(Component.translatable("create_bb.bogies.style.triple_axle_long"))
@@ -173,6 +189,11 @@ public class BogieStyles {
         .size(BogeySizes.LARGE, BogieBlocks.XL_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleLongRenderer.QuintupleAxleExtraLargeLong(), QuintupleAxleLongVisual.QuintupleAxleExtraLargeLong::new))
         .size(BogeySizes.SMALL, BogieBlocks.L_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleLongRenderer.QuintupleAxleLargeLong(), QuintupleAxleLongVisual.QuintupleAxleLargeLong::new))
         .build();
+
+    public static final BogeyStyle SEXTUPLE_AXLE_LONG
+        = builder("sextuple_axle_long").displayName(Component.translatable("create_bb.bogies.style.sextuple_axle_long"))
+        .size(BogeySizes.SMALL, BogieBlocks.L_0120_ROT, () -> () -> new SizeRenderer(new SextupleAxleLongRenderer.SextuplesAxleLargeLong(), SextupleAxleLongVisual.SextupleAxleLargeLong::new))
+        .build();
     //Short Gearless
     public static final BogeyStyle DOUBLE_AXLE_SHORT
         = builder("double_axle_short").displayName(Component.translatable("create_bb.bogies.style.double_axle_short"))
@@ -181,10 +202,10 @@ public class BogieStyles {
         .build();
 
     public static final BogeyStyle TRIPLE_AXLE_EXTENDED_SHORT
-            = builder("triple_axle_extended_short").displayName(Component.translatable("create_bb.bogies.style.triple_axle_extended_short"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedShortRenderer.TripleAxleExtraLargeExtendedShort(), TripleAxleExtendedShortVisual.TripleAxleExtraLargeExtendedShort::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedShortRenderer.TripleAxleLargeExtendedShort(), TripleAxleExtendedShortVisual.TripleAxleLargeExtendedShort::new))
-            .build();
+        = builder("triple_axle_extended_short").displayName(Component.translatable("create_bb.bogies.style.triple_axle_extended_short"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedShortRenderer.TripleAxleExtraLargeExtendedShort(), TripleAxleExtendedShortVisual.TripleAxleExtraLargeExtendedShort::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedShortRenderer.TripleAxleLargeExtendedShort(), TripleAxleExtendedShortVisual.TripleAxleLargeExtendedShort::new))
+        .build();
 
     public static final BogeyStyle TRIPLE_AXLE_SHORT
         = builder("triple_axle_short").displayName(Component.translatable("create_bb.bogies.style.triple_axle_short"))
@@ -204,71 +225,92 @@ public class BogieStyles {
         .size(BogeySizes.SMALL, BogieBlocks.L_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleShortRenderer.QuintupleAxleLargeShort(), QuintupleAxleShortVisual.QuintupleAxleLargeShort::new))
         .build();
 
+    public static final BogeyStyle SEXTUPLE_AXLE_SHORT
+        = builder("sextuple_axle_short").displayName(Component.translatable("create_bb.bogies.style.sextuple_axle_short"))
+        .size(BogeySizes.SMALL, BogieBlocks.L_0120_ROT, () -> () -> new SizeRenderer(new SextupleAxleShortRenderer.SextuplesAxleLargeShort(), SextupleAxleShortVisual.SextupleAxleLargeShort::new))
+        .build();
+
     public static final BogeyStyle SINGLE_AXLE_WALSCHAERTS_LONG
-            = builder("single_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.single_axle_walschaerts_long"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_020_ROT, () -> () -> new SizeRenderer(new SingleAxleWalschaertsLongRenderer.SingleAxleExtraLargeWalschaertsLong(), SingleAxleWalschaertsLongVisual.SingleAxleExtraLargeWalschaertsLong::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_020_ROT, () -> () -> new SizeRenderer(new SingleAxleWalschaertsLongRenderer.SingleAxleLargeWalschaertsLong(), SingleAxleWalschaertsLongVisual.SingleAxleLargeWalschaertsLong::new))
-            .build();
+        = builder("single_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.single_axle_walschaerts_long"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_020_ROT, () -> () -> new SizeRenderer(new SingleAxleWalschaertsLongRenderer.SingleAxleExtraLargeWalschaertsLong(), SingleAxleWalschaertsLongVisual.SingleAxleExtraLargeWalschaertsLong::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_020_ROT, () -> () -> new SizeRenderer(new SingleAxleWalschaertsLongRenderer.SingleAxleLargeWalschaertsLong(), SingleAxleWalschaertsLongVisual.SingleAxleLargeWalschaertsLong::new))
+        .build();
 
     public static final BogeyStyle DOUBLE_AXLE_WALSCHAERTS_LONG
-            = builder("double_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.double_axle_walschaerts_long"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleWalschaertsLongRenderer.DoubleAxleExtraLargeWalschaertsLong(), DoubleAxleWalschaertsLongVisual.DoubleAxleExtraLargeWalschaertsLong::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleWalschaertsLongRenderer.DoubleAxleLargeWalschaertsLong(), DoubleAxleWalschaertsLongVisual.DoubleAxleLargeWalschaertsLong::new))
+        = builder("double_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.double_axle_walschaerts_long"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleWalschaertsLongRenderer.DoubleAxleExtraLargeWalschaertsLong(), DoubleAxleWalschaertsLongVisual.DoubleAxleExtraLargeWalschaertsLong::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleWalschaertsLongRenderer.DoubleAxleLargeWalschaertsLong(), DoubleAxleWalschaertsLongVisual.DoubleAxleLargeWalschaertsLong::new))
+        .build();
+
+    public static final BogeyStyle DOUBLE_AXLE_WALSCHAERTS_EXTRA_LONG
+            = builder("double_axle_walschaerts_extra_long").displayName(Component.translatable("create_bb.bogies.style.double_axle_walschaerts_extra_long"))
+            .size(BogeySizes.LARGE, BogieBlocks.XL_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleWalschaertsExtraLongRenderer.DoubleAxleExtraLargeWalschaertsExtraLong(), DoubleAxleWalschaertsExtraLongVisual.DoubleAxleExtraLargeWalschaertsExtraLong::new))
+            .size(BogeySizes.SMALL, BogieBlocks.L_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleWalschaertsExtraLongRenderer.DoubleAxleLargeWalschaertsExtraLong(), DoubleAxleWalschaertsExtraLongVisual.DoubleAxleLargeWalschaertsExtraLong::new))
             .build();
 
     public static final BogeyStyle TRIPLE_AXLE_WALSCHAERTS_EXTENDED_LONG
-            = builder("triple_axle_walschaerts_extended_long").displayName(Component.translatable("create_bb.bogies.style.triple_axle_walschaerts_extended_long"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedWalschaertsLongRenderer.TripleAxleExtraLargeExtendedWalschaertsLong(), TripleAxleExtendedWalschaertsLongVisual.TripleAxleExtraLargeExtendedWalschaertsLong::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedWalschaertsLongRenderer.TripleAxleLargeExtendedWalschaertsLong(), TripleAxleExtendedWalschaertsLongVisual.TripleAxleLargeExtendedWalschaertsLong::new))
-            .build();
+        = builder("triple_axle_walschaerts_extended_long").displayName(Component.translatable("create_bb.bogies.style.triple_axle_walschaerts_extended_long"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedWalschaertsLongRenderer.TripleAxleExtraLargeExtendedWalschaertsLong(), TripleAxleExtendedWalschaertsLongVisual.TripleAxleExtraLargeExtendedWalschaertsLong::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedWalschaertsLongRenderer.TripleAxleLargeExtendedWalschaertsLong(), TripleAxleExtendedWalschaertsLongVisual.TripleAxleLargeExtendedWalschaertsLong::new))
+        .build();
 
     public static final BogeyStyle TRIPLE_AXLE_WALSCHAERTS_LONG
-            = builder("triple_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.triple_axle_walschaerts_long"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleWalschaertsLongRenderer.TripleAxleExtraLargeWalschaertsLong(), TripleAxleWalschaertsLongVisual.TripleAxleExtraLargeWalschaertsLong::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleWalschaertsLongRenderer.TripleAxleLargeWalschaertsLong(), TripleAxleWalschaertsLongVisual.TripleAxleLargeWalschaertsLong::new))
-            .build();
+        = builder("triple_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.triple_axle_walschaerts_long"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleWalschaertsLongRenderer.TripleAxleExtraLargeWalschaertsLong(), TripleAxleWalschaertsLongVisual.TripleAxleExtraLargeWalschaertsLong::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleWalschaertsLongRenderer.TripleAxleLargeWalschaertsLong(), TripleAxleWalschaertsLongVisual.TripleAxleLargeWalschaertsLong::new))
+        .build();
 
     public static final BogeyStyle QUADRUPLE_AXLE_WALSCHAERTS_LONG
-            = builder("quadruple_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.quadruple_axle_walschaerts_long"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_080_ROT, () -> () -> new SizeRenderer(new QuadrupleAxleWalschaertsLongRenderer.QuadrupleAxleExtraLargeWalschaertsLong(), QuadrupleAxleWalschaertsLongVisual.QuadrupleAxleExtraLargeWalschaertsLong::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_080_ROT, () -> () -> new SizeRenderer(new QuadrupleAxleWalschaertsLongRenderer.QuadrupleAxleLargeWalschaertsLong(), QuadrupleAxleWalschaertsLongVisual.QuadrupleAxleLargeWalschaertsLong::new))
-            .build();
+        = builder("quadruple_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.quadruple_axle_walschaerts_long"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_080_ROT, () -> () -> new SizeRenderer(new QuadrupleAxleWalschaertsLongRenderer.QuadrupleAxleExtraLargeWalschaertsLong(), QuadrupleAxleWalschaertsLongVisual.QuadrupleAxleExtraLargeWalschaertsLong::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_080_ROT, () -> () -> new SizeRenderer(new QuadrupleAxleWalschaertsLongRenderer.QuadrupleAxleLargeWalschaertsLong(), QuadrupleAxleWalschaertsLongVisual.QuadrupleAxleLargeWalschaertsLong::new))
+        .build();
 
     public static final BogeyStyle QUINTUPLE_AXLE_WALSCHAERTS_LONG
-            = builder("quintuple_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.quintuple_axle_walschaerts_long"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleWalschaertsLongRenderer.QuintupleAxleExtraLargeWalschaertsLong(), QuintupleAxleWalschaertsLongVisual.QuintupleAxleExtraLargeWalschaertsLong::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleWalschaertsLongRenderer.QuintupleAxleLargeWalschaertsLong(), QuintupleAxleWalschaertsLongVisual.QuintupleAxleLargeWalschaertsLong::new))
-            .build();
+        = builder("quintuple_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.quintuple_axle_walschaerts_long"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleWalschaertsLongRenderer.QuintupleAxleExtraLargeWalschaertsLong(), QuintupleAxleWalschaertsLongVisual.QuintupleAxleExtraLargeWalschaertsLong::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleWalschaertsLongRenderer.QuintupleAxleLargeWalschaertsLong(), QuintupleAxleWalschaertsLongVisual.QuintupleAxleLargeWalschaertsLong::new))
+        .build();
+
+    public static final BogeyStyle SEXTUPLE_AXLE_WALSCHAERTS_LONG
+        = builder("sextuple_axle_walschaerts_long").displayName(Component.translatable("create_bb.bogies.style.sextuple_axle_walschaerts_long"))
+        .size(BogeySizes.SMALL, BogieBlocks.L_0120_ROT, () -> () -> new SizeRenderer(new SextupleAxleWalschaertsLongRenderer.SextuplesAxleLargeWalschaertsLong(), SextupleAxleWalschaertsLongVisual.SextupleAxleLargeWalschaertsLong::new))
+        .build();
 
     public static final BogeyStyle DOUBLE_AXLE_WALSCHAERTS_SHORT
-            = builder("double_axle_walschaerts_short").displayName(Component.translatable("create_bb.bogies.style.double_axle_walschaerts_short"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleWalschaertsShortRenderer.DoubleAxleExtraLargeWalschaertsShort(), DoubleAxleWalschaertsShortVisual.DoubleAxleExtraLargeWalschaertsShort::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleWalschaertsShortRenderer.DoubleAxleLargeWalschaertsShort(), DoubleAxleWalschaertsShortVisual.DoubleAxleLargeWalschaertsShort::new))
-            .build();
+        = builder("double_axle_walschaerts_short").displayName(Component.translatable("create_bb.bogies.style.double_axle_walschaerts_short"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleWalschaertsShortRenderer.DoubleAxleExtraLargeWalschaertsShort(), DoubleAxleWalschaertsShortVisual.DoubleAxleExtraLargeWalschaertsShort::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_040_ROT, () -> () -> new SizeRenderer(new DoubleAxleWalschaertsShortRenderer.DoubleAxleLargeWalschaertsShort(), DoubleAxleWalschaertsShortVisual.DoubleAxleLargeWalschaertsShort::new))
+        .build();
 
     public static final BogeyStyle TRIPLE_AXLE_WALSCHAERTS_EXTENDED_SHORT
-            = builder("triple_axle_walschaerts_extended_short").displayName(Component.translatable("create_bb.bogies.style.triple_axle_walschaerts_extended_short"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedWalschaertsShortRenderer.TripleAxleExtraLargeExtendedWalschaertsShort(), TripleAxleExtendedWalschaertsShortVisual.TripleAxleExtraLargeExtendedWalschaertsShort::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedWalschaertsShortRenderer.TripleAxleLargeExtendedWalschaertsShort(), TripleAxleExtendedWalschaertsShortVisual.TripleAxleLargeExtendedWalschaertsShort::new))
-            .build();
+        = builder("triple_axle_walschaerts_extended_short").displayName(Component.translatable("create_bb.bogies.style.triple_axle_walschaerts_extended_short"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedWalschaertsShortRenderer.TripleAxleExtraLargeExtendedWalschaertsShort(), TripleAxleExtendedWalschaertsShortVisual.TripleAxleExtraLargeExtendedWalschaertsShort::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedWalschaertsShortRenderer.TripleAxleLargeExtendedWalschaertsShort(), TripleAxleExtendedWalschaertsShortVisual.TripleAxleLargeExtendedWalschaertsShort::new))
+        .build();
 
     public static final BogeyStyle TRIPLE_AXLE_WALSCHAERTS_SHORT
-            = builder("triple_axle_walschaerts_short").displayName(Component.translatable("create_bb.bogies.style.triple_axle_walschaerts_short"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleWalschaertsShortRenderer.TripleAxleExtraLargeWalschaertsShort(), TripleAxleWalschaertsShortVisual.TripleAxleExtraLargeWalschaertsShort::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleWalschaertsShortRenderer.TripleAxleLargeWalschaertsShort(), TripleAxleWalschaertsShortVisual.TripleAxleLargeWalschaertsShort::new))
-            .build();
+        = builder("triple_axle_walschaerts_short").displayName(Component.translatable("create_bb.bogies.style.triple_axle_walschaerts_short"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleWalschaertsShortRenderer.TripleAxleExtraLargeWalschaertsShort(), TripleAxleWalschaertsShortVisual.TripleAxleExtraLargeWalschaertsShort::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleWalschaertsShortRenderer.TripleAxleLargeWalschaertsShort(), TripleAxleWalschaertsShortVisual.TripleAxleLargeWalschaertsShort::new))
+        .build();
 
     public static final BogeyStyle QUADRUPLE_AXLE_WALSCHAERTS_SHORT
-            = builder("quadruple_axle_walschaerts_short").displayName(Component.translatable("create_bb.bogies.style.quadruple_axle_walschaerts_short"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_080_ROT, () -> () -> new SizeRenderer(new QuadrupleAxleWalschaertsShortRenderer.QuadrupleAxleExtraLargeWalschaertsShort(), QuadrupleAxleWalschaertsShortVisual.QuadrupleAxleExtraLargeWalschaertsShort::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_080_ROT, () -> () -> new SizeRenderer(new QuadrupleAxleWalschaertsShortRenderer.QuadrupleAxleLargeWalschaertsShort(), QuadrupleAxleWalschaertsShortVisual.QuadrupleAxleLargeWalschaertsShort::new))
-            .build();
+        = builder("quadruple_axle_walschaerts_short").displayName(Component.translatable("create_bb.bogies.style.quadruple_axle_walschaerts_short"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_080_ROT, () -> () -> new SizeRenderer(new QuadrupleAxleWalschaertsShortRenderer.QuadrupleAxleExtraLargeWalschaertsShort(), QuadrupleAxleWalschaertsShortVisual.QuadrupleAxleExtraLargeWalschaertsShort::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_080_ROT, () -> () -> new SizeRenderer(new QuadrupleAxleWalschaertsShortRenderer.QuadrupleAxleLargeWalschaertsShort(), QuadrupleAxleWalschaertsShortVisual.QuadrupleAxleLargeWalschaertsShort::new))
+        .build();
 
     public static final BogeyStyle QUINTUPLE_AXLE_WALSCHAERTS_SHORT
-            = builder("quintuple_axle_walschaerts_short").displayName(Component.translatable("create_bb.bogies.style.quintuple_axle_walschaerts_short"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleWalschaertsShortRenderer.QuintupleAxleExtraLargeWalschaertsShort(), QuintupleAxleWalschaertsShortVisual.QuintupleAxleExtraLargeWalschaertsShort::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleWalschaertsShortRenderer.QuintupleAxleLargeWalschaertsShort(), QuintupleAxleWalschaertsShortVisual.QuintupleAxleLargeWalschaertsShort::new))
-            .build();
+        = builder("quintuple_axle_walschaerts_short").displayName(Component.translatable("create_bb.bogies.style.quintuple_axle_walschaerts_short"))
+        .size(BogeySizes.LARGE, BogieBlocks.XL_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleWalschaertsShortRenderer.QuintupleAxleExtraLargeWalschaertsShort(), QuintupleAxleWalschaertsShortVisual.QuintupleAxleExtraLargeWalschaertsShort::new))
+        .size(BogeySizes.SMALL, BogieBlocks.L_0100_ROT, () -> () -> new SizeRenderer(new QuintupleAxleWalschaertsShortRenderer.QuintupleAxleLargeWalschaertsShort(), QuintupleAxleWalschaertsShortVisual.QuintupleAxleLargeWalschaertsShort::new))
+        .build();
+
+    public static final BogeyStyle SEXTUPLE_AXLE_WALSCHAERTS_SHORT
+        = builder("sextuple_axle_walschaerts_short").displayName(Component.translatable("create_bb.bogies.style.sextuple_axle_walschaerts_short"))
+        .size(BogeySizes.SMALL, BogieBlocks.L_0120_ROT, () -> () -> new SizeRenderer(new SextupleAxleWalschaertsShortRenderer.SextuplesAxleLargeWalschaertsShort(), SextupleAxleWalschaertsShortVisual.SextupleAxleLargeWalschaertsShort::new))
+        .build();
 
     private static BogeyStyle.Builder builder(String name) {
         return new BogeyStyle.Builder(BlocksBogies.asResource(name), AllBogeyStyles.STANDARD_CYCLE_GROUP);
@@ -298,38 +340,46 @@ public class BogieStyles {
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 3, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 5, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 6, Length.NORMAL));
 
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_SCOTCH_YOKE, Variant.STANDARD, ValveGear.SCOTCH_YOKE, Type.DRIVER, 1, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_SCOTCH_YOKE, Variant.STANDARD, ValveGear.SCOTCH_YOKE, Type.DRIVER, 2, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_SCOTCH_YOKE, Variant.STANDARD, ValveGear.SCOTCH_YOKE, Type.DRIVER, 3, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_SCOTCH_YOKE, Variant.STANDARD, ValveGear.SCOTCH_YOKE, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_SCOTCH_YOKE, Variant.STANDARD, ValveGear.SCOTCH_YOKE, Type.DRIVER, 5, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_SCOTCH_YOKE, Variant.STANDARD, ValveGear.SCOTCH_YOKE, Type.DRIVER, 6, Length.NORMAL));
 
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 1, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 2, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_EXTRA_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 2, Length.EXTENDED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 3, Length.EXTENDED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 3, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 5, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 6, Length.NORMAL));
 
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 2, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 3, Length.EXTENDED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 3,Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 5, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 6, Length.NORMAL));
 
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 1, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 2, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_WALSCHAERTS_EXTRA_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 2, Length.EXTENDED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_WALSCHAERTS_EXTENDED_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 3, Length.EXTENDED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 3, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 5, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 6, Length.NORMAL));
 
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_WALSCHAERTS_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 2, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_WALSCHAERTS_EXTENDED_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 3, Length.EXTENDED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_WALSCHAERTS_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 3, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_WALSCHAERTS_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_WALSCHAERTS_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 5, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_WALSCHAERTS_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 6, Length.NORMAL));
         }
     }
 

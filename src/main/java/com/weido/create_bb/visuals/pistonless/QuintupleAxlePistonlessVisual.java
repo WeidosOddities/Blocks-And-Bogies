@@ -200,7 +200,7 @@ public class QuintupleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft7.setTransform(poseStack)
-                    .translate(-.5f, .25f, -1.3125)
+                    .translate(-.5f, .25f, -1.3125f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -208,7 +208,7 @@ public class QuintupleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft8.setTransform(poseStack)
-                    .translate(-.5f, .25f, 0.3125)
+                    .translate(-.5f, .25f, 0.3125f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -520,7 +520,7 @@ public class QuintupleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft12.setTransform(poseStack)
-                    .translate(-.5f, .25f, 0.1625f)
+                    .translate(-.5f, .25f, .1625f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)

@@ -209,13 +209,13 @@ public class DoubleAxleWalschaertsShortVisual extends BlocksBogiesBogieVisual {
                     .setChanged();
 
             wheel1.setTransform(poseStack)
-                    .translate(0, 1, -0.875f)
+                    .translate(0, 1, -.875f)
                     .rotateYDegrees(forwards ? 0 : 180)
                     .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
                     .setChanged();
 
             wheel2.setTransform(poseStack)
-                    .translate(0, 1, 0.875f)
+                    .translate(0, 1, .875f)
                     .rotateYDegrees(forwards ? 0 : 180)
                     .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
                     .setChanged();
@@ -584,7 +584,7 @@ public class DoubleAxleWalschaertsShortVisual extends BlocksBogiesBogieVisual {
                     .setChanged();
 
             shaft1.setTransform(poseStack)
-                    .translate(-.5f, .25f, 0f)
+                    .translate(-.5f, .25f, 0)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)

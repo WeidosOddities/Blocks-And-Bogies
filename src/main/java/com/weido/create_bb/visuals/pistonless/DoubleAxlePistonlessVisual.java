@@ -100,6 +100,7 @@ public class DoubleAxlePistonlessVisual implements BogeyVisual {
                     .translate(0, .25f, 0)
                     .rotateXDegrees(-(wheelAngle + 90))
                     .setChanged();
+
             belt.offset(0, BELT_RADIUS_IN_UV_SPACE * Mth.DEG_TO_RAD * wheelAngle)
                     .setTransform(poseStack)
                     .scale(1 - 1 / 512f)

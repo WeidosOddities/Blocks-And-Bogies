@@ -188,7 +188,7 @@ public class TripleAxleExtendedPistonlessVisual extends BlocksBogiesBogieVisual 
                     .setChanged();
 
             shaft5.setTransform(poseStack)
-                    .translate(-.5f, .25f, 0.375f)
+                    .translate(-.5f, .25f, .375f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -430,7 +430,7 @@ public class TripleAxleExtendedPistonlessVisual extends BlocksBogiesBogieVisual 
                     .setChanged();
 
             shaft3.setTransform(poseStack)
-                    .translate(-.5f, .25f, 0.0625f)
+                    .translate(-.5f, .25f, .0625f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)

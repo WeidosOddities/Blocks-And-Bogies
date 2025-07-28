@@ -731,7 +731,7 @@ public class QuadrupleAxleWalschaertsLongVisual extends BlocksBogiesBogieVisual 
                     .setChanged();
 
             shaft9.setTransform(poseStack)
-                    .translate(-.5f, .25f, -0f)
+                    .translate(-.5f, .25f, 0)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)

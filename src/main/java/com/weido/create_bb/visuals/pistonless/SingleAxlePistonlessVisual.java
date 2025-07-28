@@ -103,7 +103,7 @@ public class SingleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft3.setTransform(poseStack)
-                    .translate(-.5f, .25f, 0.5f)
+                    .translate(-.5f, .25f, .5f)
                     .center()
                     .rotateTo(Direction.UP, Direction.EAST)
                     .rotateYDegrees(wheelAngle)
@@ -237,7 +237,7 @@ public class SingleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft3.setTransform(poseStack)
-                    .translate(-.5f, .25f, 0.5f)
+                    .translate(-.5f, .25f, .5f)
                     .center()
                     .rotateTo(Direction.UP, Direction.EAST)
                     .rotateYDegrees(wheelAngle)
