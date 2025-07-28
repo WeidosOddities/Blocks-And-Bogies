@@ -246,7 +246,7 @@ public class TripleAxleExtendedLongRenderer extends BlocksBogiesBogieRenderer {
             }
 
             for (int j = -1; j < 5; j++) {
-                shaft1.translate(-.5f, .25f, ((j*.125f)+j-2.1875))
+                shaft1.translate(-.5f, .25f, ((j*.125f)+j-2.1875f))
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()

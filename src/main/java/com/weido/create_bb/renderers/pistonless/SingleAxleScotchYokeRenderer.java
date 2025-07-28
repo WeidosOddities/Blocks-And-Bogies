@@ -56,7 +56,7 @@ public class SingleAxleScotchYokeRenderer implements BogeyRenderer {
                     .renderInto(poseStack, buffer);
 
             CachedBuffers.partial(BogiePartials.EXTRA_LARGE_2C_R_PIN, Blocks.AIR.defaultBlockState())
-                    .translate(0, 1.25, 0)
+                    .translate(0, 1.25f, 0)
                     .rotateXDegrees((wheelAngle))
                     .translate(0, .375f, 0)
                     .rotateXDegrees(-(wheelAngle))
@@ -65,7 +65,7 @@ public class SingleAxleScotchYokeRenderer implements BogeyRenderer {
                     .renderInto(poseStack, buffer);
 
             CachedBuffers.partial(BogiePartials.EXTRA_LARGE_2C_L_PIN, Blocks.AIR.defaultBlockState())
-                    .translate(0, 1.25, 0)
+                    .translate(0, 1.25f, 0)
                     .rotateXDegrees((wheelAngle + 90))
                     .translate(0, .375f, 0)
                     .rotateXDegrees(-(wheelAngle + 90))

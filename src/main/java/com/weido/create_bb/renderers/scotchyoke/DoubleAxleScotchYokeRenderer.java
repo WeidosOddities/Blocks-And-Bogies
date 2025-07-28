@@ -88,13 +88,13 @@ public class DoubleAxleScotchYokeRenderer implements BogeyRenderer {
                     .renderInto(poseStack, buffer);
 
             for (int i : Iterate.positiveAndNegative) {
-                wheels.translate(0, 1, i * 0.875f)
+                wheels.translate(0, 1, i*.875f)
                         .rotateXDegrees(wheelAngle)
                         .light(light)
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft1.translate(-.5f, .25f, (i * 1.5f) - .5f)
+                shaft1.translate(-.5f, .25f, (i*1.5f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -102,7 +102,7 @@ public class DoubleAxleScotchYokeRenderer implements BogeyRenderer {
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft2.translate(-.5f, .25f, (i * 1.875f) - .5f)
+                shaft2.translate(-.5f, .25f, (i*1.875f)-.5f)
                         .center()
                         .rotateXDegrees(wheelAngle)
                         .uncenter()
@@ -149,7 +149,7 @@ public class DoubleAxleScotchYokeRenderer implements BogeyRenderer {
                     .renderInto(poseStack, buffer);
 
             CachedBuffers.partial(BogiePartials.EXTRA_LARGE_4C_R_PIN, Blocks.AIR.defaultBlockState())
-                    .translate(0, 1.25, 0)
+                    .translate(0, 1.25f, 0)
                     .rotateXDegrees((wheelAngle))
                     .translate(0, .375f, 0)
                     .rotateXDegrees(-(wheelAngle))
@@ -179,13 +179,13 @@ public class DoubleAxleScotchYokeRenderer implements BogeyRenderer {
                     .renderInto(poseStack, buffer);
 
             for (int i : Iterate.positiveAndNegative) {
-                wheels.translate(0, 1.25, i * 1.125)
+                wheels.translate(0, 1.25f, i*1.125f)
                         .rotateXDegrees(wheelAngle)
                         .light(light)
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft1.translate(-.5f, .25f, (i * 0.5625) - .5f)
+                shaft1.translate(-.5f, .25f, (i*.5625f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -193,7 +193,7 @@ public class DoubleAxleScotchYokeRenderer implements BogeyRenderer {
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft2.translate(-.5f, .25f, (i * 1.75) - .5f)
+                shaft2.translate(-.5f, .25f, (i*1.75f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -201,7 +201,7 @@ public class DoubleAxleScotchYokeRenderer implements BogeyRenderer {
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft3.translate(-.5f, .25f, (i * 2.125) - .5f)
+                shaft3.translate(-.5f, .25f, (i*2.125f)-.5f)
                         .center()
                         .rotateXDegrees(wheelAngle)
                         .uncenter()

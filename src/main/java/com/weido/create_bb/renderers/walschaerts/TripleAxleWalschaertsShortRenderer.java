@@ -128,7 +128,7 @@ public class TripleAxleWalschaertsShortRenderer extends BlocksBogiesBogieRendere
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft1.translate(-.5f, .25f, (i*2.3125)-.5f)
+                shaft1.translate(-.5f, .25f, (i*2.3125f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -136,7 +136,7 @@ public class TripleAxleWalschaertsShortRenderer extends BlocksBogiesBogieRendere
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft2.translate(-.5f, .25f, (i*0.875)-.5f)
+                shaft2.translate(-.5f, .25f, (i*0.875f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -144,7 +144,7 @@ public class TripleAxleWalschaertsShortRenderer extends BlocksBogiesBogieRendere
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft3.translate(-.5f, .25f, (i*2.6875)-.5f)
+                shaft3.translate(-.5f, .25f, (i*2.6875f)-.5f)
                         .center()
                         .rotateXDegrees(wheelAngle)
                         .uncenter()
@@ -267,7 +267,7 @@ public class TripleAxleWalschaertsShortRenderer extends BlocksBogiesBogieRendere
             }
 
             for (int j = -1; j < 5; j++) {
-                shaft1.translate(-.5f, .25f, ((j*.125f)+j-2.1875))
+                shaft1.translate(-.5f, .25f, ((j*.125f)+j-2.1875f))
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()

@@ -97,7 +97,7 @@ public class TripleAxlePistonlessRenderer implements BogeyRenderer {
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft2.translate(-.5f, .25f, (i*0.875f)-.5f)
+                shaft2.translate(-.5f, .25f, (i*.875f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -191,7 +191,7 @@ public class TripleAxlePistonlessRenderer implements BogeyRenderer {
             }
 
             for (int j = -1; j < 5; j++) {
-                shaft1.translate(-.5f, .25f, ((j*.125f)+j-2.1875))
+                shaft1.translate(-.5f, .25f, ((j*.125f)+j-2.1875f))
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()

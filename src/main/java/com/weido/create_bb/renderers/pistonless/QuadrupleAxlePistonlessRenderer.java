@@ -84,7 +84,7 @@ public class QuadrupleAxlePistonlessRenderer implements BogeyRenderer {
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                wheels_semi.translate(0,1, i*0.875f)
+                wheels_semi.translate(0,1, i*.875f)
                         .rotateXDegrees(wheelAngle)
                         .light(light)
                         .overlay(overlay)
@@ -177,7 +177,7 @@ public class QuadrupleAxlePistonlessRenderer implements BogeyRenderer {
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                wheels_semi.translate(0,1.25, i*1.125f)
+                wheels_semi.translate(0,1.25f, i*1.125f)
                         .rotateXDegrees(wheelAngle)
                         .light(light)
                         .overlay(overlay)

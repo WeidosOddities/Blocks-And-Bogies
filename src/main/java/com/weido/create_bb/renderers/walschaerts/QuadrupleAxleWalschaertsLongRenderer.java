@@ -245,14 +245,14 @@ public class QuadrupleAxleWalschaertsLongRenderer extends BlocksBogiesBogieRende
             }
 
             for (int i : Iterate.positiveAndNegative) {
-                wheels.translate(0,1.25, i*3.375f)
+                wheels.translate(0,1.25f, i*3.375f)
                         .rotateYDegrees(forwards ? 0 : 180)
                         .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
                         .light(light)
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                wheels_semi.translate(0,1.25, i*1.125f)
+                wheels_semi.translate(0,1.25f, i*1.125f)
                         .rotateYDegrees(forwards ? 0 : 180)
                         .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
                         .light(light)

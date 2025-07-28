@@ -144,7 +144,7 @@ public class QuintupleAxleWalschaertsShortRenderer extends BlocksBogiesBogieRend
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft3.translate(-.5f, .25f, (i*4.375)-.5f)
+                shaft3.translate(-.5f, .25f, (i*4.375f)-.5f)
                         .center()
                         .rotateXDegrees(wheelAngle)
                         .uncenter()

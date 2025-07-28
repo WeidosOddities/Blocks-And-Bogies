@@ -121,14 +121,14 @@ public class TripleAxleWalschaertsLongRenderer extends BlocksBogiesBogieRenderer
             }
 
             for (int i : Iterate.positiveAndNegative) {
-                wheels.translate(0,LARGE_CENTER_HEIGHT, i*1.6875)
+                wheels.translate(0,LARGE_CENTER_HEIGHT, i*1.6875f)
                         .rotateYDegrees(forwards ? 0 : 180)
                         .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
                         .light(light)
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft1.translate(-.5f, .25f, (i*2.3125)-.5f)
+                shaft1.translate(-.5f, .25f, (i*2.3125f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -136,7 +136,7 @@ public class TripleAxleWalschaertsLongRenderer extends BlocksBogiesBogieRenderer
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft2.translate(-.5f, .25f, (i*0.875)-.5f)
+                shaft2.translate(-.5f, .25f, (i*.875f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -144,7 +144,7 @@ public class TripleAxleWalschaertsLongRenderer extends BlocksBogiesBogieRenderer
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft3.translate(-.5f, .25f, (i*2.6875)-.5f)
+                shaft3.translate(-.5f, .25f, (i*2.6875f)-.5f)
                         .center()
                         .rotateXDegrees(wheelAngle)
                         .uncenter()

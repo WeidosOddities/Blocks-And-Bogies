@@ -97,14 +97,14 @@ public class DoubleAxleLongRenderer extends BlocksBogiesBogieRenderer {
             }
 
             for (int i : Iterate.positiveAndNegative) {
-                wheels.translate(0, 1, i * 0.875f)
+                wheels.translate(0, 1, i*.875f)
                         .rotateYDegrees(forwards ? 0 : 180)
                         .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
                         .light(light)
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft1.translate(-.5f, .25f, (i * 1.5f) - .5f)
+                shaft1.translate(-.5f, .25f, (i*1.5f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -112,7 +112,7 @@ public class DoubleAxleLongRenderer extends BlocksBogiesBogieRenderer {
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft2.translate(-.5f, .25f, (i * 1.875f) - .5f)
+                shaft2.translate(-.5f, .25f, (i*1.875f)-.5f)
                         .center()
                         .rotateXDegrees(wheelAngle)
                         .uncenter()
@@ -196,14 +196,14 @@ public class DoubleAxleLongRenderer extends BlocksBogiesBogieRenderer {
             }
 
             for (int i : Iterate.positiveAndNegative) {
-                wheels.translate(0, 1.25f, i * 1.125f)
+                wheels.translate(0, 1.25f, i*1.125f)
                         .rotateYDegrees(forwards ? 0 : 180)
                         .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
                         .light(light)
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft1.translate(-.5f, .25f, (i * 0.5625f) - .5f)
+                shaft1.translate(-.5f, .25f, (i*.5625f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -211,7 +211,7 @@ public class DoubleAxleLongRenderer extends BlocksBogiesBogieRenderer {
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft2.translate(-.5f, .25f, (i * 1.75f) - .5f)
+                shaft2.translate(-.5f, .25f, (i*1.75f)-.5f)
                         .center()
                         .rotateZDegrees(wheelAngle)
                         .uncenter()
@@ -219,7 +219,7 @@ public class DoubleAxleLongRenderer extends BlocksBogiesBogieRenderer {
                         .overlay(overlay)
                         .renderInto(poseStack, buffer);
 
-                shaft3.translate(-.5f, .25f, (i * 2.125f) - .5f)
+                shaft3.translate(-.5f, .25f, (i*2.125f)-.5f)
                         .center()
                         .rotateXDegrees(wheelAngle)
                         .uncenter()
