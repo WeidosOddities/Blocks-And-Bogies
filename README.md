@@ -6,7 +6,7 @@
 </div>
 
 ___
-## Blocks & Bogies is a Create addon that adds an abundance of different bogie styles to choose from, it also adds a ui so you can fine tune which style you want to use.
+## Blocks & Bogies is a Create addon that adds an abundance of different bogie styles to choose from, it also adds a selection UI so you can fine tune exactly what style you prefer.
 
 ## Driver Bogies:
     - Walschaerts Large
@@ -53,6 +53,7 @@ ___
 
 ## Truck Bogies:
     - Standard
+        - 0-2-0E
         - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0
 
     - Trailing
