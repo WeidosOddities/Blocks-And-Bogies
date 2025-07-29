@@ -3,6 +3,7 @@
   <h1>Blocks & Bogies</h1>
 	<a href=""><img src="https://img.shields.io/badge/Avalable_For-1.21.1-blue" alt="Supported Versions"></a>
 	<a href="https://github.com/WeidosOddities/blocks-and-bogies/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red" alt="License"></a>
+	<a href="https://discord.gg/AenU6BcFSW"><img src="https://img.shields.io/discord/1398879261296689162?style=flat&label=Discord&color=5865f2" alt="License"></a>
 </div>
 
 ___
