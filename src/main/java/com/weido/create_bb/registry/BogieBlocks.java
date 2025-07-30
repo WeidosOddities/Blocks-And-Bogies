@@ -41,7 +41,7 @@ public class BogieBlocks {
             .register();
 
     public static final BlockEntry<LargeSextupleAxleRot> L_0120_ROT =
-        REGISTRATE.block("l_0100_rot", LargeSextupleAxleRot::new)
+        REGISTRATE.block("l_0120_rot", LargeSextupleAxleRot::new)
             .properties(p -> p.mapColor(MapColor.PODZOL))
             .transform((BuilderTransformers.standardBogey()))
             .register();
@@ -107,7 +107,7 @@ public class BogieBlocks {
             .register();
 
     public static final BlockEntry<LargeSextupleAxle> L_0120 =
-        REGISTRATE.block("l_0100", LargeSextupleAxle::new)
+        REGISTRATE.block("l_0120", LargeSextupleAxle::new)
             .properties(p -> p.mapColor(MapColor.PODZOL))
             .transform((BuilderTransformers.standardBogey()))
             .register();

@@ -50,7 +50,6 @@ public class MathCalculations {
                 point1.y + (ratio * (point2.y - point1.y))
         );
     }
-
     public static float calculateDistance(Point point2, Point point1) {
         float dx = point2.x - point1.x;
         float dy = point2.y - point1.y;

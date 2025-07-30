@@ -13,6 +13,6 @@ public class SmallSingleAxleBogie extends SmallBogieBlock {
         }
         @Override
         public Vec3 getConnectorAnchorOffset() {
-            return new Vec3(0, 7 / 32f, 32/32f);
+            return new Vec3(0, 7 / 32f, 28/32f);
         }
 }
