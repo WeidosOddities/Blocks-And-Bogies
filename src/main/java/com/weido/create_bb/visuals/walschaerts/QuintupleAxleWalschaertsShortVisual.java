@@ -640,24 +640,24 @@ public class QuintupleAxleWalschaertsShortVisual extends BlocksBogiesBogieVisual
         }
 
         RodCalculations.WalschaertsParameters params = new RodCalculations.WalschaertsParameters(
-                LARGE_10S_ECCENTRIC_ROD,
-                LARGE_EXPANSION_LINK,
-                LARGE_ECCENTRIC_CRANK_RADIUS,
-                LARGE_10S_EXPANSION_LINK_X,
-                LARGE_EXPANSION_LINK_Y,
-                LARGE_E_LINK_R_BAR_CONNECTION,
-                LARGE_MAIN_CRANK_RADIUS,
-                LARGE_10S_MAIN_ROD_LENGTH,
-                LARGE_10S_RADIUS_ROD,
-                LARGE_COMBINATION_LEVER,
-                LARGE_COMBINATION_UPPER,
-                LARGE_COMBINATION_LOWER,
-                LARGE_UNION_LINK,
-                LARGE_DROP_LINK,
-                LARGE_VALVE_Y,
-                LARGE_10S_PISTON_DISTANCE,
-                LARGE_CENTER_HEIGHT,
-                LARGE_10S_OFFSET
+                EXTRA_LARGE_10S_ECCENTRIC_ROD,
+                EXTRA_LARGE_EXPANSION_LINK,
+                EXTRA_LARGE_ECCENTRIC_CRANK_RADIUS,
+                EXTRA_LARGE_10S_EXPANSION_LINK_X,
+                EXTRA_LARGE_EXPANSION_LINK_Y,
+                EXTRA_LARGE_E_LINK_R_BAR_CONNECTION,
+                EXTRA_LARGE_MAIN_CRANK_RADIUS,
+                EXTRA_LARGE_10S_MAIN_ROD_LENGTH,
+                EXTRA_LARGE_10S_RADIUS_ROD,
+                EXTRA_LARGE_COMBINATION_LEVER,
+                EXTRA_LARGE_COMBINATION_UPPER,
+                EXTRA_LARGE_COMBINATION_LOWER,
+                EXTRA_LARGE_UNION_LINK,
+                EXTRA_LARGE_DROP_LINK,
+                EXTRA_LARGE_VALVE_Y,
+                EXTRA_LARGE_10S_PISTON_DISTANCE,
+                EXTRA_LARGE_CENTER_HEIGHT,
+                EXTRA_LARGE_10S_OFFSET
         );
 
         @Override

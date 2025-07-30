@@ -85,8 +85,8 @@ public class BogieStyles {
 
     public static final BogeyStyle TRIPLE_AXLE_EXTENDED_PISTONLESS
             = builder("triple_axle_extended_pistonless").displayName(Component.translatable("create_bb.bogies.style.triple_axle_extended_pistonless"))
-            .size(BogeySizes.LARGE, BogieBlocks.XL_060, () -> () -> new SizeRenderer(new TripleAxleExtendedPistonlessRenderer.TripleAxleExtraLargeExtendedPistonless(), TripleAxleExtendedPistonlessVisual.TripleAxleExtraLargeExtendedPistonless::new))
-            .size(BogeySizes.SMALL, BogieBlocks.L_060, () -> () -> new SizeRenderer(new TripleAxleExtendedPistonlessRenderer.TripleAxleLargeExtendedPistonless(), TripleAxleExtendedPistonlessVisual.TripleAxleLargeExtendedPistonless::new))
+            .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedPistonlessRenderer.TripleAxleExtraLargeExtendedPistonless(), TripleAxleExtendedPistonlessVisual.TripleAxleExtraLargeExtendedPistonless::new))
+            .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedPistonlessRenderer.TripleAxleLargeExtendedPistonless(), TripleAxleExtendedPistonlessVisual.TripleAxleLargeExtendedPistonless::new))
             .build();
 
     public static final BogeyStyle TRIPLE_AXLE_PISTONLESS
