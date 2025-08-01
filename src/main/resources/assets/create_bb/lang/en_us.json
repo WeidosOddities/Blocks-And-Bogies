@@ -66,35 +66,37 @@
   "create_bb.bogies.style.triple_axle_scotch_yoke": "0-6-0 Scotch Yoke",
   "create_bb.bogies.style.quadruple_axle_scotch_yoke": "0-8-0 Scotch Yoke",
   "create_bb.bogies.style.quintuple_axle_scotch_yoke": "0-10-0 Scotch Yoke",
-    "create_bb.bogies.style.sextuple_axle_scotch_yoke": "0-12-0 Scotch Yoke",
+  "create_bb.bogies.style.sextuple_axle_scotch_yoke": "0-12-0 Scotch Yoke",
 
   "create_bb.bogies.style.single_axle_long": "0-2-0 Gearless Long",
   "create_bb.bogies.style.double_axle_long": "0-4-0 Gearless Long",
+  "create_bb.bogies.style.double_axle__extra_long": "0-4-0 Gearless Extra Long",
   "create_bb.bogies.style.triple_axle_extended_long": "0-6-0 Gearless Extended Long",
   "create_bb.bogies.style.triple_axle_long": "0-6-0 Gearless Long",
   "create_bb.bogies.style.quadruple_axle_long": "0-8-0 Gearless Long",
   "create_bb.bogies.style.quintuple_axle_long": "0-10-0 Gearless Long",
-    "create_bb.bogies.style.sextuple_axle_long": "0-12-0 Gearless Long",
+  "create_bb.bogies.style.sextuple_axle_long": "0-12-0 Gearless Long",
 
   "create_bb.bogies.style.double_axle_short": "0-4-0 Gearless Short",
   "create_bb.bogies.style.triple_axle_short": "0-6-0 Gearless Short",
   "create_bb.bogies.style.triple_axle_extended_short": "0-6-0 Gearless Extended Short",
   "create_bb.bogies.style.quadruple_axle_short": "0-8-0 Gearless Short",
   "create_bb.bogies.style.quintuple_axle_short": "0-10-0 Gearless Short",
-    "create_bb.bogies.style.sextuple_axle_short": "0-12-0 Gearless Short",
+  "create_bb.bogies.style.sextuple_axle_short": "0-12-0 Gearless Short",
 
   "create_bb.bogies.style.single_axle_walschaerts_long": "0-2-0 Walschaerts Long",
   "create_bb.bogies.style.double_axle_walschaerts_long": "0-4-0 Walschaerts Long",
+  "create_bb.bogies.style.double_axle_walschaerts_extra_long": "0-4-0 Walschaerts Extra Long",
   "create_bb.bogies.style.triple_axle_walschaerts_extended_long": "0-6-0 Walschaerts Extended Long",
   "create_bb.bogies.style.triple_axle_walschaerts_long": "0-6-0 Walschaerts Long",
   "create_bb.bogies.style.quadruple_axle_walschaerts_long": "0-8-0 Walschaerts Long",
   "create_bb.bogies.style.quintuple_axle_walschaerts_long": "0-10-0 Walschaerts Long",
-    "create_bb.bogies.style.sextuple_axle_walschaerts_long": "0-12-0 Walschaerts Long",
+  "create_bb.bogies.style.sextuple_axle_walschaerts_long": "0-12-0 Walschaerts Long",
 
   "create_bb.bogies.style.double_axle_walschaerts_short": "0-4-0 Walschaerts Short",
   "create_bb.bogies.style.triple_axle_walschaerts_extended_short": "0-6-0 Walschaerts Extended Short",
   "create_bb.bogies.style.triple_axle_walschaerts_short": "0-6-0 Walschaerts Short",
   "create_bb.bogies.style.quadruple_axle_walschaerts_short": "0-8-0 Walschaerts Short",
   "create_bb.bogies.style.quintuple_axle_walschaerts_short": "0-10-0 Walschaerts Short",
-    "create_bb.bogies.style.sextuple_axle_walschaerts_short": "0-12-0 Walschaerts Short"
+  "create_bb.bogies.style.sextuple_axle_walschaerts_short": "0-12-0 Walschaerts Short"
 }
