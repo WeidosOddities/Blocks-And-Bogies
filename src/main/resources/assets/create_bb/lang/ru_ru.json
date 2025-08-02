@@ -1,0 +1,102 @@
+{
+  "create_bb.menu.title": "Настройка вагонной тележки",
+
+  "create_bb.tooltips.rotation": "Вагонная тележка развёрнута!",
+
+  "create_bb.menu.bogie_style": "Выбор стиля вагонной тележки",
+  "create_bb.menu.selected_bogie": "Выбранный стиль: %s",
+
+  "create_bb.menu.scroll_selection": "Прокрутка для выбора",
+  "create_bb.menu.no_options_available": "Нет других вариантов",
+  "create_bb.menu.scroll_change_speed": "Прокрутка для изменения скорости анимации",
+
+  "create_bb.menu.type": "",
+  "create_bb.menu.variant": "Стиль: ",
+  "create_bb.menu.valve_gear": "Механизм: ",
+  "create_bb.menu.axle_count": "Кол-во осей: ",
+  "create_bb.menu.size": "Размер колёс: ",
+  "create_bb.menu.length": "Конструкция: ",
+  "create_bb.menu.speed": "Скорость анимации: ",
+
+  "create_bb.menu.size.large": "Крупный",
+  "create_bb.menu.size.small": "Малый",
+  "create_bb.menu.size.extra_large": "Гигант",
+
+  "create_bb.variant.long": "С длинным поршнем",
+  "create_bb.variant.short": "С коротким поршнем",
+  "create_bb.variant.standard": "Стандартная",
+  "create_bb.variant.trailing": "Поддерживающая",
+  "create_bb.variant.pistonless": "Без поршня",
+
+  "create_bb.type.driver": "Локомотивная",
+  "create_bb.type.truck": "Вагонная",
+
+  "create_bb.valve_gear.none": "Отсутствует",
+  "create_bb.valve_gear.walschaerts": "Вальсхарта",
+  "create_bb.valve_gear.rotary_poppet": "Роторный",
+  "create_bb.valve_gear.scotch_yoke": "Шотландский",
+  "create_bb.valve_gear.southern": "Южный",
+
+  "create_bb.length.standard": "Обычная",
+  "create_bb.length.extended": "Длинная",
+  "create_bb.length.offset": "Смещённая",
+
+  "create_bb.bogies.style.single_axle_trailing": "Малоколёсная поддерживающая 0-2-0",
+  "create_bb.bogies.style.double_axle_trailing": "Малоколёсная поддерживающая 0-4-0",
+  "create_bb.bogies.style.triple_axle_trailing": "Малоколёсная поддерживающая 0-6-0",
+  "create_bb.bogies.style.quadruple_axle_trailing": "Малоколёсная поддерживающая 0-8-0",
+
+  "create_bb.bogies.style.single_axle_offset": "Малоколёсная одноосная смещённая",
+
+  "create_bb.bogies.style.single_axle_bogie": "Малоколёсная одноосная стандартная",
+  "create_bb.bogies.style.triple_axle_bogie": "Малоколёсная стандартная 0-6-0",
+  "create_bb.bogies.style.quadruple_axle_bogie": "Малоколёсная стандартная 0-8-0",
+  "create_bb.bogies.style.quintuple_axle_bogie": "Малоколёсная стандартная 0-10-0",
+
+  "create_bb.bogies.style.single_axle_pistonless": "Крупноколёсная без поршня 0-2-0",
+  "create_bb.bogies.style.double_axle_pistonless": "Крупноколёсная без поршня 0-4-0",
+  "create_bb.bogies.style.triple_axle_extended_pistonless": "Крупноколёсная длинной конструкции без поршня 0-6-0",
+  "create_bb.bogies.style.triple_axle_pistonless": "Крупноколёсная без поршня 0-6-0",
+  "create_bb.bogies.style.quadruple_axle_pistonless": "Крупноколёсная без поршня 0-8-0",
+  "create_bb.bogies.style.quintuple_axle_pistonless": "Крупноколёсная без поршня 0-10-0",
+  "create_bb.bogies.style.sextuple_axle_pistonless": "Крупноколёсная без поршня 0-12-0",
+
+  "create_bb.bogies.style.single_axle_scotch_yoke": "Крупноколёсная с шотландским механизмом 0-2-0",
+  "create_bb.bogies.style.double_axle_scotch_yoke": "Крупноколёсная с шотландским механизмом 0-4-0",
+  "create_bb.bogies.style.triple_axle_scotch_yoke": "Крупноколёсная с шотландским механизмом 0-6-0",
+  "create_bb.bogies.style.quadruple_axle_scotch_yoke": "Крупноколёсная с шотландским механизмом 0-8-0",
+  "create_bb.bogies.style.quintuple_axle_scotch_yoke": "Крупноколёсная с шотландским механизмом 0-10-0",
+  "create_bb.bogies.style.sextuple_axle_scotch_yoke": "Крупноколёсная с шотландским механизмом 0-12-0",
+
+  "create_bb.bogies.style.single_axle_long": "Крупноколёсная с длинным поршнем без механизма 0-2-0",
+  "create_bb.bogies.style.double_axle_long": "Крупноколёсная с длинным поршнем без механизма 0-4-0",
+  "create_bb.bogies.style.double_axle_extra_long": "Крупноколёсная длинной конструкции с длинным поршнем без механизма 0-4-0",
+  "create_bb.bogies.style.triple_axle_extended_long": "Крупноколёсная длинной конструкции с длинным поршнем без механизма 0-6-0",
+  "create_bb.bogies.style.triple_axle_long": "Крупноколёсная с длинным поршнем без механизма 0-6-0",
+  "create_bb.bogies.style.quadruple_axle_long": "Крупноколёсная с длинным поршнем без механизма 0-8-0",
+  "create_bb.bogies.style.quintuple_axle_long": "Крупноколёсная с длинным поршнем без механизма 0-10-0",
+  "create_bb.bogies.style.sextuple_axle_long": "Крупноколёсная с длинным поршнем без механизма 0-12-0",
+
+  "create_bb.bogies.style.double_axle_short": "Крупноколёсная с коротким поршнем без механизма 0-4-0",
+  "create_bb.bogies.style.triple_axle_short": "Крупноколёсная с коротким поршнем без механизма 0-6-0",
+  "create_bb.bogies.style.triple_axle_extended_short": "Крупноколёсная длинной конструкции с коротким поршнем без механизма 0-6-0",
+  "create_bb.bogies.style.quadruple_axle_short": "Крупноколёсная с коротким поршнем без механизма 0-8-0",
+  "create_bb.bogies.style.quintuple_axle_short": "Крупноколёсная с коротким поршнем без механизма 0-10-0",
+  "create_bb.bogies.style.sextuple_axle_short": "Крупноколёсная с коротким поршнем без механизма 0-12-0",
+
+  "create_bb.bogies.style.single_axle_walschaerts_long": "Крупноколёсная с длинным поршнем и механизмом Вальсхарта 0-2-0",
+  "create_bb.bogies.style.double_axle_walschaerts_long": "Крупноколёсная с длинным поршнем и механизмом Вальсхарта 0-4-0",
+  "create_bb.bogies.style.double_axle_walschaerts_extra_long": "Крупноколёсная длинной конструкции с длинным поршнем и механизмом Вальсхарта 0-4-0",
+  "create_bb.bogies.style.triple_axle_walschaerts_extended_long": "Крупноколёсная длинной конструкции с длинным поршнем и механизмом Вальсхарта 0-6-0",
+  "create_bb.bogies.style.triple_axle_walschaerts_long": "Крупноколёсная с длинным поршнем и механизмом Вальсхарта 0-6-0",
+  "create_bb.bogies.style.quadruple_axle_walschaerts_long": "Крупноколёсная с длинным поршнем и механизмом Вальсхарта 0-8-0",
+  "create_bb.bogies.style.quintuple_axle_walschaerts_long": "Крупноколёсная с длинным поршнем и механизмом Вальсхарта 0-10-0",
+  "create_bb.bogies.style.sextuple_axle_walschaerts_long": "Крупноколёсная с длинным поршнем и механизмом Вальсхарта 0-12-0",
+
+  "create_bb.bogies.style.double_axle_walschaerts_short": "Крупноколёсная с коротким поршнем и механизмом Вальсхарта 0-4-0",
+  "create_bb.bogies.style.triple_axle_walschaerts_extended_short": "Крупноколёсная длинной конструкции с коротким поршнем и механизмом Вальсхарта 0-6-0",
+  "create_bb.bogies.style.triple_axle_walschaerts_short": "Крупноколёсная с коротким поршнем и механизмом Вальсхарта 0-6-0",
+  "create_bb.bogies.style.quadruple_axle_walschaerts_short": "Крупноколёсная с коротким поршнем и механизмом Вальсхарта 0-8-0",
+  "create_bb.bogies.style.quintuple_axle_walschaerts_short": "Крупноколёсная с коротким поршнем и механизмом Вальсхарта 0-10-0",
+  "create_bb.bogies.style.sextuple_axle_walschaerts_short": "Крупноколёсная с коротким поршнем и механизмом Вальсхарта 0-12-0"
+}
