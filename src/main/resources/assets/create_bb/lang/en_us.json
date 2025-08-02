@@ -70,7 +70,7 @@
 
   "create_bb.bogies.style.single_axle_long": "0-2-0 Gearless Long",
   "create_bb.bogies.style.double_axle_long": "0-4-0 Gearless Long",
-  "create_bb.bogies.style.double_axle__extra_long": "0-4-0 Gearless Extra Long",
+  "create_bb.bogies.style.double_axle_extra_long": "0-4-0 Gearless Extra Long",
   "create_bb.bogies.style.triple_axle_extended_long": "0-6-0 Gearless Extended Long",
   "create_bb.bogies.style.triple_axle_long": "0-6-0 Gearless Long",
   "create_bb.bogies.style.quadruple_axle_long": "0-8-0 Gearless Long",
