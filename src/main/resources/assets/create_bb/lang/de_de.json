@@ -1,0 +1,102 @@
+{
+  "create_bb.menu.title": "Drehgestell Anpassung",
+
+  "create_bb.tooltips.rotation": "Drehgestell Rotiert!",
+
+  "create_bb.menu.bogie_style": "Drehgestell Stil Auswahl",
+  "create_bb.menu.selected_bogie": "Ausgewähltes Drehgestell: %s",
+
+  "create_bb.menu.scroll_selection": "Scrolle zum Auswählen",
+  "create_bb.menu.no_options_available": "Keine Option Verfügbar",
+  "create_bb.menu.scroll_change_speed": "Scrolle um die Geschwindigkeit zu ändern",
+
+  "create_bb.menu.type": "",
+  "create_bb.menu.variant": "Stil: ",
+  "create_bb.menu.valve_gear": "Ventilsteuerung: ",
+  "create_bb.menu.axle_count": "Achsen Anzahl: ",
+  "create_bb.menu.size": "Größe: ",
+  "create_bb.menu.length": "Variante: ",
+  "create_bb.menu.speed": "Geschwindigkeit: ",
+
+  "create_bb.menu.size.large": "Groß",
+  "create_bb.menu.size.small": "Klein",
+  "create_bb.menu.size.extra_large": "Extra Groß",
+
+  "create_bb.variant.long": "Lang",
+  "create_bb.variant.short": "Kurz",
+  "create_bb.variant.standard": "Standard",
+  "create_bb.variant.trailing": "Nachlaufend",
+  "create_bb.variant.pistonless": "Kolbenlos",
+
+  "create_bb.type.driver": "Triebdrehgestell",
+  "create_bb.type.truck": "Drehgestell",
+
+  "create_bb.valve_gear.none": "Ohne",
+  "create_bb.valve_gear.walschaerts": "Heusinger",
+  "create_bb.valve_gear.rotary_poppet": "Rotations Tellerventil",
+  "create_bb.valve_gear.scotch_yoke": "Kurbelschleife",
+  "create_bb.valve_gear.southern": "Südamerikanisch",
+
+  "create_bb.length.standard": "Standard",
+  "create_bb.length.extended": "Erweitert",
+  "create_bb.length.offset": "Versetzt",
+
+  "create_bb.bogies.style.single_axle_trailing": "Kleines 0-2-0 Nachlaufendes Drehgestell",
+  "create_bb.bogies.style.double_axle_trailing": "Kleines 0-4-0 Nachlaufendes Drehgestell",
+  "create_bb.bogies.style.triple_axle_trailing": "Kleines 0-6-0 Nachlaufendes Drehgestell",
+  "create_bb.bogies.style.quadruple_axle_trailing": "Kleines 0-8-0 Nachlaufendes Drehgestell",
+
+  "create_bb.bogies.style.single_axle_offset": "Kleines Einachsiges Versetztes Drehgestell",
+
+  "create_bb.bogies.style.single_axle_bogie": "Kleines Einachsiges Standard Drehgestell",
+  "create_bb.bogies.style.triple_axle_bogie": "Kleines 0-6-0 Standard Drehgestell",
+  "create_bb.bogies.style.quadruple_axle_bogie": "Kleines 0-8-0 Standard Drehgestell",
+  "create_bb.bogies.style.quintuple_axle_bogie": "Kleines 0-10-0 Standard Drehgestell",
+
+  "create_bb.bogies.style.single_axle_pistonless": "0-2-0 Kolbenlos",
+  "create_bb.bogies.style.double_axle_pistonless": "0-4-0 Kolbenlos",
+  "create_bb.bogies.style.triple_axle_extended_pistonless": "0-6-0 Erweitert Kolbenlos",
+  "create_bb.bogies.style.triple_axle_pistonless": "0-6-0 Kolbenlos",
+  "create_bb.bogies.style.quadruple_axle_pistonless": "0-8-0 Kolbenlos",
+  "create_bb.bogies.style.quintuple_axle_pistonless": "0-10-0 Kolbenlos",
+  "create_bb.bogies.style.sextuple_axle_pistonless": "0-12-0 Kolbenlos",
+
+  "create_bb.bogies.style.single_axle_scotch_yoke": "0-2-0 Kurbelschleife",
+  "create_bb.bogies.style.double_axle_scotch_yoke": "0-4-0 Kurbelschleife",
+  "create_bb.bogies.style.triple_axle_scotch_yoke": "0-6-0 Kurbelschleife",
+  "create_bb.bogies.style.quadruple_axle_scotch_yoke": "0-8-0 Kurbelschleife",
+  "create_bb.bogies.style.quintuple_axle_scotch_yoke": "0-10-0 Kurbelschleife",
+  "create_bb.bogies.style.sextuple_axle_scotch_yoke": "0-12-0 Kurbelschleife",
+
+  "create_bb.bogies.style.single_axle_long": "0-2-0 Kolbenlos Lang",
+  "create_bb.bogies.style.double_axle_long": "0-4-0 Kolbenlos Lang",
+  "create_bb.bogies.style.double_axle_extra_long": "0-4-0 Kolbenlos Extra Lang",
+  "create_bb.bogies.style.triple_axle_extended_long": "0-6-0 Kolbenlos Erweitert Lang",
+  "create_bb.bogies.style.triple_axle_long": "0-6-0 Kolbenlos Lang",
+  "create_bb.bogies.style.quadruple_axle_long": "0-8-0 Kolbenlos Lang",
+  "create_bb.bogies.style.quintuple_axle_long": "0-10-0 Kolbenlos Lang",
+  "create_bb.bogies.style.sextuple_axle_long": "0-12-0 Kolbenlos Lang",
+
+  "create_bb.bogies.style.double_axle_short": "0-4-0 Kolbenlos Kurz",
+  "create_bb.bogies.style.triple_axle_short": "0-6-0 Kolbenlos Kurz",
+  "create_bb.bogies.style.triple_axle_extended_short": "0-6-0 Kolbenlos Erweitert Kurz",
+  "create_bb.bogies.style.quadruple_axle_short": "0-8-0 Kolbenlos Kurz",
+  "create_bb.bogies.style.quintuple_axle_short": "0-10-0 Kolbenlos Kurz",
+  "create_bb.bogies.style.sextuple_axle_short": "0-12-0 Kolbenlos Kurz",
+
+  "create_bb.bogies.style.single_axle_walschaerts_long": "0-2-0 Heusinger Lang",
+  "create_bb.bogies.style.double_axle_walschaerts_long": "0-4-0 Heusinger Lang",
+  "create_bb.bogies.style.double_axle_walschaerts_extra_long": "0-4-0 Heusinger Extra Lang",
+  "create_bb.bogies.style.triple_axle_walschaerts_extended_long": "0-6-0 Heusinger Erweitert Lang",
+  "create_bb.bogies.style.triple_axle_walschaerts_long": "0-6-0 Heusinger Lang",
+  "create_bb.bogies.style.quadruple_axle_walschaerts_long": "0-8-0 Heusinger Lang",
+  "create_bb.bogies.style.quintuple_axle_walschaerts_long": "0-10-0 Heusinger Lang",
+  "create_bb.bogies.style.sextuple_axle_walschaerts_long": "0-12-0 Heusinger Lang",
+
+  "create_bb.bogies.style.double_axle_walschaerts_short": "0-4-0 Heusinger Kurz",
+  "create_bb.bogies.style.triple_axle_walschaerts_extended_short": "0-6-0 Heusinger Erweitert Kurz",
+  "create_bb.bogies.style.triple_axle_walschaerts_short": "0-6-0 Heusinger Kurz",
+  "create_bb.bogies.style.quadruple_axle_walschaerts_short": "0-8-0 Heusinger Kurz",
+  "create_bb.bogies.style.quintuple_axle_walschaerts_short": "0-10-0 Heusinger Kurz",
+  "create_bb.bogies.style.sextuple_axle_walschaerts_short": "0-12-0 Heusinger Kurz"
+}
