@@ -4,11 +4,11 @@ import com.weido.create_bb.registry.BogieBlockEntities;
 import com.weido.create_bb.registry.BogieBlocks;
 import com.weido.create_bb.registry.BogiePackets;
 import com.weido.create_bb.registry.BogieStyles;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraft.resources.ResourceLocation;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
