@@ -1,6 +1,6 @@
 {
     "parent": "create_bb:block/bogie/textures",
-    "loader": "neoforge:obj",
+    "loader": "forge:obj",
     "flip_v": true,
     "model": "create_bb:models/block/bogie/extra_large/xl6lw/left_m_rod.obj",
     "mtl_override": "create_bb:models/block/bogie/textures.mtl"
