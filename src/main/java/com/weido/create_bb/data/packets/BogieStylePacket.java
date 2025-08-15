@@ -15,10 +15,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.network.NetworkEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.weido.create_bb.data.menu.Entry.StyleMenuHandler;
+
+import java.lang.reflect.Method;
+import java.util.UUID;
 
 public class BogieStylePacket extends SimplePacketBase {
     private final BogeyStyle style;
@@ -71,7 +75,20 @@ public class BogieStylePacket extends SimplePacketBase {
                 }
             }
             if (size != null) {
-                StyleMenuHandler.addStyle(player.getUUID(), Pair.of(style, size));
+                if (!ModList.get().isLoaded("railways")) {
+                    StyleMenuHandler.addStyle(player.getUUID(), Pair.of(style, size));
+                }
+                else {
+                    if (ModList.get().isLoaded("railways")) {
+                        try {
+                            Class<?> handlerClass = Class.forName("com.railwayteam.railways.content.bogey_menu.handler.BogeyMenuHandlerServer");
+                            Method addStyleMethod = handlerClass.getMethod("addStyle", UUID.class, Pair.class);
+                            addStyleMethod.invoke(null, player.getUUID(), Pair.of(style, size));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
             }
         });
         return true;
