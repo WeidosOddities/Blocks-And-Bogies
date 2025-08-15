@@ -20,9 +20,10 @@ public class BlocksBogies {
     public static final String MOD_ID = "create_bb";
     public static final String MOD_NAME = "Create: Blocks & Bogies";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MOD_ID);
+    public static CreateRegistrate REGISTRATE;
 
     public BlocksBogies() {
+        REGISTRATE = CreateRegistrate.create(MOD_ID);
         onCtor();
     }
 
@@ -40,8 +41,6 @@ public class BlocksBogies {
         modEventBus.addListener(BlocksBogies::init);
 
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> BlocksBogiesClient.onCtorClient(modEventBus));
-
-        modEventBus.addListener(BlocksBogies::init);
     }
 
     public static void init(final FMLCommonSetupEvent event) {
