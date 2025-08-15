@@ -460,7 +460,7 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
         int backgroundWidth = background.getWidth();
         poseStack.translate(guiLeft + backgroundWidth/2f + previewOffsetX, guiTop + background.getHeight() - 151 + previewOffsetY, -100);
         poseStack.scale(1, 1, -1);
-        poseStack.translate(0, 0, -100);
+        poseStack.translate(0, 0, -200);
         poseStack.scale(previewScale, previewScale, previewScale);
 
         poseStack.mulPose(Axis.ZP.rotationDegrees(180));
