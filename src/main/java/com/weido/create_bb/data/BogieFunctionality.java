@@ -3,7 +3,8 @@ package com.weido.create_bb.data;
 import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlockEntity;
 import com.weido.create_bb.blocks.BBBogieBlockEntity;
-import com.weido.create_bb.data.packets.BogieMenuPacket;
+import com.weido.create_bb.data.packets.ClientBogieMenuPacket;
+import com.weido.create_bb.registry.BogiePackets;
 import net.createmod.catnip.nbt.NBTHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,7 +13,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -22,11 +23,11 @@ import static com.weido.create_bb.data.Constants.BOGIE_ASSEMBLY_DIRECTION_KEY;
 import static com.weido.create_bb.data.Constants.BOGIE_DIRECTION_KEY;
 
 public class BogieFunctionality {
-    public static ItemInteractionResult BogieRotationInteraction(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand) {
-        if (isInvalidInteraction(player, hand)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    public static InteractionResult BogieRotationInteraction(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand) {
+        if (isInvalidInteraction(player, hand)) return InteractionResult.PASS;
 
         BBBogieBlockEntity be = level.getBlockEntity(pos) instanceof BBBogieBlockEntity bogie ? bogie : null;
-        if (be == null) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if (be == null) return InteractionResult.PASS;
 
         if (player.isShiftKeyDown()) {
             return openMenu(level, player, pos);
@@ -35,11 +36,11 @@ public class BogieFunctionality {
         return rotateBogie(state, level, pos, player, be);
     }
 
-    public static ItemInteractionResult BogeyMenuInteraction(Level level, BlockPos pos, Player player, InteractionHand hand) {
-        if (isInvalidInteraction(player, hand)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    public static InteractionResult BogeyMenuInteraction(Level level, BlockPos pos, Player player, InteractionHand hand) {
+        if (isInvalidInteraction(player, hand)) return InteractionResult.PASS;
 
         AbstractBogeyBlockEntity be = (AbstractBogeyBlockEntity) level.getBlockEntity(pos);
-        if (be == null || !player.isShiftKeyDown()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if (be == null || !player.isShiftKeyDown()) return InteractionResult.PASS;
 
         return openMenu(level, player, pos);
     }
@@ -48,19 +49,20 @@ public class BogieFunctionality {
         return hand != InteractionHand.MAIN_HAND || !player.getItemInHand(hand).isEmpty();
     }
 
-    private static ItemInteractionResult openMenu(Level level, Player player, BlockPos pos) {
-        if (level.isClientSide) return ItemInteractionResult.SUCCESS;
+    private static InteractionResult openMenu(Level level, Player player, BlockPos pos) {
+        if (level.isClientSide) return InteractionResult.SUCCESS;
 
-        if (player instanceof ServerPlayer serverPlayer) {
-            new BogieMenuPacket.Serverbound(pos).handle(serverPlayer);
+        if (player instanceof ServerPlayer) {
+            ClientBogieMenuPacket packet = new ClientBogieMenuPacket(pos);
+            BogiePackets.getChannel().sendToServer(packet);
         }
 
         AllSoundEvents.SCROLL_VALUE.playOnServer(level, pos, 1, 1);
-        return ItemInteractionResult.CONSUME;
+        return InteractionResult.CONSUME;
     }
     // Bogie Rotation 🗿
-    private static ItemInteractionResult rotateBogie(BlockState state, Level level, BlockPos pos, Player player, BBBogieBlockEntity be) {
-        if (level.isClientSide) return ItemInteractionResult.FAIL;
+    private static InteractionResult rotateBogie(BlockState state, Level level, BlockPos pos, Player player, BBBogieBlockEntity be) {
+        if (level.isClientSide) return InteractionResult.FAIL;
 
         CompoundTag bogieData = be.getBogeyData();
         Direction assemblyDirection = NBTHelper.readEnum(bogieData, BOGIE_ASSEMBLY_DIRECTION_KEY, Direction.class);
@@ -86,7 +88,7 @@ public class BogieFunctionality {
         AllSoundEvents.WRENCH_ROTATE.playOnServer(level, pos, 1, new Random().nextFloat() + 0.5f);
         player.displayClientMessage(Component.translatable("create_bb.tooltips.rotation"), true);
 
-        return ItemInteractionResult.CONSUME;
+        return InteractionResult.CONSUME;
     }
 
     private static boolean isDirectionPositive(Direction direction) {

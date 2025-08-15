@@ -6,7 +6,7 @@ import com.weido.create_bb.blocks.sizes.LargeBogieBlock;
 import com.weido.create_bb.data.BogieFunctionality;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -19,7 +19,7 @@ public class RotatableLargeBogieBlock extends LargeBogieBlock {
     }
 
     @Override
-    protected ItemInteractionResult onInteractWithBogey(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected InteractionResult onInteractWithBogey(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         return BogieFunctionality.BogieRotationInteraction(state, level, pos, player, hand);
     }
 }

@@ -12,17 +12,15 @@ import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
 import com.weido.create_bb.data.BogieFunctionality;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(StandardBogeyBlock.class)
@@ -34,7 +32,7 @@ public abstract class StandardBogeyBlockMixin extends AbstractBogeyBlock<Standar
     }
 
     @Override
-    protected ItemInteractionResult onInteractWithBogey(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected InteractionResult onInteractWithBogey(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         return BogieFunctionality.BogeyMenuInteraction(level, pos, player, hand);
     }
 
@@ -64,8 +62,7 @@ public abstract class StandardBogeyBlockMixin extends AbstractBogeyBlock<Standar
     }
 
     @Override
-    public @NotNull ItemStack getCloneItemStack(@NotNull BlockState state, @NotNull HitResult target, @NotNull LevelReader level, @NotNull BlockPos pos,
-                                                @NotNull Player player) {
+    public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
         return AllBlocks.RAILWAY_CASING.asStack();
     }
 

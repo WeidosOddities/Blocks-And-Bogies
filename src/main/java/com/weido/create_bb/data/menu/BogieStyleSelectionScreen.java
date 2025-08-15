@@ -14,6 +14,7 @@ import com.simibubi.create.foundation.gui.widget.IconButton;
 import com.simibubi.create.foundation.gui.widget.ScrollInput;
 import com.weido.create_bb.data.menu.Entry.StyleEntryManager;
 import com.weido.create_bb.data.packets.BogieStylePacket;
+import com.weido.create_bb.registry.BogiePackets;
 import net.createmod.catnip.platform.CatnipServices;
 import net.createmod.catnip.gui.AbstractSimiScreen;
 import net.createmod.catnip.render.CachedBuffers;
@@ -132,8 +133,8 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
     }
 
     @Override
-    public void renderBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        super.renderBackground(graphics, mouseX, mouseY, partialTicks);
+    public void renderBackground(@NotNull GuiGraphics graphics) {
+        super.renderBackground(graphics);
         background.render(graphics, guiLeft, guiTop);
     }
 
@@ -177,17 +178,17 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
             sizeScroll.getState(),
             lengthScroll.getState()
         );
-        BogieStylePacket.Serverbound packet = new BogieStylePacket.Serverbound(
+        BogieStylePacket packet = new BogieStylePacket(
             selectedBogey.bogeyStyle(),
             ((SizeScrollInput) sizeScroll).getCurrentSize(),
             targetPos
         );
-        CatnipServices.NETWORK.sendToServer(packet);
+        BogiePackets.getChannel().sendToServer(packet);
         super.onClose();
     }
 
     @Override
-    public boolean mouseScrolled(double mouseX, double mouseY, double horizontalAmount, double verticalAmount) {
+    public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
         int speedX = speedScroll.getX();
         int speedY = speedScroll.getY();
         int numberWidth = BlocksBogiesGuiTextures.NUMBER_BACKGROUND.getWidth();
@@ -195,7 +196,7 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
 
         if (mouseX >= speedX && mouseX <= speedX + numberWidth &&
             mouseY >= speedY && mouseY <= speedY + numberHeight) {
-            return speedScroll.mouseScrolled(mouseX, mouseY, horizontalAmount, verticalAmount);
+            return speedScroll.mouseScrolled(mouseX, mouseY, delta);
         }
 
         int previewX = guiLeft + background.getWidth() - previewPosRight;
@@ -203,10 +204,10 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
 
         if (mouseX >= previewX && mouseX <= previewX + previewWidth &&
             mouseY >= previewY && mouseY <= previewY + previewHeight) {
-            previewScale = (float) Mth.clamp(previewScale + verticalAmount * 2.0f, MIN_SCALE, MAX_SCALE);
+            previewScale = (float) Mth.clamp(previewScale + delta * 2.0f, MIN_SCALE, MAX_SCALE);
             return true;
         }
-        return super.mouseScrolled(mouseX, mouseY, horizontalAmount, verticalAmount);
+        return super.mouseScrolled(mouseX, mouseY, delta);
     }
 
     @Override

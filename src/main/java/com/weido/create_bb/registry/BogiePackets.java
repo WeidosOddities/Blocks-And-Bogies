@@ -1,43 +1,93 @@
 package com.weido.create_bb.registry;
 
-import com.weido.create_bb.BlocksBogies;
-import com.weido.create_bb.data.packets.BogieMenuPacket;
+import static net.minecraftforge.network.NetworkDirection.PLAY_TO_CLIENT;
+import static net.minecraftforge.network.NetworkDirection.PLAY_TO_SERVER;
+
+import com.simibubi.create.foundation.networking.SimplePacketBase;
 import com.weido.create_bb.data.packets.BogieStylePacket;
-import net.createmod.catnip.net.base.BasePacketPayload;
-import net.createmod.catnip.net.base.CatnipPacketRegistry;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import java.util.Locale;
+import com.weido.create_bb.data.packets.ClientBogieMenuPacket;
+import com.weido.create_bb.data.packets.ServerBogieMenuPacket;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.network.NetworkDirection;
+import net.minecraftforge.network.NetworkEvent.Context;
+import net.minecraftforge.network.NetworkRegistry;
+import net.minecraftforge.network.PacketDistributor;
+import net.minecraftforge.network.PacketDistributor.TargetPoint;
+import net.minecraftforge.network.simple.SimpleChannel;
 
-public enum BogiePackets implements BasePacketPayload.PacketTypeProvider {
+import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.function.BiConsumer;
 
-    S_BOGIE_MENU(BogieMenuPacket.Clientbound.class, BogieMenuPacket.Clientbound.STREAM_CODEC),
+public enum BogiePackets {
 
-    C_BOGIE_MENU(BogieMenuPacket.Serverbound.class, BogieMenuPacket.Serverbound.STREAM_CODEC),
-    C_BOGIE_STYLE(BogieStylePacket.Serverbound.class, BogieStylePacket.Serverbound.STREAM_CODEC),
-    ;
-    private final CatnipPacketRegistry.PacketType<?> type;
+    S_BOGIE_MENU(ServerBogieMenuPacket.class, ServerBogieMenuPacket::new, PLAY_TO_CLIENT),
+    C_BOGIE_MENU(ClientBogieMenuPacket.class, ClientBogieMenuPacket::new, PLAY_TO_SERVER),
+    C_BOGIE_STYLE(BogieStylePacket.class, BogieStylePacket::new, PLAY_TO_SERVER);
 
-    <T extends BasePacketPayload> BogiePackets(Class<T> clazz, StreamCodec<? super RegistryFriendlyByteBuf, T> codec) {
-        String name = this.name().toLowerCase(Locale.ROOT);
-        this.type = new CatnipPacketRegistry.PacketType<>(
-            new CustomPacketPayload.Type<>(BlocksBogies.asResource(name)),
-            clazz, codec
-        );
+    public static final ResourceLocation CHANNEL_NAME = ResourceLocation.fromNamespaceAndPath("create_bb", "bogie");
+    public static final int NETWORK_VERSION = 1;
+    public static final String NETWORK_VERSION_STR = String.valueOf(NETWORK_VERSION);
+    private static SimpleChannel channel;
+
+    private PacketType<?> packetType;
+
+    <T extends SimplePacketBase> BogiePackets(Class<T> type, Function<FriendlyByteBuf, T> factory, NetworkDirection direction) {
+        packetType = new PacketType<>(type, factory, direction);
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
-    public <T extends CustomPacketPayload> CustomPacketPayload.Type<T> getType() {
-        return (CustomPacketPayload.Type<T>) this.type.type();
+    public static void registerPackets() {
+        channel = NetworkRegistry.ChannelBuilder.named(CHANNEL_NAME)
+                .serverAcceptedVersions(NETWORK_VERSION_STR::equals)
+                .clientAcceptedVersions(NETWORK_VERSION_STR::equals)
+                .networkProtocolVersion(() -> NETWORK_VERSION_STR)
+                .simpleChannel();
+
+        for (BogiePackets packet : values())
+            packet.packetType.register();
     }
 
-    public static void register() {
-        CatnipPacketRegistry packetRegistry = new CatnipPacketRegistry(BlocksBogies.MOD_ID, 1);
-        for (BogiePackets packet : BogiePackets.values()) {
-            packetRegistry.registerPacket(packet.type);
+    public static SimpleChannel getChannel() {
+        return channel;
+    }
+
+    public static void sendToNear(Level world, BlockPos pos, int range, Object message) {
+        getChannel().send(
+                PacketDistributor.NEAR.with(TargetPoint.p(pos.getX(), pos.getY(), pos.getZ(), range, world.dimension())),
+                message);
+    }
+
+    private static class PacketType<T extends SimplePacketBase> {
+        private static int index = 0;
+
+        private BiConsumer<T, FriendlyByteBuf> encoder;
+        private Function<FriendlyByteBuf, T> decoder;
+        private BiConsumer<T, Supplier<Context>> handler;
+        private Class<T> type;
+        private NetworkDirection direction;
+
+        private PacketType(Class<T> type, Function<FriendlyByteBuf, T> factory, NetworkDirection direction) {
+            encoder = T::write;
+            decoder = factory;
+            handler = (packet, contextSupplier) -> {
+                Context context = contextSupplier.get();
+                if (packet.handle(context)) {
+                    context.setPacketHandled(true);
+                }
+            };
+            this.type = type;
+            this.direction = direction;
         }
-        packetRegistry.registerAllPackets();
+
+        private void register() {
+            getChannel().messageBuilder(type, index++, direction)
+                    .encoder(encoder)
+                    .decoder(decoder)
+                    .consumerNetworkThread(handler)
+                    .add();
+        }
     }
 }
