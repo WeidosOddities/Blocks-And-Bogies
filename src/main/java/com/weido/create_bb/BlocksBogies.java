@@ -48,7 +48,7 @@ public class BlocksBogies {
         LOGGER.info("{} initializing...", MOD_NAME);
     }
     public static ResourceLocation asResource(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+        return new ResourceLocation(MOD_ID, path);
     }
     public static CreateRegistrate registrate() {
         return REGISTRATE;

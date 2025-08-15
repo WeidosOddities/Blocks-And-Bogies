@@ -32,7 +32,7 @@ public enum BlocksBogiesGuiTextures implements ScreenElement, TextureSheetSegmen
     }
 
     BlocksBogiesGuiTextures(String namespace, String location, int startX, int startY, int width, int height, int textureHeight, int textureWidth) {
-        this.location = ResourceLocation.fromNamespaceAndPath(namespace, "textures/gui/" + location + ".png");
+        this.location = new ResourceLocation(namespace, "textures/gui/" + location + ".png");
         this.width = width;
         this.height = height;
         this.startX = startX;

@@ -28,7 +28,7 @@ public enum BogiePackets {
     C_BOGIE_MENU(ClientBogieMenuPacket.class, ClientBogieMenuPacket::new, PLAY_TO_SERVER),
     C_BOGIE_STYLE(BogieStylePacket.class, BogieStylePacket::new, PLAY_TO_SERVER);
 
-    public static final ResourceLocation CHANNEL_NAME = ResourceLocation.fromNamespaceAndPath("create_bb", "bogie");
+    public static final ResourceLocation CHANNEL_NAME = new ResourceLocation("create_bb", "bogie");
     public static final int NETWORK_VERSION = 1;
     public static final String NETWORK_VERSION_STR = String.valueOf(NETWORK_VERSION);
     private static SimpleChannel channel;
