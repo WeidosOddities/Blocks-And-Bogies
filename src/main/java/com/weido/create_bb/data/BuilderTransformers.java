@@ -18,14 +18,10 @@ public class BuilderTransformers {
         return b -> b.initialProperties(SharedProperties::softMetal)
             .properties(p -> p.sound(SoundType.NETHERITE_BLOCK))
             .properties(BlockBehaviour.Properties::noOcclusion)
+            .properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
             .transform(pickaxeOnly())
-            .tag(AllTags.AllBlockTags.SAFE_NBT.tag)
-            .loot((p, l) -> p.dropOther(l, AllBlocks.RAILWAY_CASING.get()));
-    }
-
-    public static <B extends BBBogieBlock, P> NonNullUnaryOperator<BlockBuilder<B, P>> standardBogey() {
-        return b -> b.transform(sharedBogey())
             .blockstate((c, p) -> BlockStateGen.horizontalAxisBlock(c, p, s -> p.models()
-                .getExistingFile(p.modLoc("block/bogie/top"))));
+            .getExistingFile(p.modLoc("block/bogie/top"))))
+            .tag(AllTags.AllBlockTags.SAFE_NBT.tag);
     }
 }
