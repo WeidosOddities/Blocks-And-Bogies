@@ -1,6 +1,7 @@
 package com.weido.create_bb.data.menu;
 
 import com.mojang.blaze3d.platform.Lighting;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import java.util.Set;
@@ -15,7 +16,6 @@ import com.simibubi.create.foundation.gui.widget.ScrollInput;
 import com.weido.create_bb.data.menu.Entry.StyleEntryManager;
 import com.weido.create_bb.data.packets.BogieStylePacket;
 import com.weido.create_bb.registry.BogiePackets;
-import net.createmod.catnip.platform.CatnipServices;
 import net.createmod.catnip.gui.AbstractSimiScreen;
 import net.createmod.catnip.render.CachedBuffers;
 import net.minecraft.client.renderer.RenderType;
@@ -67,7 +67,7 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
     int previewWidth = 296;
     int previewHeight = 129;
 
-    StyleEntry selectedBogey;
+    StyleEntry selectedBogie;
 
     public BogieStyleSelectionScreen(BlockPos pos) { this.targetPos = pos; }
 
@@ -140,7 +140,7 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
 
     @Override
     protected void renderWindow(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        if (selectedBogey != null && minecraft != null && minecraft.level != null) {
+        if (selectedBogie != null && minecraft != null && minecraft.level != null) {
             int previewX = guiLeft + background.getWidth() - previewPosRight;
             int previewY = guiTop + background.getHeight() - previewPosBottom;
 
@@ -179,7 +179,7 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
             lengthScroll.getState()
         );
         BogieStylePacket packet = new BogieStylePacket(
-            selectedBogey.bogeyStyle(),
+            selectedBogie.bogeyStyle(),
             ((SizeScrollInput) sizeScroll).getCurrentSize(),
             targetPos
         );
@@ -377,7 +377,7 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
 
         int axleCount = axleCountScroll.getState();
 
-        selectedBogey = StyleEntryManager.getBogeyEntryList().stream()
+        selectedBogie = StyleEntryManager.getBogeyEntryList().stream()
             .filter(entry -> entry.variant() == variant &&
                 entry.valveGear() == valveGear &&
                 entry.type() == currentType &&
@@ -449,30 +449,33 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
     }
 
     private void renderModel(GuiGraphics graphics, float partialTicks) {
-        if (selectedBogey == null || minecraft == null || minecraft.level == null) return;
-
-        BogeyStyle style = selectedBogey.bogeyStyle();
-        BogeySizes.BogeySize renderSize = ((SizeScrollInput) sizeScroll).getCurrentSize();
-
-        PoseStack poseStack = graphics.pose();
-        poseStack.pushPose();
+        if (selectedBogie == null || minecraft == null || minecraft.level == null) return;
 
         int backgroundWidth = background.getWidth();
-        poseStack.translate(guiLeft + backgroundWidth/2f + previewOffsetX, guiTop + background.getHeight() - 151 + previewOffsetY, -100);
-        poseStack.scale(1, 1, -1);
-        poseStack.translate(0, 0, -200);
-        poseStack.scale(previewScale, previewScale, previewScale);
 
-        poseStack.mulPose(Axis.ZP.rotationDegrees(180));
-        poseStack.mulPose(Axis.XP.rotationDegrees(rotationX));
-        poseStack.mulPose(Axis.YP.rotationDegrees(rotationY));
+        BogeyStyle style = selectedBogie.bogeyStyle();
+        BogeySizes.BogeySize renderSize = ((SizeScrollInput) sizeScroll).getCurrentSize();
 
+        PoseStack ms = graphics.pose();
+
+        ms.pushPose();
+        PoseStack modelViewStack = RenderSystem.getModelViewStack();
+        modelViewStack.pushPose();
+        modelViewStack.translate(guiLeft + backgroundWidth/2f + previewOffsetX, guiTop + background.getHeight() - 151 + previewOffsetY, 1500);
+        modelViewStack.scale(1, 1, -1);
+        RenderSystem.applyModelViewMatrix();
+
+
+        ms.translate(0, 0, 1000);
+        ms.scale(previewScale, previewScale, previewScale);
+        ms.mulPose(Axis.ZP.rotationDegrees(180));
+        ms.mulPose(Axis.XP.rotationDegrees(rotationX));
+        ms.mulPose(Axis.YP.rotationDegrees(rotationY));
         Lighting.setupForEntityInInventory();
 
         MultiBufferSource.BufferSource bufferSource = minecraft.renderBuffers().bufferSource();
         int light = 0xF000F0;
         int overlay = OverlayTexture.NO_OVERLAY;
-
         wheelAngle = (wheelAngle + (-speedScroll.getState() / 10f) * partialTicks) % 360;
 
         BlockState bogeyState = style.getBlockForSize(renderSize)
@@ -483,14 +486,14 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
             .translate(-0.5f, -0.5f, -0.5f)
             .light(light)
             .overlay(overlay)
-            .renderInto(poseStack, bufferSource.getBuffer(RenderType.cutoutMipped()));
+            .renderInto(ms, bufferSource.getBuffer(RenderType.cutoutMipped()));
 
-        poseStack.translate(0, 0, 0);
-
-        style.render(renderSize, partialTicks, poseStack, bufferSource, light, overlay, wheelAngle, null, false);
+        style.render(renderSize, partialTicks, ms, bufferSource, light, overlay, wheelAngle, null, false);
 
         bufferSource.endBatch();
-        poseStack.popPose();
+        modelViewStack.popPose();
+        RenderSystem.applyModelViewMatrix();
+        ms.popPose();
     }
 
     private void renderAllText(GuiGraphics graphics) {
