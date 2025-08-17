@@ -9,12 +9,10 @@
       "y": 90
     },
     "axis=z,waterlogged=false": {
-      "model": "create_bb:block/bogie/top",
-        "y": 0
+      "model": "create_bb:block/bogie/top"
     },
     "axis=z,waterlogged=true": {
-      "model": "create_bb:block/bogie/top",
-        "y": 0
+      "model": "create_bb:block/bogie/top"
     }
   }
 }
