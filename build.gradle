@@ -4,6 +4,7 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.spongepowered.mixin' version '0.7.+'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
 version = mod_version
@@ -13,15 +14,11 @@ base {
     archivesName = mod_id
 }
 
-mixin {
-    config "create_bb.mixins.json"
-}
-
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
-    mappings channel: mapping_channel, version: mapping_version
+    mappings channel: "parchment", version: "${parchment_version}-${minecraft_version}"
 
     copyIdeResources = true
 
@@ -42,6 +39,9 @@ minecraft {
 
         client {
             property 'forge.enabledGameTestNamespaces', mod_id
+
+            property("mixin.env.remapRefMap", "true")
+            property("mixin.env.refMapRemappingFile", "${projectDir}/build/createSrgToMcp/output.srg")
         }
 
         server {
@@ -61,7 +61,14 @@ minecraft {
     }
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+}
+
+mixin {
+    config 'create_bb.mixins.json'
+    add(sourceSets.main, 'create_bb.refmap.json')
+}
 
 repositories {
     maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
@@ -73,18 +80,17 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-
     implementation(fg.deobf("org.embeddedt:embeddium-1.20.1:0.3.31-beta.53+mc1.20.1"))
     implementation(fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false })
     implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}"))
     compileOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}"))
     runtimeOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}"))
     implementation(fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}"))
-    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
-    implementation("io.github.llamalad7:mixinextras-forge:0.3.5")
+    implementation("io.github.llamalad7:mixinextras-forge:${mixin_extras_version}")
     implementation(fg.deobf("com.railwayteam.railways:Steam_Rails-forge-1.20.1:1.6.12-alpha-1.20_create-v6+forge-mc1.20.1-build.1575"))
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixin_extras_version}"))
 
-    annotationProcessor('org.spongepowered:mixin:0.8.5:processor')
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -114,7 +120,6 @@ tasks.named('jar', Jar).configure {
                 'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
-
     finalizedBy 'reobfJar'
 }
 
