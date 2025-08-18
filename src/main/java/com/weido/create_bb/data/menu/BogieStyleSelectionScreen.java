@@ -22,6 +22,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -31,12 +32,13 @@ import net.minecraft.util.Mth;
 import com.weido.create_bb.registry.BlocksBogiesGuiTextures;
 import com.weido.create_bb.data.menu.Entry.StyleEntry;
 import com.weido.create_bb.data.menu.Input.*;
-
+import org.jetbrains.annotations.Nullable;
 import org.lwjgl.glfw.GLFW;
+import org.lwjgl.opengl.GL11;
 
 public class BogieStyleSelectionScreen extends AbstractSimiScreen {
     private final BlocksBogiesGuiTextures background = BlocksBogiesGuiTextures.BOGIE_MENU;
-    private final BlockPos targetPos;
+    private final @Nullable BlockPos targetPos;
     private static final float MIN_SCALE = 10.0f;
     private static final float MAX_SCALE = 96.0f;
     private static boolean firstTime = true;
@@ -69,7 +71,9 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
 
     StyleEntry selectedBogie;
 
-    public BogieStyleSelectionScreen(BlockPos pos) { this.targetPos = pos; }
+    public BogieStyleSelectionScreen(@Nullable BlockPos pos) {
+        this.targetPos = pos;
+    }
 
     @Override
     protected void init() {
@@ -89,6 +93,15 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
 
         IconButton confirmButton = new IconButton(guiLeft + background.getWidth() - 25, guiTop + background.getHeight() - 24, AllIcons.I_CONFIRM)
                 .withCallback(this::onClose);
+
+        if (ModList.get().isLoaded("railways")) {
+            addRenderableWidget(com.weido.create_bb.data.compat.steamnrails.MenuSwitchButton.create(
+                    guiLeft + background.getWidth() - 54,
+                    guiTop + background.getHeight() - 24,
+                    targetPos,
+                    this::onMenuSwitch
+            ));
+        }
 
         typeButton = new TypeButton(buttonRightPos, buttonBottomPos)
             .withCallback(() -> {
@@ -170,20 +183,8 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
     @Override
     public void onClose() {
         firstTime = false;
-        BogeyStyleMenuState.saveState(
-            currentType,
-            variantScroll.getState(),
-            valvegearScroll.getState(),
-            axleCountScroll.getState(),
-            sizeScroll.getState(),
-            lengthScroll.getState()
-        );
-        BogieStylePacket packet = new BogieStylePacket(
-            selectedBogie.bogeyStyle(),
-            ((SizeScrollInput) sizeScroll).getCurrentSize(),
-            targetPos
-        );
-        BogiePackets.getChannel().sendToServer(packet);
+        saveMenuState();
+        sendMenuPacket();
         super.onClose();
     }
 
@@ -494,6 +495,8 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
         modelViewStack.popPose();
         RenderSystem.applyModelViewMatrix();
         ms.popPose();
+
+        RenderSystem.clear(GL11.GL_DEPTH_BUFFER_BIT, false);
     }
 
     private void renderAllText(GuiGraphics graphics) {
@@ -554,5 +557,30 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
 
     private void updateSizeSelection() {
         ((SizeScrollInput) sizeScroll).setDriver(currentType == StyleEntry.Type.DRIVER);
+    }
+
+    public void onMenuSwitch() {
+        firstTime = false;
+        saveMenuState();
+    }
+
+    public void sendMenuPacket() {
+        BogieStylePacket packet = new BogieStylePacket(
+                selectedBogie.bogeyStyle(),
+                ((SizeScrollInput) sizeScroll).getCurrentSize(),
+                targetPos
+        );
+        BogiePackets.getChannel().sendToServer(packet);
+    }
+
+    public void saveMenuState() {
+        BogeyStyleMenuState.saveState(
+                currentType,
+                variantScroll.getState(),
+                valvegearScroll.getState(),
+                axleCountScroll.getState(),
+                sizeScroll.getState(),
+                lengthScroll.getState()
+        );
     }
 }

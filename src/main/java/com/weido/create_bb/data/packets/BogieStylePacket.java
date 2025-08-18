@@ -6,6 +6,7 @@ import com.simibubi.create.content.trains.bogey.BogeySizes;
 import com.simibubi.create.content.trains.bogey.BogeySizes.BogeySize;
 import com.simibubi.create.content.trains.bogey.BogeyStyle;
 import com.simibubi.create.foundation.networking.SimplePacketBase;
+import com.weido.create_bb.data.compat.steamnrails.MixinOverlapFix;
 import net.createmod.catnip.data.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -21,16 +22,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.weido.create_bb.data.menu.Entry.StyleMenuHandler;
 
-import java.lang.reflect.Method;
-import java.util.UUID;
-
 public class BogieStylePacket extends SimplePacketBase {
     private final BogeyStyle style;
     @Nullable
     private final BogeySize size;
+    @Nullable
     private final BlockPos pos;
 
-    public BogieStylePacket(@NotNull BogeyStyle style, @Nullable BogeySize size, BlockPos pos) {
+    public BogieStylePacket(@NotNull BogeyStyle style, @Nullable BogeySize size, @Nullable BlockPos pos) {
         this.style = style;
         this.size = size;
         this.pos = pos;
@@ -45,7 +44,11 @@ public class BogieStylePacket extends SimplePacketBase {
         } else {
             this.size = null;
         }
-        this.pos = buf.readBlockPos();
+        if (buf.readBoolean()) {
+            this.pos = buf.readBlockPos();
+        } else {
+            this.pos = null;
+        }
     }
 
     @Override
@@ -55,7 +58,10 @@ public class BogieStylePacket extends SimplePacketBase {
         if (size != null) {
             buf.writeResourceLocation(size.id());
         }
-        buf.writeBlockPos(pos);
+        buf.writeBoolean(pos != null);
+        if (pos != null) {
+            buf.writeBlockPos(pos);
+        }
     }
 
     @Override
@@ -64,7 +70,7 @@ public class BogieStylePacket extends SimplePacketBase {
             ServerPlayer player = context.getSender();
             if (player == null) return;
             Level level = player.level();
-            if (level.getBlockEntity(pos) instanceof AbstractBogeyBlockEntity) {
+            if (pos != null && level.getBlockEntity(pos) instanceof AbstractBogeyBlockEntity) {
                 Block newBlock = style.getBlockForSize(size);
                 BlockState newState = newBlock.defaultBlockState()
                         .setValue(BlockStateProperties.HORIZONTAL_AXIS,
@@ -75,19 +81,11 @@ public class BogieStylePacket extends SimplePacketBase {
                 }
             }
             if (size != null) {
-                if (!ModList.get().isLoaded("railways")) {
-                    StyleMenuHandler.addStyle(player.getUUID(), Pair.of(style, size));
+                if (ModList.get().isLoaded("railways")) {
+                    MixinOverlapFix.addStyle(player.getUUID(), Pair.of(style, size));
                 }
                 else {
-                    if (ModList.get().isLoaded("railways")) {
-                        try {
-                            Class<?> handlerClass = Class.forName("com.railwayteam.railways.content.bogey_menu.handler.BogeyMenuHandlerServer");
-                            Method addStyleMethod = handlerClass.getMethod("addStyle", UUID.class, Pair.class);
-                            addStyleMethod.invoke(null, player.getUUID(), Pair.of(style, size));
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
+                    StyleMenuHandler.addStyle(player.getUUID(), Pair.of(style, size));
                 }
             }
         });

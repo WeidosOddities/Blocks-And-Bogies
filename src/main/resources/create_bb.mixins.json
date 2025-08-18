@@ -1,12 +1,16 @@
 {
   "required": false,
   "package": "com.weido.create_bb.mixin",
+  "refmap": "create_bb.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "StationBlockEntityMixin",
     "StandardBogeyBlockMixin",
+    "TrackBlockMixin",
+    "SNRMenuSwitchMixin",
     "CRBogeyBlockMixin",
-    "TrackBlockMixin"
+    "InvisibleBogeyBlockMixin",
+    "MonoBogeyBlockMixin"
   ],
   "client": [ ],
   "injectors": {

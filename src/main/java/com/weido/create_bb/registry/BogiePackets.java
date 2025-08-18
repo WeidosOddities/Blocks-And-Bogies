@@ -54,12 +54,6 @@ public enum BogiePackets {
         return channel;
     }
 
-    public static void sendToNear(Level world, BlockPos pos, int range, Object message) {
-        getChannel().send(
-                PacketDistributor.NEAR.with(TargetPoint.p(pos.getX(), pos.getY(), pos.getZ(), range, world.dimension())),
-                message);
-    }
-
     private static class PacketType<T extends SimplePacketBase> {
         private static int index = 0;
 
