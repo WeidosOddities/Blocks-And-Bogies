@@ -5,7 +5,6 @@ import static net.minecraftforge.network.NetworkDirection.PLAY_TO_SERVER;
 
 import com.simibubi.create.foundation.networking.SimplePacketBase;
 import com.weido.create_bb.data.packets.BogieStylePacket;
-import com.weido.create_bb.data.packets.ClientBogieMenuPacket;
 import com.weido.create_bb.data.packets.BogieMenuPacket;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
