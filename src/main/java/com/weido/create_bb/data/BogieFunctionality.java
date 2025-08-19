@@ -3,7 +3,6 @@ package com.weido.create_bb.data;
 import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlockEntity;
 import com.weido.create_bb.blocks.BBBogieBlockEntity;
-import com.weido.create_bb.data.packets.ClientBogieMenuPacket;
 import com.weido.create_bb.data.packets.ServerBogieMenuPacket;
 import com.weido.create_bb.registry.BogiePackets;
 import net.createmod.catnip.nbt.NBTHelper;
@@ -18,7 +17,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.PacketDistributor;
 
 import java.util.Random;
