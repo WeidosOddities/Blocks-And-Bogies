@@ -4,6 +4,7 @@ import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlockEntity;
 import com.weido.create_bb.blocks.BBBogieBlockEntity;
 import com.weido.create_bb.data.packets.ClientBogieMenuPacket;
+import com.weido.create_bb.data.packets.ServerBogieMenuPacket;
 import com.weido.create_bb.registry.BogiePackets;
 import net.createmod.catnip.nbt.NBTHelper;
 import net.minecraft.core.BlockPos;
@@ -17,6 +18,9 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.network.NetworkDirection;
+import net.minecraftforge.network.PacketDistributor;
+
 import java.util.Random;
 
 import static com.weido.create_bb.data.Constants.BOGIE_ASSEMBLY_DIRECTION_KEY;
@@ -52,10 +56,17 @@ public class BogieFunctionality {
     private static InteractionResult openMenu(Level level, Player player, BlockPos pos) {
         if (level.isClientSide) return InteractionResult.SUCCESS;
 
-        if (player instanceof ServerPlayer) {
-            ClientBogieMenuPacket packet = new ClientBogieMenuPacket(pos);
-            BogiePackets.getChannel().sendToServer(packet);
+        if (player instanceof ServerPlayer serverPlayer) {
+//            ClientBogieMenuPacket packet = new ClientBogieMenuPacket(pos);
+//            BogiePackets.getChannel().sendToServer(packet);
+
+            BogiePackets.getChannel().send(
+                    PacketDistributor.PLAYER.with(() -> serverPlayer),
+                    new ServerBogieMenuPacket(pos)
+            );
         }
+
+
 
         AllSoundEvents.SCROLL_VALUE.playOnServer(level, pos, 1, 1);
         return InteractionResult.CONSUME;
