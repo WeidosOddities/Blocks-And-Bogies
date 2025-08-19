@@ -3,7 +3,7 @@ package com.weido.create_bb.data;
 import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlockEntity;
 import com.weido.create_bb.blocks.BBBogieBlockEntity;
-import com.weido.create_bb.data.packets.ServerBogieMenuPacket;
+import com.weido.create_bb.data.packets.BogieMenuPacket;
 import com.weido.create_bb.registry.BogiePackets;
 import net.createmod.catnip.nbt.NBTHelper;
 import net.minecraft.core.BlockPos;
@@ -60,7 +60,7 @@ public class BogieFunctionality {
 
             BogiePackets.getChannel().send(
                     PacketDistributor.PLAYER.with(() -> serverPlayer),
-                    new ServerBogieMenuPacket(pos)
+                    new BogieMenuPacket(pos)
             );
         }
 

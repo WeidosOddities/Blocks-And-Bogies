@@ -9,14 +9,14 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.network.NetworkEvent;
 
-public class ServerBogieMenuPacket extends SimplePacketBase {
+public class BogieMenuPacket extends SimplePacketBase {
     private final BlockPos pos;
 
-    public ServerBogieMenuPacket(BlockPos pos) {
+    public BogieMenuPacket(BlockPos pos) {
         this.pos = pos;
     }
 
-    public ServerBogieMenuPacket(FriendlyByteBuf buf) {
+    public BogieMenuPacket(FriendlyByteBuf buf) {
         this.pos = buf.readBlockPos();
     }
 
