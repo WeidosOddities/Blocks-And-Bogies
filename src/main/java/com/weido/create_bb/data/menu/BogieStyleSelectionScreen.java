@@ -38,7 +38,7 @@ import org.lwjgl.opengl.GL11;
 
 public class BogieStyleSelectionScreen extends AbstractSimiScreen {
     private final BlocksBogiesGuiTextures background = BlocksBogiesGuiTextures.BOGIE_MENU;
-    private final @Nullable BlockPos targetPos;
+    private @Nullable BlockPos targetPos;
     private static final float MIN_SCALE = 10.0f;
     private static final float MAX_SCALE = 96.0f;
     private static boolean firstTime = true;
@@ -191,6 +191,7 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
         saveMenuState();
         sendMenuPacket();
         super.onClose();
+        targetPos = null;
     }
 
     @Override

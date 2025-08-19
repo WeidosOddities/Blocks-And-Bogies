@@ -52,6 +52,8 @@ public class SNRMenuSwitchMixin {
             BogieStylePacket packet = new BogieStylePacket((BogeyStyle) style, size, targetPos);
             BogiePackets.getChannel().sendToServer(packet);
 
+            RailwayScreenAccessor.setTargetPos(null);
+
         } catch (Exception ignored) { }
     }
 }
