@@ -53,6 +53,7 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
     private float rotationY = 45;
     private float totalRotationY = 45;
     private float wheelAngle = 0.0f;
+    private float prevWheelAngle = 0.0f;
     private double lastMouseX;
     private double lastMouseY;
     private TypeButton typeButton;
@@ -178,7 +179,11 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
     }
 
     @Override
-    public void tick() { super.tick(); }
+    public void tick() {
+        super.tick();
+        prevWheelAngle = wheelAngle;
+        wheelAngle = (wheelAngle + (-speedScroll.getState())) % 360;
+    }
 
     @Override
     public void onClose() {
@@ -466,7 +471,6 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
         modelViewStack.scale(1, 1, -1);
         RenderSystem.applyModelViewMatrix();
 
-
         ms.translate(0, 0, 1000);
         ms.scale(previewScale, previewScale, previewScale);
         ms.mulPose(Axis.ZP.rotationDegrees(180));
@@ -477,7 +481,8 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
         MultiBufferSource.BufferSource bufferSource = minecraft.renderBuffers().bufferSource();
         int light = 0xF000F0;
         int overlay = OverlayTexture.NO_OVERLAY;
-        wheelAngle = (wheelAngle + (-speedScroll.getState() / 10f) * partialTicks) % 360;
+
+        float interpolatedAngle = lerpAngle(partialTicks, prevWheelAngle, wheelAngle);
 
         BlockState bogeyState = style.getBlockForSize(renderSize)
             .defaultBlockState()
@@ -489,7 +494,7 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
             .overlay(overlay)
             .renderInto(ms, bufferSource.getBuffer(RenderType.cutoutMipped()));
 
-        style.render(renderSize, partialTicks, ms, bufferSource, light, overlay, wheelAngle, null, false);
+        style.render(renderSize, partialTicks, ms, bufferSource, light, overlay, interpolatedAngle, null, false);
 
         bufferSource.endBatch();
         modelViewStack.popPose();
@@ -582,5 +587,10 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
                 sizeScroll.getState(),
                 lengthScroll.getState()
         );
+    }
+
+    private float lerpAngle(float partialTicks, float start, float end) {
+        float delta = ((end - start + 540) % 360) - 180;
+        return start + delta * partialTicks;
     }
 }
