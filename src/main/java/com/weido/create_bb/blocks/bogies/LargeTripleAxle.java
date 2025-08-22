@@ -19,6 +19,6 @@ public class LargeTripleAxle extends LargeBogieBlock {
 
     @Override
     public double getWheelPointSpacing() {
-        return 3.375f;
+        return 54/16f;
     }
 }
