@@ -11,8 +11,14 @@ public class LargeQuintupleAxle extends LargeBogieBlock {
     public LargeQuintupleAxle(Properties props) {
         super(props, BogieStyles.QUINTUPLE_AXLE_PISTONLESS, BogeySizes.SMALL);
     }
+
     @Override
     public Vec3 getConnectorAnchorOffset() {
         return new Vec3(0, 7/32f, 140/32f);
+    }
+
+    @Override
+    public double getWheelPointSpacing() {
+        return 104/16f;
     }
 }

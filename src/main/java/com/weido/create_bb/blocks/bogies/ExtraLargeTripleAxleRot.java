@@ -16,4 +16,9 @@ public class ExtraLargeTripleAxleRot extends RotatableExtraLargeBogieBlock {
     public Vec3 getConnectorAnchorOffset() {
         return new Vec3(0, 7/32f, 104/32f);
     }
+
+    @Override
+    public double getWheelPointSpacing() {
+        return 72/16f;
+    }
 }
