@@ -127,7 +127,6 @@ public class SextupleAxlePistonlessVisual extends BlocksBogiesBogieVisual {
             belt.offset(0, BELT_RADIUS_IN_UV_SPACE * Mth.DEG_TO_RAD * wheelAngle)
                     .setTransform(poseStack)
                     .scale(1 - 1 / 512f)
-                    .rotateYDegrees(forwards ? 0 : 180)
                     .setChanged();
 
             wheel1.setTransform(poseStack)

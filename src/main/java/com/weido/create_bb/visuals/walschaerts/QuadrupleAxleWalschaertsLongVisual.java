@@ -204,7 +204,6 @@ public class QuadrupleAxleWalschaertsLongVisual extends BlocksBogiesBogieVisual 
             belt.offset(0, BELT_RADIUS_IN_UV_SPACE * Mth.DEG_TO_RAD * wheelAngle)
                     .setTransform(poseStack)
                     .scale(1 - 1 / 512f)
-                    .rotateYDegrees(forwards ? 0 : 180)
                     .setChanged();
 
             for (int i = 0; i < 2; i++) {
@@ -619,7 +618,6 @@ public class QuadrupleAxleWalschaertsLongVisual extends BlocksBogiesBogieVisual 
             belt.offset(0, BELT_RADIUS_IN_UV_SPACE * Mth.DEG_TO_RAD * wheelAngle)
                     .setTransform(poseStack)
                     .scale(1 - 1 / 512f)
-                    .rotateYDegrees(forwards ? 0 : 180)
                     .setChanged();
 
             for (int i = 0; i < 2; i++) {
