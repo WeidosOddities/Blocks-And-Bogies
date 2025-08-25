@@ -14,9 +14,4 @@ public class LargeSextupleAxleRot extends RotatableLargeBogieBlock {
     public Vec3 getConnectorAnchorOffset() {
         return new Vec3(0, 7/32f, 172/32f);
     }
-
-    @Override
-    public double getWheelPointSpacing() {
-        return 140/16f;
-    }
 }

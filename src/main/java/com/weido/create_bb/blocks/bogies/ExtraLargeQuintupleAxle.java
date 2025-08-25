@@ -15,9 +15,4 @@ public class ExtraLargeQuintupleAxle extends ExtraLargeBogieBlock {
     public Vec3 getConnectorAnchorOffset() {
         return new Vec3(0, 7/32f, 176/32f);
     }
-
-    @Override
-    public double getWheelPointSpacing() {
-        return 144/16f;
-    }
 }

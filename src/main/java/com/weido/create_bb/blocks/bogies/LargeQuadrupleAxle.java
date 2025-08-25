@@ -16,9 +16,4 @@ public class LargeQuadrupleAxle extends LargeBogieBlock {
     public Vec3 getConnectorAnchorOffset() {
         return new Vec3(0,7/32f,116/32f);
     }
-
-    @Override
-    public double getWheelPointSpacing() {
-        return 84/16f;
-    }
 }
