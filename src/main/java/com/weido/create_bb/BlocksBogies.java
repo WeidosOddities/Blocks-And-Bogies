@@ -1,9 +1,6 @@
 package com.weido.create_bb;
 
-import com.weido.create_bb.registry.BogieBlockEntities;
-import com.weido.create_bb.registry.BogieBlocks;
-import com.weido.create_bb.registry.BogiePackets;
-import com.weido.create_bb.registry.BogieStyles;
+import com.weido.create_bb.registry.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
@@ -38,9 +35,9 @@ public class BlocksBogies {
         BogiePackets.registerPackets();
         BogieBlockEntities.register();
 
-        modEventBus.addListener(BlocksBogies::init);
+        BogiePartials.init();
 
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> BlocksBogiesClient.onCtorClient(modEventBus));
+        modEventBus.addListener(BlocksBogies::init);
     }
 
     public static void init(final FMLCommonSetupEvent event) {
