@@ -42,6 +42,7 @@
   "create_bb.length.standard": "Default",
   "create_bb.length.extended": "Extended",
   "create_bb.length.offset": "Offset",
+  "create_bb.length.spaced": "Spaced",
 
   "create_bb.bogies.style.single_axle_trailing": "Small 0-2-0 Trailing Bogie",
   "create_bb.bogies.style.double_axle_trailing": "Small 0-4-0 Trailing Bogie",

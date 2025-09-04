@@ -40,6 +40,7 @@
   "create_bb.length.standard": "Обычная",
   "create_bb.length.extended": "Длинная",
   "create_bb.length.offset": "Смещённая",
+  "create_bb.length.spaced": "Spaced",
 
   "create_bb.bogies.style.single_axle_trailing": "Малоколёсная поддерживающая 0-2-0",
   "create_bb.bogies.style.double_axle_trailing": "Малоколёсная поддерживающая 0-4-0",

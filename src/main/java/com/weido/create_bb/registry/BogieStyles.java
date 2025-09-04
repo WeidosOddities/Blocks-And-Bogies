@@ -336,7 +336,7 @@ public class BogieStyles {
 
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 1, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 2, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 3, Length.EXTENDED));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 3, Length.SPACED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 3, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 5, Length.NORMAL));
@@ -352,14 +352,14 @@ public class BogieStyles {
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 1, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 2, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_EXTRA_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 2, Length.EXTENDED));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 3, Length.EXTENDED));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 3, Length.SPACED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 3, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 5, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 6, Length.NORMAL));
 
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 2, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 3, Length.EXTENDED));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 3, Length.SPACED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 3,Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 5, Length.NORMAL));
@@ -368,14 +368,14 @@ public class BogieStyles {
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 1, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 2, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_WALSCHAERTS_EXTRA_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 2, Length.EXTENDED));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_WALSCHAERTS_EXTENDED_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 3, Length.EXTENDED));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_WALSCHAERTS_EXTENDED_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 3, Length.SPACED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 3, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 5, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 6, Length.NORMAL));
 
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_WALSCHAERTS_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 2, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_WALSCHAERTS_EXTENDED_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 3, Length.EXTENDED));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_WALSCHAERTS_EXTENDED_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 3, Length.SPACED));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_WALSCHAERTS_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 3, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_WALSCHAERTS_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_WALSCHAERTS_SHORT, Variant.SHORT, ValveGear.WALSCHAERTS, Type.DRIVER, 5, Length.NORMAL));

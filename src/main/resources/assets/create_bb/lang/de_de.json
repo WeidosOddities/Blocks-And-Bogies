@@ -40,6 +40,7 @@
   "create_bb.length.standard": "Standard",
   "create_bb.length.extended": "Erweitert",
   "create_bb.length.offset": "Versetzt",
+  "create_bb.length.spaced": "Spaced",
 
   "create_bb.bogies.style.single_axle_trailing": "Kleines 0-2-0 Nachlaufendes Drehgestell",
   "create_bb.bogies.style.double_axle_trailing": "Kleines 0-4-0 Nachlaufendes Drehgestell",

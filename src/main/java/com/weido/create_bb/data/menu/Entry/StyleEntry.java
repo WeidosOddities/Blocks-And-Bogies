@@ -63,6 +63,7 @@ public record StyleEntry(@NotNull BogeyStyle bogeyStyle, Variant variant, ValveG
     public enum Length {
         NORMAL("create_bb.length.standard"),
         EXTENDED("create_bb.length.extended"),
+        SPACED("create_bb.length.spaced"),
         OFFSET("create_bb.length.offset");
         private final String translationKey;
 
