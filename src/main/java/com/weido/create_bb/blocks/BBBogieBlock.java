@@ -1,6 +1,5 @@
 package com.weido.create_bb.blocks;
 
-import com.simibubi.create.AllBlocks;
 import com.simibubi.create.api.schematic.requirement.SpecialBlockItemRequirement;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlock;
 import com.simibubi.create.content.trains.bogey.BogeySizes.BogeySize;
@@ -8,23 +7,8 @@ import com.simibubi.create.content.trains.bogey.BogeyStyle;
 import com.simibubi.create.content.trains.track.TrackMaterial;
 import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
-
-import com.weido.create_bb.data.BogieFunctionality;
 import com.weido.create_bb.registry.BogieBlockEntities;
-
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 
 
@@ -62,11 +46,6 @@ public class BBBogieBlock extends AbstractBogeyBlock <BBBogieBlockEntity>
     @Override
     public BogeyStyle getDefaultStyle() {
         return defaultStyle;
-    }
-
-    @Override
-    public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
-        return AllBlocks.RAILWAY_CASING.asStack();
     }
 
     @Override

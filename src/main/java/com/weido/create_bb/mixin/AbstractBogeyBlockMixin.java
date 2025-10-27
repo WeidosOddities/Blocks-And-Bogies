@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AbstractBogeyBlock.class)
 public abstract class AbstractBogeyBlockMixin {
-    @Inject(method = "onInteractWithBogey", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "onInteractWithBogey", at = @At("HEAD"), cancellable = true, remap = false)
     private void create_bb$onInteractWithBogey(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, CallbackInfoReturnable<InteractionResult> cir) {
         cir.setReturnValue(BogieFunctionality.BogeyMenuInteraction(level, pos, player, hand));
     }

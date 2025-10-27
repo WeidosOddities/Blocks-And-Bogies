@@ -8,9 +8,6 @@
     "BogeyMenuScreenMixin",
     "CarriageContraptionVisualMixin",
     "ContraptionVisualAccessor",
-    "CRBogeyBlockMixin",
-    "MonoBogeyBlockMixin",
-    "StandardBogeyBlockMixin",
     "StationBlockEntityMixin",
     "TrackBlockMixin"
   ],
