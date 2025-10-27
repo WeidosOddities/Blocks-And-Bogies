@@ -1,6 +1,8 @@
 package com.weido.create_bb.visuals.standard;
 
 import java.util.function.Consumer;
+
+import com.simibubi.create.foundation.render.SpecialModels;
 import org.jetbrains.annotations.Nullable;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.AllPartialModels;
@@ -40,14 +42,14 @@ public class TripleAxleBogieVisual implements BogeyVisual {
             super(ctx, partialTick, inContraption);
 
             frame = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.SMALL_BOGIE_6_FRAME))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.SMALL_BOGIE_6_FRAME))
                     .createInstance();
 
             var shaftInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SHAFT));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT));
 
             var wheelInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SMALL_BOGEY_WHEELS));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SMALL_BOGEY_WHEELS));
 
             shaft1 = shaftInstancer.createInstance();
             shaft2 = shaftInstancer.createInstance();

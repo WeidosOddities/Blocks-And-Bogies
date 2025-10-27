@@ -5,6 +5,7 @@ import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.AllSpriteShifts;
 import com.simibubi.create.content.processing.burner.ScrollTransformedInstance;
 import com.simibubi.create.foundation.render.AllInstanceTypes;
+import com.simibubi.create.foundation.render.SpecialModels;
 import com.weido.create_bb.data.rotation.BlocksBogiesBogieVisual;
 import com.weido.create_bb.registry.BogiePartials;
 import com.weido.create_bb.data.math.RodCalculations;
@@ -63,45 +64,45 @@ public class QuintupleAxleLongVisual extends BlocksBogiesBogieVisual {
             super(ctx, partialTick, inContraption);
 
             frame = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_10L_FRAME))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_10L_FRAME))
                     .createInstance();
 
             belt = ctx.instancerProvider()
-                    .instancer(AllInstanceTypes.SCROLLING_TRANSFORMED, Models.partial(BogiePartials.LARGE_10P_BELTS))
+                    .instancer(AllInstanceTypes.SCROLLING_TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_10P_BELTS))
                     .createInstance();
 
             r_c_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_10L_R_C_ROD))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_10L_R_C_ROD))
                     .createInstance();
             l_c_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_10L_L_C_ROD))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_10L_L_C_ROD))
                     .createInstance();
 
             r_m_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_10LW_R_M_ROD))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_10LW_R_M_ROD))
                     .createInstance();
             l_m_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_10LW_L_M_ROD))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_10LW_L_M_ROD))
                     .createInstance();
 
             r_p_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_R_P_ROD_GEARLESS))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_R_P_ROD_GEARLESS))
                     .createInstance();
             l_p_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_L_P_ROD_GEARLESS))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_L_P_ROD_GEARLESS))
                     .createInstance();
 
             var wheelInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_SHARED_WHEELS));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_SHARED_WHEELS));
 
             var wheelBlindInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_SHARED_WHEELS_BLIND));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_SHARED_WHEELS_BLIND));
 
             var wheelSemiBlindInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_SHARED_WHEELS_SEMI_BLIND));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_SHARED_WHEELS_SEMI_BLIND));
 
             var shaftInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SHAFT));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT));
 
             wheel1 = wheelInstancer.createInstance();
             wheel2 = wheelInstancer.createInstance();
@@ -393,45 +394,45 @@ public class QuintupleAxleLongVisual extends BlocksBogiesBogieVisual {
             super(ctx, partialTick, inContraption);
 
             frame = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_10L_FRAME))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_10L_FRAME))
                     .createInstance();
 
             belt = ctx.instancerProvider()
-                    .instancer(AllInstanceTypes.SCROLLING_TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_10P_BELTS))
+                    .instancer(AllInstanceTypes.SCROLLING_TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_10P_BELTS))
                     .createInstance();
 
             r_c_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_10L_R_C_ROD))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_10L_R_C_ROD))
                     .createInstance();
             l_c_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_10L_L_C_ROD))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_10L_L_C_ROD))
                     .createInstance();
 
             r_m_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_10LW_R_M_ROD))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_10LW_R_M_ROD))
                     .createInstance();
             l_m_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_10LW_L_M_ROD))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_10LW_L_M_ROD))
                     .createInstance();
 
             r_p_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_R_P_ROD_GEARLESS))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_R_P_ROD_GEARLESS))
                     .createInstance();
             l_p_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_L_P_ROD_GEARLESS))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_L_P_ROD_GEARLESS))
                     .createInstance();
 
             var wheelInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_SHARED_WHEELS));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_SHARED_WHEELS));
 
             var wheelBlindInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_SHARED_WHEELS_BLIND));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_SHARED_WHEELS_BLIND));
 
             var wheelSemiBlindInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND));
 
             var shaftInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SHAFT));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT));
 
             wheel1 = wheelInstancer.createInstance();
             wheel2 = wheelInstancer.createInstance();

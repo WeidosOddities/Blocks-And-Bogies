@@ -1,5 +1,6 @@
 package com.weido.create_bb.visuals.standard;
 
+import com.simibubi.create.foundation.render.SpecialModels;
 import com.weido.create_bb.data.rotation.BlocksBogiesBogieVisual;
 import org.jetbrains.annotations.Nullable;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -35,15 +36,15 @@ public class SingleAxleBogieVisual extends BlocksBogiesBogieVisual {
             super(ctx, partialTick, inContraption);
 
             frame = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.SMALL_OFFSET_2_FRAME))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.SMALL_OFFSET_2_FRAME))
                     .createInstance();
 
             shaft = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SHAFT))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT))
                     .createInstance();
 
             wheel = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SMALL_BOGEY_WHEELS))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SMALL_BOGEY_WHEELS))
                     .createInstance();
         }
 

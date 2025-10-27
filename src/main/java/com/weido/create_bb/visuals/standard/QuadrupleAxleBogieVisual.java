@@ -3,6 +3,7 @@ package com.weido.create_bb.visuals.standard;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.content.trains.bogey.BogeyVisual;
+import com.simibubi.create.foundation.render.SpecialModels;
 import com.weido.create_bb.registry.BogiePartials;
 import dev.engine_room.flywheel.api.instance.Instance;
 import dev.engine_room.flywheel.api.visualization.VisualizationContext;
@@ -42,14 +43,14 @@ public class QuadrupleAxleBogieVisual implements BogeyVisual {
             super(ctx, partialTick, inContraption);
 
             frame = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.SMALL_BOGIE_8_FRAME))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.SMALL_BOGIE_8_FRAME))
                     .createInstance();
 
             var shaftInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SHAFT));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT));
 
             var wheelInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SMALL_BOGEY_WHEELS));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SMALL_BOGEY_WHEELS));
 
             shaft1 = shaftInstancer.createInstance();
             shaft2 = shaftInstancer.createInstance();

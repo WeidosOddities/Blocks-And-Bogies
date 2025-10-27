@@ -4,15 +4,16 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.AllSpriteShifts;
 import com.simibubi.create.content.processing.burner.ScrollTransformedInstance;
+import com.simibubi.create.content.trains.bogey.BogeyVisual;
 import com.simibubi.create.foundation.render.AllInstanceTypes;
-import com.weido.create_bb.data.rotation.BlocksBogiesBogieVisual;
+import com.simibubi.create.foundation.render.SpecialModels;
 import com.weido.create_bb.registry.BogiePartials;
 import dev.engine_room.flywheel.api.instance.Instance;
 import dev.engine_room.flywheel.api.visualization.VisualizationContext;
 import dev.engine_room.flywheel.lib.instance.InstanceTypes;
 import dev.engine_room.flywheel.lib.instance.TransformedInstance;
-import dev.engine_room.flywheel.lib.model.Models;
 import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
@@ -20,10 +21,10 @@ import java.util.function.Consumer;
 
 import static com.weido.create_bb.data.Constants.*;
 
-public class SextupleAxlePistonlessVisual extends BlocksBogiesBogieVisual {
+public class SextupleAxlePistonlessVisual implements BogeyVisual {
     public SextupleAxlePistonlessVisual(VisualizationContext ctx, float partialTick, boolean inContraption) { }
     @Override
-    public void update(boolean forwards, float wheelAngle, PoseStack poseStack) { }
+    public void update(CompoundTag bogieData, float wheelAngle, PoseStack poseStack) { }
     @Override
     public void hide() { }
     @Override
@@ -57,31 +58,31 @@ public class SextupleAxlePistonlessVisual extends BlocksBogiesBogieVisual {
             super(ctx, partialTick, inContraption);
 
             frame = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_12P_FRAME))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_12P_FRAME))
                     .createInstance();
 
             belt = ctx.instancerProvider()
-                    .instancer(AllInstanceTypes.SCROLLING_TRANSFORMED, Models.partial(BogiePartials.LARGE_12LW_BELTS))
+                    .instancer(AllInstanceTypes.SCROLLING_TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_12LW_BELTS))
                     .createInstance();
 
             r_c_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_12P_R_C_ROD))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_12P_R_C_ROD))
                     .createInstance();
             l_c_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_12P_L_C_ROD))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_12P_L_C_ROD))
                     .createInstance();
 
             var wheelInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_SHARED_WHEELS));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_SHARED_WHEELS));
 
             var wheelBlindInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_SHARED_WHEELS_BLIND));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_SHARED_WHEELS_BLIND));
 
             var wheelSemiBlindInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.LARGE_SHARED_WHEELS_SEMI_BLIND));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_SHARED_WHEELS_SEMI_BLIND));
 
             var shaftInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SHAFT));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT));
 
             wheel1 = wheelInstancer.createInstance();
             wheel2 = wheelInstancer.createInstance();
@@ -103,11 +104,10 @@ public class SextupleAxlePistonlessVisual extends BlocksBogiesBogieVisual {
         }
 
         @Override
-        public void update(boolean forwards, float wheelAngle, PoseStack poseStack) {
-            super.update(forwards, wheelAngle, poseStack);
+        public void update(CompoundTag bogieData, float wheelAngle, PoseStack poseStack) {
+            super.update(bogieData, wheelAngle, poseStack);
             frame.setTransform(poseStack)
                     .scale(1 - 1 / 512f)
-                    .rotateYDegrees(forwards ? 0 : 180)
                     .setChanged();
 
             r_c_rod.setTransform(poseStack)
@@ -131,38 +131,33 @@ public class SextupleAxlePistonlessVisual extends BlocksBogiesBogieVisual {
 
             wheel1.setTransform(poseStack)
                     .translate(0, 1, -4.375f)
-                    .rotateYDegrees(forwards ? 0 : 180)
-                    .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
+                    .rotateYDegrees(0)
+                    .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             wheel2.setTransform(poseStack)
                     .translate(0, 1, 4.375f)
-                    .rotateYDegrees(forwards ? 0 : 180)
-                    .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
+                    .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             wheel3.setTransform(poseStack)
                     .translate(0, 1, -2.625f)
-                    .rotateYDegrees(forwards ? 0 : 180)
-                    .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
+                    .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             wheel4.setTransform(poseStack)
                     .translate(0, 1, 2.625f)
-                    .rotateYDegrees(forwards ? 0 : 180)
-                    .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
+                    .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             wheel5.setTransform(poseStack)
                     .translate(0, 1, .875)
-                    .rotateYDegrees(forwards ? 0 : 180)
-                    .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
+                    .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             wheel6.setTransform(poseStack)
                     .translate(0, 1, -.875)
-                    .rotateYDegrees(forwards ? 0 : 180)
-                    .rotateXDegrees(forwards ? wheelAngle : -wheelAngle)
+                    .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             shaft1.setTransform(poseStack)

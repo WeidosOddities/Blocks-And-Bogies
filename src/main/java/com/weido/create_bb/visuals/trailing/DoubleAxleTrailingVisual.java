@@ -13,6 +13,7 @@ import dev.engine_room.flywheel.lib.model.Models;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import com.weido.create_bb.registry.BogiePartials;
+import com.simibubi.create.foundation.render.SpecialModels;
 
 public class DoubleAxleTrailingVisual implements BogeyVisual {
     public DoubleAxleTrailingVisual(VisualizationContext ctx, float partialTick, boolean inContraption) { }
@@ -40,14 +41,14 @@ public class DoubleAxleTrailingVisual implements BogeyVisual {
             super(ctx, partialTick, inContraption);
 
             var wheelInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.SMALL_SHARED_WHEELS));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.SMALL_SHARED_WHEELS));
             var shaftInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SHAFT));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT));
             var t_shaftInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SHAFT));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT));
 
             frame = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.SMALL_TRAILING_4_FRAME))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.SMALL_TRAILING_4_FRAME))
                     .createInstance();
 
             wheel1 = wheelInstancer.createInstance();

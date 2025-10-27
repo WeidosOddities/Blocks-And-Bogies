@@ -1,5 +1,6 @@
 package com.weido.create_bb.visuals.trailing;
 
+import com.simibubi.create.foundation.render.SpecialModels;
 import org.jetbrains.annotations.Nullable;
 import java.util.function.Consumer;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -44,14 +45,14 @@ public class QuadrupleAxleTrailingVisual implements BogeyVisual {
             super(ctx, partialTick, inContraption);
 
             frame = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.SMALL_TRAILING_8_FRAME))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.SMALL_TRAILING_8_FRAME))
                     .createInstance();
 
             var shaftInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.SHAFT));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT));
 
             var wheelInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, Models.partial(BogiePartials.SMALL_SHARED_WHEELS));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.SMALL_SHARED_WHEELS));
 
             shaft1 = shaftInstancer.createInstance();
             shaft2 = shaftInstancer.createInstance();
