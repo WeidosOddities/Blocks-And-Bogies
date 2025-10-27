@@ -13,8 +13,7 @@
   ],
   "client": [
     "AbstractSimiScreenAccessor",
-    "BogeyMenuScreenAccessor",
-    "ScreenAccessor"
+    "BogeyMenuScreenAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

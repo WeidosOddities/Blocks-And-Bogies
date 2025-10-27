@@ -6,6 +6,7 @@ import com.simibubi.create.content.trains.bogey.BogeySizes;
 import com.simibubi.create.content.trains.bogey.BogeyStyle;
 import com.simibubi.create.foundation.gui.AllIcons;
 import com.simibubi.create.foundation.gui.widget.IconButton;
+import com.weido.create_bb.data.compat.steamnrails.JankWidgetRenderer;
 import com.weido.create_bb.data.compat.steamnrails.MenuSwitchButton;
 import com.weido.create_bb.data.menu.BogieStyleSelectionScreen;
 import com.weido.create_bb.data.packets.BogieStylePacket;
@@ -23,7 +24,6 @@ public abstract class BogeyMenuScreenMixin {
     @Inject(method = "init", at = @At("TAIL"))
     private void create_bb$injectSwitchButton(CallbackInfo ci) {
         BogeyMenuScreen self = (BogeyMenuScreen) (Object) this;
-        ScreenAccessor screenAccessor = (ScreenAccessor) this;
         AbstractSimiScreenAccessor abstractSimiScreenAccessor = (AbstractSimiScreenAccessor) self;
 
         int x = abstractSimiScreenAccessor.getGuiLeft();
@@ -40,7 +40,7 @@ public abstract class BogeyMenuScreenMixin {
             switchButton.withCallback(() -> ScreenOpener.open(new BogieStyleSelectionScreen(targetPos)));
             switchButton.setToolTip(Component.translatable("create_bb.tooltips.switch_to_bogey_menu").withStyle(s -> s.withColor(AbstractSimiWidget.HEADER_RGB.getRGB())));
 
-            screenAccessor.invokeAddRenderableWidget(switchButton);
+            JankWidgetRenderer.addRenderableWidgetReflect(self, switchButton);
         }
     }
 
