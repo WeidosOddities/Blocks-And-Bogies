@@ -40,11 +40,6 @@ public class BBBogieBlock extends AbstractBogeyBlock <BBBogieBlockEntity>
     }
 
     @Override
-    protected InteractionResult onInteractWithBogey(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        return BogieFunctionality.BogeyMenuInteraction(level, pos, player, hand);
-    }
-
-    @Override
     public TrackMaterial.TrackType getTrackType(BogeyStyle style) {
         return TrackMaterial.TrackType.STANDARD;
     }

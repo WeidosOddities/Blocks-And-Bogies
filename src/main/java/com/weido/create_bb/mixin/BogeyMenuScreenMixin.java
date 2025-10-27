@@ -6,11 +6,9 @@ import com.simibubi.create.content.trains.bogey.BogeySizes;
 import com.simibubi.create.content.trains.bogey.BogeyStyle;
 import com.simibubi.create.foundation.gui.AllIcons;
 import com.simibubi.create.foundation.gui.widget.IconButton;
+import com.weido.create_bb.data.compat.steamnrails.MenuSwitchButton;
 import com.weido.create_bb.data.menu.BogieStyleSelectionScreen;
 import com.weido.create_bb.data.packets.BogieStylePacket;
-import com.weido.create_bb.data.accessors.MinecraftScreenAccessor;
-import com.weido.create_bb.data.accessors.SimiScreenAccessor;
-import com.weido.create_bb.data.accessors.RailwayScreenAccessor;
 import com.weido.create_bb.registry.BogiePackets;
 import net.createmod.catnip.gui.ScreenOpener;
 import net.createmod.catnip.gui.widget.AbstractSimiWidget;
@@ -21,19 +19,28 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BogeyMenuScreen.class)
-public class SNRMenuSwitchMixin {
+public abstract class BogeyMenuScreenMixin {
     @Inject(method = "init", at = @At("TAIL"))
     private void create_bb$injectSwitchButton(CallbackInfo ci) {
         BogeyMenuScreen self = (BogeyMenuScreen) (Object) this;
-        int x = SimiScreenAccessor.getGuiLeft(self);
-        int y = SimiScreenAccessor.getGuiTop(self);
-        var background = RailwayScreenAccessor.getBackground(self);
-        var targetPos = RailwayScreenAccessor.getTargetPos();
+        ScreenAccessor screenAccessor = (ScreenAccessor) this;
+        AbstractSimiScreenAccessor abstractSimiScreenAccessor = (AbstractSimiScreenAccessor) self;
+
+        int x = abstractSimiScreenAccessor.getGuiLeft();
+        int y = abstractSimiScreenAccessor.getGuiTop();
+        var background = ((BogeyMenuScreenAccessor) this).getBackground();
+        var targetPos = MenuSwitchButton.getTargetPos();
+
         if (background != null) {
-            IconButton switchButton = new IconButton(x + background.width - 62, y + background.height - 24, AllIcons.I_DICE);
+            IconButton switchButton = new IconButton(
+                    x + background.width - 62,
+                    y + background.height - 24,
+                    AllIcons.I_DICE
+            );
             switchButton.withCallback(() -> ScreenOpener.open(new BogieStyleSelectionScreen(targetPos)));
             switchButton.setToolTip(Component.translatable("create_bb.tooltips.switch_to_bogey_menu").withStyle(s -> s.withColor(AbstractSimiWidget.HEADER_RGB.getRGB())));
-            MinecraftScreenAccessor.addRenderableWidgetReflect(self, switchButton);
+
+            screenAccessor.invokeAddRenderableWidget(switchButton);
         }
     }
 
@@ -47,12 +54,12 @@ public class SNRMenuSwitchMixin {
 
             var style = selectedBogey.getClass().getMethod("bogeyStyle").invoke(selectedBogey);
             BogeySizes.BogeySize size = BogeyMenuHandlerClient.getSize((BogeyStyle) style);
-            var targetPos = RailwayScreenAccessor.getTargetPos();
+            var targetPos = MenuSwitchButton.getTargetPos();
 
             BogieStylePacket packet = new BogieStylePacket((BogeyStyle) style, size, targetPos);
             BogiePackets.getChannel().sendToServer(packet);
 
-            RailwayScreenAccessor.setTargetPos(null);
+            MenuSwitchButton.setTargetPos(null);
 
         } catch (Exception ignored) { }
     }

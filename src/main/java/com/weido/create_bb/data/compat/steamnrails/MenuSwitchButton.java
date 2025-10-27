@@ -10,11 +10,21 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 
 public class MenuSwitchButton {
+    private static BlockPos targetPos;
+
+    public static BlockPos getTargetPos() {
+        return targetPos;
+    }
+
+    public static void setTargetPos(BlockPos pos) {
+        targetPos = pos;
+    }
+
     public static IconButton create(int x, int y, BlockPos targetPos, Runnable onMenuSwitch) {
         IconButton menuSwitchButton = new IconButton(x, y, AllIcons.I_DICE)
                 .withCallback(() -> {
                     BogeyMenuScreen screen = new BogeyMenuScreen();
-                    RailwayScreenAccessor.setTargetPos(targetPos);
+//                    RailwayScreenAccessor.setTargetPos(targetPos);
                     ScreenOpener.open(screen);
                     onMenuSwitch.run();
                 });

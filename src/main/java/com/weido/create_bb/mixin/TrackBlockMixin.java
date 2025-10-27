@@ -24,14 +24,12 @@ public class TrackBlockMixin {
     @Inject(method = "getBogeyAnchor", at = @At("HEAD"), cancellable = true)
     private void placeCustomStyle(BlockGetter world, BlockPos pos, BlockState state, CallbackInfoReturnable<BlockState> cir) {
         if (!ModList.get().isLoaded("railways")) {
-
             if (StyleMenuHandler.getCurrentPlayer() == null)
                 return;
             Pair<BogeyStyle, BogeySize> styleData = StyleMenuHandler.getStyle(StyleMenuHandler.getCurrentPlayer());
             BogeyStyle style = styleData.getFirst();
-
-
             BogeySize size = styleData.getSecond();
+
             int escape = BogeySizes.all().size();
             while (!style.validSizes().contains(size)) {
                 if (escape < 0)
@@ -39,7 +37,9 @@ public class TrackBlockMixin {
                 size = size.nextBySize();
                 escape--;
             }
+
             Block block = style.getBlockForSize(size);
+
             cir.setReturnValue(
                 block.defaultBlockState()
                 .setValue(BlockStateProperties.HORIZONTAL_AXIS,
