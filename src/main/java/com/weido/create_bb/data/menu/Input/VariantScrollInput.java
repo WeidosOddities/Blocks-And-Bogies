@@ -30,7 +30,6 @@ public class VariantScrollInput extends ScrollInput {
         List<StyleEntry.Variant> priorityOrder = List.of(
             StyleEntry.Variant.LONG,
             StyleEntry.Variant.SHORT,
-            StyleEntry.Variant.PISTONLESS,
             StyleEntry.Variant.STANDARD,
             StyleEntry.Variant.TRAILING
         );

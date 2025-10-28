@@ -8,6 +8,8 @@ public class BogiePartials {
     SMALL_SHARED_WHEELS = block("bogie/small/shared/wheels"),
 
     LARGE_SHARED_WHEELS_SINGLE              = block("bogie/large/shared/wheels_single"),
+    LARGE_SHARED_WHEELS_BLIND_SINGLE        = block("bogie/large/shared/wheels_b_single"),
+    LARGE_SHARED_WHEELS_SEMI_BLIND_SINGLE   = block("bogie/large/shared/wheels_s_b_single"),
     LARGE_SHARED_WHEELS                     = block("bogie/large/shared/wheels"),
     LARGE_SHARED_WHEELS_BLIND               = block("bogie/large/shared/wheels_b"),
     LARGE_SHARED_WHEELS_SEMI_BLIND          = block("bogie/large/shared/wheels_s_b"),
@@ -26,6 +28,8 @@ public class BogiePartials {
     LARGE_R_P_ROD_GEARLESS                  = block("bogie/large/shared/right_p_rod_g"),
 
     EXTRA_LARGE_SHARED_WHEELS_SINGLE        = block("bogie/extra_large/shared/wheels_single"),
+    EXTRA_LARGE_SHARED_WHEELS_BLIND_SINGLE         = block("bogie/extra_large/shared/wheels_b_single"),
+    EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND_SINGLE    = block("bogie/extra_large/shared/wheels_s_b_single"),
     EXTRA_LARGE_SHARED_WHEELS               = block("bogie/extra_large/shared/wheels"),
     EXTRA_LARGE_SHARED_WHEELS_BLIND         = block("bogie/extra_large/shared/wheels_b"),
     EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND    = block("bogie/extra_large/shared/wheels_s_b"),

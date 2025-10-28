@@ -30,6 +30,9 @@ public class ValveGearScrollInput extends ScrollInput {
         List<StyleEntry.ValveGear> priorityOrder = List.of(
             StyleEntry.ValveGear.NONE,
             StyleEntry.ValveGear.WALSCHAERTS,
+            StyleEntry.ValveGear.GEARLESS,
+            StyleEntry.ValveGear.PISTONLESS,
+            StyleEntry.ValveGear.RODLESS,
             StyleEntry.ValveGear.SCOTCH_YOKE,
             StyleEntry.ValveGear.ROTARY_POPPET
         );

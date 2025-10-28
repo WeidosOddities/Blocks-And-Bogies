@@ -1,28 +1,28 @@
-package com.weido.create_bb.visuals.pistonless;
+package com.weido.create_bb.visuals.rodless;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.AllSpriteShifts;
 import com.simibubi.create.content.processing.burner.ScrollTransformedInstance;
 import com.simibubi.create.content.trains.bogey.BogeyVisual;
 import com.simibubi.create.foundation.render.AllInstanceTypes;
 import com.simibubi.create.foundation.render.SpecialModels;
+import com.weido.create_bb.registry.BogiePartials;
 import dev.engine_room.flywheel.api.instance.Instance;
 import dev.engine_room.flywheel.api.visualization.VisualizationContext;
 import dev.engine_room.flywheel.lib.instance.InstanceTypes;
 import dev.engine_room.flywheel.lib.instance.TransformedInstance;
-import dev.engine_room.flywheel.lib.model.Models;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Mth;
-import com.mojang.blaze3d.vertex.PoseStack;
-import java.util.function.Consumer;
 import org.jetbrains.annotations.Nullable;
-import com.weido.create_bb.registry.BogiePartials;
 
-import static com.weido.create_bb.data.Constants.*;
+import java.util.function.Consumer;
 
-public class TripleAxlePistonlessVisual implements BogeyVisual {
-    public TripleAxlePistonlessVisual(VisualizationContext ctx, float partialTick, boolean inContraption) { }
+import static com.weido.create_bb.data.Constants.BELT_RADIUS_IN_UV_SPACE;
+
+public class QuadrupleAxleRodlessVisual implements BogeyVisual {
+    public QuadrupleAxleRodlessVisual(VisualizationContext ctx, float partialTick, boolean inContraption) { }
     @Override
     public void update(CompoundTag bogeyData, float wheelAngle, PoseStack poseStack) { }
     @Override
@@ -34,14 +34,13 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
     @Override
     public void delete() { }
 
-    public static class TripleAxleLargePistonless extends TripleAxlePistonlessVisual {
+    public static class QuadrupleAxleLargeRodless extends QuadrupleAxleRodlessVisual {
         private final TransformedInstance frame;
         private final ScrollTransformedInstance belt;
-        private final TransformedInstance r_c_rod;
-        private final TransformedInstance l_c_rod;
         private final TransformedInstance wheel1;
         private final TransformedInstance wheel2;
         private final TransformedInstance wheel3;
+        private final TransformedInstance wheel4;
         private final TransformedInstance shaft1;
         private final TransformedInstance shaft2;
         private final TransformedInstance shaft3;
@@ -49,30 +48,22 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
         private final TransformedInstance shaft5;
         private final TransformedInstance shaft6;
 
-        public TripleAxleLargePistonless(VisualizationContext ctx, float partialTick, boolean inContraption) {
+        public QuadrupleAxleLargeRodless(VisualizationContext ctx, float partialTick, boolean inContraption) {
             super(ctx, partialTick, inContraption);
 
             frame = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_6P_FRAME))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_8P_FRAME))
                     .createInstance();
 
             belt = ctx.instancerProvider()
-                    .instancer(AllInstanceTypes.SCROLLING_TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_6P_BELTS))
-                    .createInstance();
-
-            r_c_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_6P_R_C_ROD))
-                    .createInstance();
-
-            l_c_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_6P_L_C_ROD))
+                    .instancer(AllInstanceTypes.SCROLLING_TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_8P_BELTS))
                     .createInstance();
 
             var wheelInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_SHARED_WHEELS));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_SHARED_WHEELS_SINGLE));
 
             var wheelSemiBlindInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_SHARED_WHEELS_SEMI_BLIND));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.LARGE_SHARED_WHEELS_SEMI_BLIND_SINGLE));
 
             var shaftInstancer = ctx.instancerProvider()
                     .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT));
@@ -80,6 +71,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             wheel1 = wheelInstancer.createInstance();
             wheel2 = wheelInstancer.createInstance();
             wheel3 = wheelSemiBlindInstancer.createInstance();
+            wheel4 = wheelSemiBlindInstancer.createInstance();
 
             belt.setSpriteShift(AllSpriteShifts.BOGEY_BELT);
 
@@ -99,42 +91,33 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .scale(1 - 1 / 512f)
                     .setChanged();
 
-            r_c_rod.setTransform(poseStack)
-                    .translate(0, 1, 0)
-                    .rotateXDegrees((wheelAngle))
-                    .translate(0, .25f, 0)
-                    .rotateXDegrees(-(wheelAngle))
-                    .setChanged();
-
-            l_c_rod.setTransform(poseStack)
-                    .translate(0, 1, 0)
-                    .rotateXDegrees((wheelAngle+90))
-                    .translate(0, .25f, 0)
-                    .rotateXDegrees(-(wheelAngle+90))
-                    .setChanged();
-
             belt.offset(0, BELT_RADIUS_IN_UV_SPACE * Mth.DEG_TO_RAD * wheelAngle)
                     .setTransform(poseStack)
                     .scale(1 - 1 / 512f)
                     .setChanged();
 
             wheel1.setTransform(poseStack)
-                    .translate(0, 1, -1.6875f)
+                    .translate(0, 1, -2.625f)
                     .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             wheel2.setTransform(poseStack)
-                    .translate(0, 1, 1.6875f)
+                    .translate(0, 1, 2.625f)
                     .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             wheel3.setTransform(poseStack)
-                    .translate(0, 1, 0)
+                    .translate(0, 1, -.875f)
+                    .rotateXDegrees(wheelAngle)
+                    .setChanged();
+
+            wheel4.setTransform(poseStack)
+                    .translate(0, 1, .875f)
                     .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             shaft1.setTransform(poseStack)
-                    .translate(-.5f, .25f, -3.1875f)
+                    .translate(-.5f, .25f, -4.125f)
                     .center()
                     .rotateTo(Direction.UP, Direction.EAST)
                     .rotateYDegrees(wheelAngle)
@@ -142,7 +125,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft2.setTransform(poseStack)
-                    .translate(-.5f, .25f, 2.1875f)
+                    .translate(-.5f, .25f, 3.125f)
                     .center()
                     .rotateTo(Direction.UP, Direction.EAST)
                     .rotateYDegrees(wheelAngle)
@@ -150,7 +133,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft3.setTransform(poseStack)
-                    .translate(-.5f, .25f, 1.8125f)
+                    .translate(-.5f, .25f, 2.75f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -158,7 +141,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft4.setTransform(poseStack)
-                    .translate(-.5f, .25f, -2.8125f)
+                    .translate(-.5f, .25f, -3.75f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -166,7 +149,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft5.setTransform(poseStack)
-                    .translate(-.5f, .25f, .375f)
+                    .translate(-.5f, .25f, 1.25f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -174,7 +157,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft6.setTransform(poseStack)
-                    .translate(-.5f, .25f, -1.375f)
+                    .translate(-.5f, .25f, -2.25f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -187,11 +170,10 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             super.hide();
             frame.setZeroTransform().setChanged();
             belt.setZeroTransform().setChanged();
-            l_c_rod.setZeroTransform().setChanged();
-            r_c_rod.setZeroTransform().setChanged();
             wheel1.setZeroTransform().setChanged();
             wheel2.setZeroTransform().setChanged();
             wheel3.setZeroTransform().setChanged();
+            wheel4.setZeroTransform().setChanged();
             shaft1.setZeroTransform().setChanged();
             shaft2.setZeroTransform().setChanged();
             shaft3.setZeroTransform().setChanged();
@@ -202,14 +184,12 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
 
         @Override
         public void updateLight(int packedLight) {
-            super.updateLight(packedLight);
             frame.light(packedLight).setChanged();
             belt.light(packedLight).setChanged();
-            l_c_rod.light(packedLight).setChanged();
-            r_c_rod.light(packedLight).setChanged();
             wheel1.light(packedLight).setChanged();
             wheel2.light(packedLight).setChanged();
             wheel3.light(packedLight).setChanged();
+            wheel4.light(packedLight).setChanged();
             shaft1.light(packedLight).setChanged();
             shaft2.light(packedLight).setChanged();
             shaft3.light(packedLight).setChanged();
@@ -223,11 +203,10 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             super.collectCrumblingInstances(consumer);
             consumer.accept(frame);
             consumer.accept(belt);
-            consumer.accept(l_c_rod);
-            consumer.accept(r_c_rod);
             consumer.accept(wheel1);
             consumer.accept(wheel2);
             consumer.accept(wheel3);
+            consumer.accept(wheel4);
             consumer.accept(shaft1);
             consumer.accept(shaft2);
             consumer.accept(shaft3);
@@ -241,11 +220,10 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             super.delete();
             frame.delete();
             belt.delete();
-            l_c_rod.delete();
-            r_c_rod.delete();
             wheel1.delete();
             wheel2.delete();
             wheel3.delete();
+            wheel4.delete();
             shaft1.delete();
             shaft2.delete();
             shaft3.delete();
@@ -254,15 +232,13 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             shaft6.delete();
         }
     }
-
-    public static class TripleAxleExtraLargePistonless extends TripleAxlePistonlessVisual {
+    public static class QuadrupleAxleExtraLargeRodless extends QuadrupleAxleRodlessVisual {
         private final TransformedInstance frame;
         private final ScrollTransformedInstance belt;
-        private final TransformedInstance r_c_rod;
-        private final TransformedInstance l_c_rod;
         private final TransformedInstance wheel1;
         private final TransformedInstance wheel2;
         private final TransformedInstance wheel3;
+        private final TransformedInstance wheel4;
         private final TransformedInstance shaft1;
         private final TransformedInstance shaft2;
         private final TransformedInstance shaft3;
@@ -271,31 +247,25 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
         private final TransformedInstance shaft6;
         private final TransformedInstance shaft7;
         private final TransformedInstance shaft8;
+        private final TransformedInstance shaft9;
+        private final TransformedInstance shaft10;
 
-        public TripleAxleExtraLargePistonless(VisualizationContext ctx, float partialTick, boolean inContraption) {
+        public QuadrupleAxleExtraLargeRodless(VisualizationContext ctx, float partialTick, boolean inContraption) {
             super(ctx, partialTick, inContraption);
 
             frame = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_6P_FRAME))
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_8P_FRAME))
                     .createInstance();
 
             belt = ctx.instancerProvider()
-                    .instancer(AllInstanceTypes.SCROLLING_TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_6P_BELTS))
-                    .createInstance();
-
-            r_c_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_6P_R_C_ROD))
-                    .createInstance();
-
-            l_c_rod = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_6P_L_C_ROD))
+                    .instancer(AllInstanceTypes.SCROLLING_TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_8P_BELTS))
                     .createInstance();
 
             var wheelInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_SHARED_WHEELS));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_SHARED_WHEELS_SINGLE));
 
             var wheelSemiBlindInstancer = ctx.instancerProvider()
-                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND));
+                    .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(BogiePartials.EXTRA_LARGE_SHARED_WHEELS_SEMI_BLIND_SINGLE));
 
             var shaftInstancer = ctx.instancerProvider()
                     .instancer(InstanceTypes.TRANSFORMED, SpecialModels.smoothLit(AllPartialModels.SHAFT));
@@ -303,6 +273,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             wheel1 = wheelInstancer.createInstance();
             wheel2 = wheelInstancer.createInstance();
             wheel3 = wheelSemiBlindInstancer.createInstance();
+            wheel4 = wheelSemiBlindInstancer.createInstance();
 
             belt.setSpriteShift(AllSpriteShifts.BOGEY_BELT);
 
@@ -315,6 +286,8 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             shaft6 = shaftInstancer.createInstance();
             shaft7 = shaftInstancer.createInstance();
             shaft8 = shaftInstancer.createInstance();
+            shaft9 = shaftInstancer.createInstance();
+            shaft10 = shaftInstancer.createInstance();
         }
 
         @Override
@@ -324,42 +297,33 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .scale(1 - 1 / 512f)
                     .setChanged();
 
-            r_c_rod.setTransform(poseStack)
-                    .translate(0, 1.25f, 0)
-                    .rotateXDegrees((wheelAngle))
-                    .translate(0, .375f, 0)
-                    .rotateXDegrees(-(wheelAngle))
-                    .setChanged();
-
-            l_c_rod.setTransform(poseStack)
-                    .translate(0, 1.25f, 0)
-                    .rotateXDegrees((wheelAngle+90))
-                    .translate(0, .375f, 0)
-                    .rotateXDegrees(-(wheelAngle+90))
-                    .setChanged();
-
             belt.offset(0, BELT_RADIUS_IN_UV_SPACE * Mth.DEG_TO_RAD * wheelAngle)
                     .setTransform(poseStack)
                     .scale(1 - 1 / 512f)
                     .setChanged();
 
             wheel1.setTransform(poseStack)
-                    .translate(0, 1.25f, -2.25f)
+                    .translate(0, 1.25f, -3.375f)
                     .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             wheel2.setTransform(poseStack)
-                    .translate(0, 1.25f, 2.25f)
+                    .translate(0, 1.25f, 3.375f)
                     .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             wheel3.setTransform(poseStack)
-                    .translate(0, 1.25f, 0)
+                    .translate(0, 1.25f, -1.125f)
+                    .rotateXDegrees(wheelAngle)
+                    .setChanged();
+
+            wheel4.setTransform(poseStack)
+                    .translate(0, 1.25f, 1.125f)
                     .rotateXDegrees(wheelAngle)
                     .setChanged();
 
             shaft1.setTransform(poseStack)
-                    .translate(-.5f, .25f, -3.75f)
+                    .translate(-.5f, .25f, -4.875f)
                     .center()
                     .rotateTo(Direction.UP, Direction.EAST)
                     .rotateYDegrees(wheelAngle)
@@ -367,7 +331,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft2.setTransform(poseStack)
-                    .translate(-.5f, .25f, 2.75f)
+                    .translate(-.5f, .25f, 3.875f)
                     .center()
                     .rotateTo(Direction.UP, Direction.EAST)
                     .rotateYDegrees(wheelAngle)
@@ -375,7 +339,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft3.setTransform(poseStack)
-                    .translate(-.5f, .25f, .0625f)
+                    .translate(-.5f, .25f, 3.4375f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -383,7 +347,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft4.setTransform(poseStack)
-                    .translate(-.5f, .25f, -1.0625f)
+                    .translate(-.5f, .25f, -4.4375f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -391,7 +355,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft5.setTransform(poseStack)
-                    .translate(-.5f, .25f, 1.1875f)
+                    .translate(-.5f, .25f, 2.125f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -399,7 +363,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft6.setTransform(poseStack)
-                    .translate(-.5f, .25f, -2.1875f)
+                    .translate(-.5f, .25f, -3.125f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -407,7 +371,7 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft7.setTransform(poseStack)
-                    .translate(-.5f, .25f, 2.3125f)
+                    .translate(-.5f, .25f, 1.1875f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -415,7 +379,23 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
                     .setChanged();
 
             shaft8.setTransform(poseStack)
-                    .translate(-.5f, .25f, -3.3125f)
+                    .translate(-.5f, .25f, -2.1875f)
+                    .center()
+                    .rotateTo(Direction.UP, Direction.SOUTH)
+                    .rotateYDegrees(wheelAngle)
+                    .uncenter()
+                    .setChanged();
+
+            shaft9.setTransform(poseStack)
+                    .translate(-.5f, .25f, 0)
+                    .center()
+                    .rotateTo(Direction.UP, Direction.SOUTH)
+                    .rotateYDegrees(wheelAngle)
+                    .uncenter()
+                    .setChanged();
+
+            shaft10.setTransform(poseStack)
+                    .translate(-.5f, .25f, -1f)
                     .center()
                     .rotateTo(Direction.UP, Direction.SOUTH)
                     .rotateYDegrees(wheelAngle)
@@ -428,11 +408,10 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             super.hide();
             frame.setZeroTransform().setChanged();
             belt.setZeroTransform().setChanged();
-            l_c_rod.setZeroTransform().setChanged();
-            r_c_rod.setZeroTransform().setChanged();
             wheel1.setZeroTransform().setChanged();
             wheel2.setZeroTransform().setChanged();
             wheel3.setZeroTransform().setChanged();
+            wheel4.setZeroTransform().setChanged();
             shaft1.setZeroTransform().setChanged();
             shaft2.setZeroTransform().setChanged();
             shaft3.setZeroTransform().setChanged();
@@ -441,18 +420,18 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             shaft6.setZeroTransform().setChanged();
             shaft7.setZeroTransform().setChanged();
             shaft8.setZeroTransform().setChanged();
+            shaft9.setZeroTransform().setChanged();
+            shaft10.setZeroTransform().setChanged();
         }
 
         @Override
         public void updateLight(int packedLight) {
-            super.updateLight(packedLight);
             frame.light(packedLight).setChanged();
             belt.light(packedLight).setChanged();
-            l_c_rod.light(packedLight).setChanged();
-            r_c_rod.light(packedLight).setChanged();
             wheel1.light(packedLight).setChanged();
             wheel2.light(packedLight).setChanged();
             wheel3.light(packedLight).setChanged();
+            wheel4.light(packedLight).setChanged();
             shaft1.light(packedLight).setChanged();
             shaft2.light(packedLight).setChanged();
             shaft3.light(packedLight).setChanged();
@@ -461,6 +440,8 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             shaft6.light(packedLight).setChanged();
             shaft7.light(packedLight).setChanged();
             shaft8.light(packedLight).setChanged();
+            shaft9.light(packedLight).setChanged();
+            shaft10.light(packedLight).setChanged();
         }
 
         @Override
@@ -468,11 +449,10 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             super.collectCrumblingInstances(consumer);
             consumer.accept(frame);
             consumer.accept(belt);
-            consumer.accept(l_c_rod);
-            consumer.accept(r_c_rod);
             consumer.accept(wheel1);
             consumer.accept(wheel2);
             consumer.accept(wheel3);
+            consumer.accept(wheel4);
             consumer.accept(shaft1);
             consumer.accept(shaft2);
             consumer.accept(shaft3);
@@ -481,6 +461,8 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             consumer.accept(shaft6);
             consumer.accept(shaft7);
             consumer.accept(shaft8);
+            consumer.accept(shaft9);
+            consumer.accept(shaft10);
         }
 
         @Override
@@ -488,11 +470,10 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             super.delete();
             frame.delete();
             belt.delete();
-            l_c_rod.delete();
-            r_c_rod.delete();
             wheel1.delete();
             wheel2.delete();
             wheel3.delete();
+            wheel4.delete();
             shaft1.delete();
             shaft2.delete();
             shaft3.delete();
@@ -501,6 +482,8 @@ public class TripleAxlePistonlessVisual implements BogeyVisual {
             shaft6.delete();
             shaft7.delete();
             shaft8.delete();
+            shaft9.delete();
+            shaft10.delete();
         }
     }
 }

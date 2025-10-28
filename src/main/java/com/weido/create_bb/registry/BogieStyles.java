@@ -10,12 +10,14 @@ import com.weido.create_bb.BlocksBogies;
 import com.weido.create_bb.data.menu.Entry.*;
 import com.weido.create_bb.renderers.gearless.*;
 import com.weido.create_bb.renderers.pistonless.*;
+import com.weido.create_bb.renderers.rodless.*;
 import com.weido.create_bb.renderers.walschaerts.*;
 import com.weido.create_bb.renderers.scotchyoke.*;
 import com.weido.create_bb.renderers.standard.*;
 import com.weido.create_bb.renderers.trailing.*;
 import com.weido.create_bb.visuals.gearless.*;
 import com.weido.create_bb.visuals.pistonless.*;
+import com.weido.create_bb.visuals.rodless.*;
 import com.weido.create_bb.visuals.walschaerts.*;
 import com.weido.create_bb.visuals.scotchyoke.*;
 import com.weido.create_bb.visuals.standard.*;
@@ -111,6 +113,42 @@ public class BogieStyles {
         = builder("sextuple_axle_pistonless_l").displayName(Component.translatable("create_bb.bogies.style.sextuple_axle_pistonless"))
         .size(BogeySizes.SMALL, BogieBlocks.L_0120, () -> () -> new SizeRenderer(new SextupleAxlePistonlessRenderer.SextuplesAxleLargePistonless(), SextupleAxlePistonlessVisual.SextupleAxleLargePistonless::new))
         .build();
+
+    //Rodless
+    public static final BogeyStyle DOUBLE_AXLE_RODLESS
+            = builder("double_axle_rodless").displayName(Component.translatable("create_bb.bogies.style.double_axle_rodless"))
+            .size(BogeySizes.LARGE, BogieBlocks.XL_040, () -> () -> new SizeRenderer(new DoubleAxleRodlessRenderer.DoubleAxleExtraLargeRodless(), DoubleAxleRodlessVisual.DoubleAxleExtraLargeRodless::new))
+            .size(BogeySizes.SMALL, BogieBlocks.L_040, () -> () -> new SizeRenderer(new DoubleAxleRodlessRenderer.DoubleAxleLargeRodless(), DoubleAxleRodlessVisual.DoubleAxleLargeRodless::new))
+            .build();
+
+    public static final BogeyStyle TRIPLE_AXLE_EXTENDED_RODLESS
+            = builder("triple_axle_extended_rodless").displayName(Component.translatable("create_bb.bogies.style.triple_axle_extended_rodless"))
+            .size(BogeySizes.LARGE, BogieBlocks.XL_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedRodlessRenderer.TripleAxleExtraLargeExtendedRodless(), TripleAxleExtendedRodlessVisual.TripleAxleExtraLargeExtendedRodless::new))
+            .size(BogeySizes.SMALL, BogieBlocks.L_060_ROT, () -> () -> new SizeRenderer(new TripleAxleExtendedRodlessRenderer.TripleAxleLargeExtendedRodless(), TripleAxleExtendedRodlessVisual.TripleAxleLargeExtendedRodless::new))
+            .build();
+
+    public static final BogeyStyle TRIPLE_AXLE_RODLESS
+            = builder("triple_axle_rodless").displayName(Component.translatable("create_bb.bogies.style.triple_axle_rodless"))
+            .size(BogeySizes.LARGE, BogieBlocks.XL_060, () -> () -> new SizeRenderer(new TripleAxleRodlessRenderer.TripleAxleExtraLargeRodless(), TripleAxleRodlessVisual.TripleAxleExtraLargeRodless::new))
+            .size(BogeySizes.SMALL, BogieBlocks.L_060, () -> () -> new SizeRenderer(new TripleAxleRodlessRenderer.TripleAxleLargeRodless(), TripleAxleRodlessVisual.TripleAxleLargeRodless::new))
+            .build();
+
+    public static final BogeyStyle QUADRUPLE_AXLE_RODLESS
+            = builder("quadruple_axle_rodless").displayName(Component.translatable("create_bb.bogies.style.quadruple_axle_rodless"))
+            .size(BogeySizes.LARGE, BogieBlocks.XL_080, () -> () -> new SizeRenderer(new QuadrupleAxleRodlessRenderer.QuadrupleAxleExtraLargeRodless(), QuadrupleAxleRodlessVisual.QuadrupleAxleExtraLargeRodless::new))
+            .size(BogeySizes.SMALL, BogieBlocks.L_080, () -> () -> new SizeRenderer(new QuadrupleAxleRodlessRenderer.QuadrupleAxleLargeRodless(), QuadrupleAxleRodlessVisual.QuadrupleAxleLargeRodless::new))
+            .build();
+
+    public static final BogeyStyle QUINTUPLE_AXLE_RODLESS
+            = builder("quintuple_axle_rodless").displayName(Component.translatable("create_bb.bogies.style.quintuple_axle_rodless"))
+            .size(BogeySizes.LARGE, BogieBlocks.XL_0100, () -> () -> new SizeRenderer(new QuintupleAxleRodlessRenderer.QuintupleAxleExtraLargeRodless(), QuintupleAxleRodlessVisual.QuintupleAxleExtraLargeRodless::new))
+            .size(BogeySizes.SMALL, BogieBlocks.L_0100, () -> () -> new SizeRenderer(new QuintupleAxleRodlessRenderer.QuintupleAxleLargeRodless(), QuintupleAxleRodlessVisual.QuintupleAxleLargeRodless::new))
+            .build();
+
+    public static final BogeyStyle SEXTUPLE_AXLE_RODLESS
+            = builder("sextuple_axle_rodless").displayName(Component.translatable("create_bb.bogies.style.sextuple_axle_rodless"))
+            .size(BogeySizes.SMALL, BogieBlocks.L_0120, () -> () -> new SizeRenderer(new SextupleAxleRodlessRenderer.SextuplesAxleLargeRodless(), SextupleAxleRodlessVisual.SextupleAxleLargeRodless::new))
+            .build();
 
 //Scotch Yoke
     public static final BogeyStyle SINGLE_AXLE_SCOTCH_YOKE
@@ -334,13 +372,21 @@ public class BogieStyles {
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_BOGIE, Variant.STANDARD, ValveGear.NONE, Type.TRUCK, 4, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_BOGIE, Variant.STANDARD, ValveGear.NONE, Type.TRUCK, 5, Length.NORMAL));
 
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 1, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 2, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 3, Length.SPACED));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 3, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 4, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 5, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_PISTONLESS, Variant.PISTONLESS, ValveGear.NONE, Type.DRIVER, 6, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_PISTONLESS, Variant.STANDARD, ValveGear.PISTONLESS, Type.DRIVER, 1, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_PISTONLESS, Variant.STANDARD, ValveGear.PISTONLESS, Type.DRIVER, 2, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_PISTONLESS, Variant.STANDARD, ValveGear.PISTONLESS, Type.DRIVER, 3, Length.SPACED));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_PISTONLESS, Variant.STANDARD, ValveGear.PISTONLESS, Type.DRIVER, 3, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_PISTONLESS, Variant.STANDARD, ValveGear.PISTONLESS, Type.DRIVER, 4, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_PISTONLESS, Variant.STANDARD, ValveGear.PISTONLESS, Type.DRIVER, 5, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_PISTONLESS, Variant.STANDARD, ValveGear.PISTONLESS, Type.DRIVER, 6, Length.NORMAL));
+
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_PISTONLESS, Variant.STANDARD, ValveGear.RODLESS, Type.DRIVER, 1, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_RODLESS, Variant.STANDARD, ValveGear.RODLESS, Type.DRIVER, 2, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_RODLESS, Variant.STANDARD, ValveGear.RODLESS, Type.DRIVER, 3, Length.SPACED));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_RODLESS, Variant.STANDARD, ValveGear.RODLESS, Type.DRIVER, 3, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_RODLESS, Variant.STANDARD, ValveGear.RODLESS, Type.DRIVER, 4, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_RODLESS, Variant.STANDARD, ValveGear.RODLESS, Type.DRIVER, 5, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_RODLESS, Variant.STANDARD, ValveGear.RODLESS, Type.DRIVER, 6, Length.NORMAL));
 
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_SCOTCH_YOKE, Variant.STANDARD, ValveGear.SCOTCH_YOKE, Type.DRIVER, 1, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_SCOTCH_YOKE, Variant.STANDARD, ValveGear.SCOTCH_YOKE, Type.DRIVER, 2, Length.NORMAL));
@@ -349,21 +395,21 @@ public class BogieStyles {
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_SCOTCH_YOKE, Variant.STANDARD, ValveGear.SCOTCH_YOKE, Type.DRIVER, 5, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_SCOTCH_YOKE, Variant.STANDARD, ValveGear.SCOTCH_YOKE, Type.DRIVER, 6, Length.NORMAL));
 
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 1, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 2, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_EXTRA_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 2, Length.EXTENDED));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 3, Length.SPACED));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 3, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 4, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 5, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_LONG, Variant.LONG, ValveGear.NONE, Type.DRIVER, 6, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_LONG, Variant.LONG, ValveGear.GEARLESS, Type.DRIVER, 1, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_LONG, Variant.LONG, ValveGear.GEARLESS, Type.DRIVER, 2, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_EXTRA_LONG, Variant.LONG, ValveGear.GEARLESS, Type.DRIVER, 2, Length.EXTENDED));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_LONG, Variant.LONG, ValveGear.GEARLESS, Type.DRIVER, 3, Length.SPACED));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_LONG, Variant.LONG, ValveGear.GEARLESS, Type.DRIVER, 3, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_LONG, Variant.LONG, ValveGear.GEARLESS, Type.DRIVER, 4, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_LONG, Variant.LONG, ValveGear.GEARLESS, Type.DRIVER, 5, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_LONG, Variant.LONG, ValveGear.GEARLESS, Type.DRIVER, 6, Length.NORMAL));
 
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 2, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 3, Length.SPACED));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 3,Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 4, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 5, Length.NORMAL));
-            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.NONE, Type.DRIVER, 6, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_SHORT, Variant.SHORT, ValveGear.GEARLESS, Type.DRIVER, 2, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_EXTENDED_SHORT, Variant.SHORT, ValveGear.GEARLESS, Type.DRIVER, 3, Length.SPACED));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.TRIPLE_AXLE_SHORT, Variant.SHORT, ValveGear.GEARLESS, Type.DRIVER, 3,Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUADRUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.GEARLESS, Type.DRIVER, 4, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.QUINTUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.GEARLESS, Type.DRIVER, 5, Length.NORMAL));
+            MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SEXTUPLE_AXLE_SHORT, Variant.SHORT, ValveGear.GEARLESS, Type.DRIVER, 6, Length.NORMAL));
 
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.SINGLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 1, Length.NORMAL));
             MANAGER.addToBogeyEntryList(StyleEntry.getOrCreate(BogieStyles.DOUBLE_AXLE_WALSCHAERTS_LONG, Variant.LONG, ValveGear.WALSCHAERTS, Type.DRIVER, 2, Length.NORMAL));
