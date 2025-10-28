@@ -93,7 +93,7 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
         int buttonBottomPos = guiTop + background.getHeight() - 53;
 
         IconButton confirmButton = new IconButton(guiLeft + background.getWidth() - 25, guiTop + background.getHeight() - 24, AllIcons.I_CONFIRM)
-                .withCallback(this::onClose);
+                .withCallback(this::onMenuClose);
 
         if (ModList.get().isLoaded("railways")) {
             addRenderableWidget(com.weido.create_bb.data.compat.steamnrails.MenuSwitchButton.create(
@@ -187,6 +187,11 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
 
     @Override
     public void onClose() {
+        super.onClose();
+        targetPos = null;
+    }
+
+    public void onMenuClose() {
         firstTime = false;
         saveMenuState();
         sendMenuPacket();
