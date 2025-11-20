@@ -112,10 +112,10 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
                 updateSizeSelection();
             });
 
-        variantScroll = new VariantScrollInput(buttonLeftPos, buttonTopPos, 142, buttonHeight)
+        variantScroll = new VariantScrollInput(buttonRightPos, buttonTopPos, 142, buttonHeight)
             .setState(firstTime ? 0 : BogeyStyleMenuState.getLastVariant());
 
-        valvegearScroll = new ValveGearScrollInput(buttonRightPos, buttonTopPos, 142, buttonHeight)
+        valvegearScroll = new ValveGearScrollInput(buttonLeftPos, buttonTopPos, 142, buttonHeight)
             .setState(firstTime ? 0 : BogeyStyleMenuState.getLastValvegear());
 
         axleCountScroll = new AxleCountScrollInput(buttonLeftPos, buttonBottomPos, 78, buttonHeight)
