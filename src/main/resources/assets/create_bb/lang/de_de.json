@@ -26,12 +26,14 @@
   "create_bb.variant.short": "Kurz",
   "create_bb.variant.standard": "Standard",
   "create_bb.variant.trailing": "Nachlaufend",
-  "create_bb.variant.pistonless": "Kolbenlos",
 
   "create_bb.type.driver": "Triebdrehgestell",
   "create_bb.type.truck": "Drehgestell",
 
   "create_bb.valve_gear.none": "Ohne",
+  "create_bb.valve_gear.gearless": "Steuerungslos",
+  "create_bb.valve_gear.rodless": "Stangenlos",
+  "create_bb.valve_gear.pistonless": "Kolbenlos",
   "create_bb.valve_gear.walschaerts": "Heusinger",
   "create_bb.valve_gear.rotary_poppet": "Rotations Tellerventil",
   "create_bb.valve_gear.scotch_yoke": "Kurbelschleife",
@@ -40,7 +42,7 @@
   "create_bb.length.standard": "Standard",
   "create_bb.length.extended": "Erweitert",
   "create_bb.length.offset": "Versetzt",
-  "create_bb.length.spaced": "Spaced",
+  "create_bb.length.spaced": "Achsabstand",
 
   "create_bb.bogies.style.single_axle_trailing": "Kleines 0-2-0 Nachlaufendes Drehgestell",
   "create_bb.bogies.style.double_axle_trailing": "Kleines 0-4-0 Nachlaufendes Drehgestell",
@@ -61,6 +63,15 @@
   "create_bb.bogies.style.quadruple_axle_pistonless": "0-8-0 Kolbenlos",
   "create_bb.bogies.style.quintuple_axle_pistonless": "0-10-0 Kolbenlos",
   "create_bb.bogies.style.sextuple_axle_pistonless": "0-12-0 Kolbenlos",
+
+  "create_bb.bogies.style.single_axle_rodless": "0-2-0 Stangenlos",
+  "create_bb.bogies.style.double_axle_rodless": "0-4-0 Stangenlos",
+  "create_bb.bogies.style.triple_axle_extended_rodless": "0-6-0 Erweitert Stangenlos",
+  "create_bb.bogies.style.triple_axle_rodless": "0-6-0 Stangenlos",
+  "create_bb.bogies.style.quadruple_axle_rodless": "0-8-0 Stangenlos",
+  "create_bb.bogies.style.quintuple_axle_rodless": "0-10-0 Stangenlos",
+  "create_bb.bogies.style.sextuple_axle_rodless": "0-12-0 Stangenlos",
+
 
   "create_bb.bogies.style.single_axle_scotch_yoke": "0-2-0 Kurbelschleife",
   "create_bb.bogies.style.double_axle_scotch_yoke": "0-4-0 Kurbelschleife",
