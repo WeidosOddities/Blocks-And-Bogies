@@ -55,9 +55,6 @@ public class BogieFunctionality {
         if (level.isClientSide) return InteractionResult.SUCCESS;
 
         if (player instanceof ServerPlayer serverPlayer) {
-//            ClientBogieMenuPacket packet = new ClientBogieMenuPacket(pos);
-//            BogiePackets.getChannel().sendToServer(packet);
-
             BogiePackets.getChannel().send(
                     PacketDistributor.PLAYER.with(() -> serverPlayer),
                     new BogieMenuPacket(pos)
