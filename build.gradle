@@ -68,7 +68,11 @@ dependencies {
     compileOnly("com.tterrag.registrate:Registrate:${registrate_version}")
 
     // Steam 'n' Rails (optional compatibility)
-    compileOnly files('../Railway-1.21.1/build/libs/railways-0.1.0+neoforge-mc1.21.1-local.jar')
+    // Railway 1.21.1 is not yet published to Maven. To compile SNR compat:
+    // Place the Railway jar in the libs/ folder as 'railways.jar'
+    if (file('libs/railways.jar').exists()) {
+        compileOnly files('libs/railways.jar')
+    }
 }
 
 sourceSets.main {
