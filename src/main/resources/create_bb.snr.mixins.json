@@ -1,0 +1,15 @@
+{
+  "required": false,
+  "package": "com.weido.create_bb.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "com.weido.create_bb.mixin.SNRMixinPlugin",
+  "mixins": [
+    "AbstractSimiScreenAccessor",
+    "BogeyMenuScreenAccessor",
+    "BogeyMenuScreenMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

@@ -66,6 +66,9 @@ dependencies {
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
     compileOnly("com.tterrag.registrate:Registrate:${registrate_version}")
+
+    // Steam 'n' Rails (optional compatibility)
+    compileOnly files('../Railway-1.21.1/build/libs/railways-0.1.0+neoforge-mc1.21.1-local.jar')
 }
 
 sourceSets.main {
