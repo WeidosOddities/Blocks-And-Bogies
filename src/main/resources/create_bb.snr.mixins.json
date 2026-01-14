@@ -3,12 +3,12 @@
   "package": "com.weido.create_bb.mixin",
   "compatibilityLevel": "JAVA_21",
   "plugin": "com.weido.create_bb.mixin.SNRMixinPlugin",
-  "mixins": [
-    "AbstractSimiScreenAccessor",
+  "mixins": [],
+  "client": [
     "BogeyMenuScreenAccessor",
-    "BogeyMenuScreenMixin"
+    "BogeyMenuScreenMixin",
+    "BogieStyleSelectionScreenMixin"
   ],
-  "client": [],
   "injectors": {
     "defaultRequire": 0
   }
