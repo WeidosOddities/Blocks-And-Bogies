@@ -24,6 +24,11 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
+      - name: Download Railway dependency for SNR compat
+        run: |
+          mkdir -p libs
+          curl -L -o libs/railways.jar "https://cdn.modrinth.com/data/HSzwjxnb/versions/nfzHpeEX/railways-0.1.0%2Bneoforge-mc1.21.1.jar"
+
       - name: Build with Gradle
         run: ./gradlew build
 
