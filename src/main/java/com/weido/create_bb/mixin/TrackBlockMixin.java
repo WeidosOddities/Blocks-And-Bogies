@@ -12,6 +12,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.neoforged.fml.ModList;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -22,25 +23,27 @@ import com.weido.create_bb.data.menu.Entry.StyleMenuHandler;
 public class TrackBlockMixin {
     @Inject(method = "getBogeyAnchor", at = @At("HEAD"), cancellable = true)
     private void placeCustomStyle(BlockGetter world, BlockPos pos, BlockState state, CallbackInfoReturnable<BlockState> cir) {
-        if (StyleMenuHandler.getCurrentPlayer() == null)
-            return;
-        Pair<BogeyStyle, BogeySize> styleData = StyleMenuHandler.getStyle(StyleMenuHandler.getCurrentPlayer());
-        BogeyStyle style = styleData.getFirst();
-
-
-        BogeySize size = styleData.getSecond();
-        int escape = BogeySizes.all().size();
-        while (!style.validSizes().contains(size)) {
-            if (escape < 0)
+        if (!ModList.get().isLoaded("railways")) {
+            if (StyleMenuHandler.getCurrentPlayer() == null)
                 return;
-            size = size.nextBySize();
-            escape--;
+            Pair<BogeyStyle, BogeySize> styleData = StyleMenuHandler.getStyle(StyleMenuHandler.getCurrentPlayer());
+            BogeyStyle style = styleData.getFirst();
+
+
+            BogeySize size = styleData.getSecond();
+            int escape = BogeySizes.all().size();
+            while (!style.validSizes().contains(size)) {
+                if (escape < 0)
+                    return;
+                size = size.nextBySize();
+                escape--;
+            }
+            Block block = style.getBlockForSize(size);
+            cir.setReturnValue(
+                    block.defaultBlockState()
+                            .setValue(BlockStateProperties.HORIZONTAL_AXIS,
+                                    state.getValue(TrackBlock.SHAPE) == TrackShape.XO ? Direction.Axis.X : Direction.Axis.Z)
+            );
         }
-        Block block = style.getBlockForSize(size);
-        cir.setReturnValue(
-            block.defaultBlockState()
-            .setValue(BlockStateProperties.HORIZONTAL_AXIS,
-            state.getValue(TrackBlock.SHAPE) == TrackShape.XO ? Direction.Axis.X : Direction.Axis.Z)
-        );
     }
 }

@@ -61,17 +61,17 @@ configurations {
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
-    implementation("com.simibubi.create:create-${minecraft_version}:${create_version}") { transitive = false }
-    implementation("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}")
+    implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
-    compileOnly("com.tterrag.registrate:Registrate:${registrate_version}")
+    implementation("com.tterrag.registrate:Registrate:${registrate_version}")
 
     // Steam 'n' Rails (optional compatibility)
     // Railway 1.21.1 is not yet published to Maven. To compile SNR compat:
     // Place the Railway jar in the libs/ folder as 'railways.jar'
     if (file('libs/railways.jar').exists()) {
-        compileOnly files('libs/railways.jar')
+        implementation files('libs/railways.jar')
     }
 }
 

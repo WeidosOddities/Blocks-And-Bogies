@@ -24,7 +24,7 @@ license="${mod_license}"
 
 [[dependencies.${mod_id}]]
     modId="railways"
-    mandatory=false
+    type="optional"
     versionRange="[0.1.0,)"
     ordering="AFTER"
     side="BOTH"

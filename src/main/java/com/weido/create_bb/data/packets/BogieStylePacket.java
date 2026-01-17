@@ -5,6 +5,7 @@ import com.simibubi.create.content.trains.bogey.AbstractBogeyBlockEntity;
 import com.simibubi.create.content.trains.bogey.BogeySizes;
 import com.simibubi.create.content.trains.bogey.BogeySizes.BogeySize;
 import com.simibubi.create.content.trains.bogey.BogeyStyle;
+import com.weido.create_bb.data.compat.steamnrails.RailwaysSelectionOverride;
 import net.createmod.catnip.data.Pair;
 import net.createmod.catnip.net.base.BasePacketPayload;
 import net.createmod.catnip.net.base.ServerboundPacketPayload;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.neoforged.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.weido.create_bb.registry.BogiePackets;
@@ -38,9 +40,10 @@ public abstract class BogieStylePacket implements CustomPacketPayload {
         final BogeyStyle style;
         @Nullable
         final BogeySize size;
+        @Nullable
         final BlockPos pos;
 
-        public Serverbound(@NotNull BogeyStyle style, @Nullable BogeySize size, BlockPos pos) {
+        public Serverbound(@NotNull BogeyStyle style, @Nullable BogeySize size, @Nullable BlockPos pos) {
             super(BogiePackets.C_BOGIE_STYLE);
             this.style = style;
             this.size = size;
@@ -54,7 +57,10 @@ public abstract class BogieStylePacket implements CustomPacketPayload {
                 if (packet.size != null) {
                     buf.writeResourceLocation(packet.size.id());
                 }
-                buf.writeBlockPos(packet.pos);
+                buf.writeBoolean(packet.pos != null);
+                if (packet.pos != null) {
+                    buf.writeBlockPos(packet.pos);
+                }
             },
             (FriendlyByteBuf buf) -> {
                 ResourceLocation loc = buf.readResourceLocation();
@@ -64,14 +70,17 @@ public abstract class BogieStylePacket implements CustomPacketPayload {
                     ResourceLocation sizeLoc = buf.readResourceLocation();
                     size = BogeySizes.all().get(sizeLoc);
                 }
-                BlockPos pos = buf.readBlockPos();
+                BlockPos pos = null;
+                if (buf.readBoolean()) {
+                    pos = buf.readBlockPos();
+                }
                 return new Serverbound(style, size, pos);
             }
         );
 
         public void handle(ServerPlayer player) {
             Level level = player.level();
-            if (level.getBlockEntity(pos) instanceof AbstractBogeyBlockEntity) {
+            if (pos != null && level.getBlockEntity(pos) instanceof AbstractBogeyBlockEntity) {
                 Block newBlock = style.getBlockForSize(size);
                 BlockState newState = newBlock.defaultBlockState()
                     .setValue(BlockStateProperties.HORIZONTAL_AXIS,
@@ -84,7 +93,12 @@ public abstract class BogieStylePacket implements CustomPacketPayload {
             }
 
             if (size != null) {
-                StyleMenuHandler.addStyle(player.getUUID(), Pair.of(style, size));
+                if (ModList.get().isLoaded("railways")) {
+                    RailwaysSelectionOverride.addStyle(player.getUUID(), Pair.of(style, size));
+                }
+                else {
+                    StyleMenuHandler.addStyle(player.getUUID(), Pair.of(style, size));
+                }
             }
         }
     }

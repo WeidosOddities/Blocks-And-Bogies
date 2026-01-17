@@ -5,9 +5,9 @@
   "mixins": [
     "CarriageContraptionVisualMixin",
     "ContraptionVisualAccessor",
-    "StandardBogeyBlockMixin",
     "StationBlockEntityMixin",
-    "TrackBlockMixin"
+    "TrackBlockMixin",
+    "AbstractBogeyBlockMixin"
   ],
   "client": [],
   "injectors": {

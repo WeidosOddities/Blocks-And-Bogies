@@ -14,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
+import net.neoforged.fml.ModList;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -29,14 +30,19 @@ public abstract class StationBlockEntityMixin extends SmartBlockEntity {
     }
 
     @Inject(method = "trackClicked", at = @At("HEAD"))
-            private void storePlayer(Player player, InteractionHand hand, ITrackBlock track, BlockState state, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        StyleMenuHandler.setCurrentPlayer(player.getUUID());
+    private void storePlayer(Player player, InteractionHand hand, ITrackBlock track, BlockState state, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
+        if (!ModList.get().isLoaded("railways")) {
+            StyleMenuHandler.setCurrentPlayer(player.getUUID());
+        }
     }
 
     @Inject(method = "trackClicked", at = @At("RETURN"))
-            private void clearPlayer(Player player, InteractionHand hand, ITrackBlock track, BlockState state, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        StyleMenuHandler.setCurrentPlayer(null);
+    private void clearPlayer(Player player, InteractionHand hand, ITrackBlock track, BlockState state, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
+        if (!ModList.get().isLoaded("railways")) {
+            StyleMenuHandler.setCurrentPlayer(null);
+        }
     }
+
     @SuppressWarnings("InvalidInjectorMethodSignature")
     @Inject(
             method = "trackClicked",
@@ -46,12 +52,15 @@ public abstract class StationBlockEntityMixin extends SmartBlockEntity {
             locals = LocalCapture.CAPTURE_FAILSOFT,
             remap = true,
             require = 0)
-    private void create_bb$setBogeyData(Player player, InteractionHand hand, ITrackBlock track, BlockState state, BlockPos pos, CallbackInfoReturnable<Boolean> cir, BoundingBox bb, BlockPos up, BlockPos down, int bogeyOffset, ItemStack handItem, boolean upsideDown, BlockPos targetPos) {
-        Pair<BogeyStyle, BogeySize> styleData = StyleMenuHandler.getStyle(player.getUUID());
-        BogeyStyle style = styleData.getFirst();
 
-        if (level != null && level.getBlockEntity(targetPos) instanceof AbstractBogeyBlockEntity bogeyBE) {
-            bogeyBE.setBogeyStyle(style);
+    private void create_bb$setBogeyData(Player player, InteractionHand hand, ITrackBlock track, BlockState state, BlockPos pos, CallbackInfoReturnable<Boolean> cir, BoundingBox bb, BlockPos up, BlockPos down, int bogeyOffset, ItemStack handItem, boolean upsideDown, BlockPos targetPos) {
+        if (!ModList.get().isLoaded("railways")) {
+            Pair<BogeyStyle, BogeySize> styleData = StyleMenuHandler.getStyle(player.getUUID());
+            BogeyStyle style = styleData.getFirst();
+
+            if (level != null && level.getBlockEntity(targetPos) instanceof AbstractBogeyBlockEntity bogeyBE) {
+                bogeyBE.setBogeyStyle(style);
+            }
         }
     }
 }
