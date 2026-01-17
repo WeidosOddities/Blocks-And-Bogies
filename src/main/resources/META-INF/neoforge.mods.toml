@@ -12,9 +12,19 @@ license="${mod_license}"
 [[mixins]]
     config="create_bb.mixins.json"
 
+[[mixins]]
+    config="create_bb.snr.mixins.json"
+
 [[dependencies.${mod_id}]]
     modId="create"
     mandatory=true
     versionRange="[6.0.7,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="railways"
+    mandatory=false
+    versionRange="[0.1.0,)"
     ordering="AFTER"
     side="BOTH"
