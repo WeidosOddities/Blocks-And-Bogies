@@ -1,12 +1,17 @@
 <div align="center">
-  <img src="icon.png" width="192" height="192" alt="Logo of mod">
-  <h1>Blocks & Bogies</h1>
-	<a href=""><img src="https://img.shields.io/badge/Available_For-1.21.1--1.20.1-blue" alt="Supported Versions"></a>
-	<a href="https://github.com/WeidosOddities/blocks-and-bogies/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red" alt="License"></a>
-	<a href="https://github.com/WeidosOddities/blocks-and-bogies/releases"><img src="https://img.shields.io/github/v/tag/WeidosOddities/Blocks-And-Bogies?label=Version&color=maroon" alt="License"></a>
+  <img src="icon.png" width="256" height="256" alt="Logo of mod">
+  	<h1>Blocks & Bogies</h1>
+	<a href=""><img src="https://img.shields.io/badge/Available_For-1.21.1--1.20.1-6FACD5" alt="Supported Versions"></a>
+	<a href="https://github.com/WeidosOddities/blocks-and-bogies/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-4F95CD" alt="License"></a>
+	<a href="https://github.com/WeidosOddities/blocks-and-bogies/releases"><img src="https://img.shields.io/github/v/tag/WeidosOddities/Blocks-And-Bogies?label=Version&color=366C9B" alt="Version"></a>
 	<a href="https://discord.gg/AenU6BcFSW"><img src="https://img.shields.io/discord/1398879261296689162?logo=Discord&logoColor=white&label=Discord&color=5865F2" alt="License"></a>
     <a href="https://modrinth.com/mod/blocks-bogies"><img src="https://img.shields.io/modrinth/dt/blocks-bogies?logo=Modrinth&logoColor=white&label=Modrinth&color=00B363" alt="Modrinth"></a>
     <a href="https://www.curseforge.com/minecraft/mc-mods/create-blocks-bogies"><img src="https://img.shields.io/curseforge/dt/1317252?style=flat&logo=CurseForge&logoColor=white&label=CurseForge&color=F16436" alt="CurseForge"></a>
+</div>
+<div align="center">
+	<a href="https://www.youtube.com/@t__cup"><img src="https://img.shields.io/badge/Main_Assets-Teacup-DCA455?logo=blockbench&logoColor=white" alt="Assets"></a>
+	<a href="https://www.youtube.com/@weidos.oddities"><img src="https://img.shields.io/badge/Development-Weidos_Oddities-945931?logo=intellijidea&logoColor=white" alt="Development"></a>
+	<a href="https://modrinth.com/user/GaXamillion"><img src="https://img.shields.io/badge/Additional_Assets-GaXamillion-3E230E?logo=blockbench&logoColor=white" alt="Additional Assets"></a>
 </div>
 
 ___
