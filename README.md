@@ -9,9 +9,9 @@
     <a href="https://www.curseforge.com/minecraft/mc-mods/create-blocks-bogies"><img src="https://img.shields.io/curseforge/dt/1317252?style=flat&logo=CurseForge&logoColor=white&label=CurseForge&color=F16436" alt="CurseForge"></a>
 </div>
 <div align="center">
- <a href="https://modrinth.com/user/GaXamillion"><img src="https://img.shields.io/badge/Supporting_Artist-GaXamillion-3E230E?logo=blockbench&logoColor=white" alt="Assets"></a>
 	<a href="https://www.youtube.com/@weidos.oddities"><img src="https://img.shields.io/badge/Developer-Weido%27s_Oddities-945931?logo=youtube&logoColor=white" alt="Developer"></a>
 	<a href="https://www.youtube.com/@t__cup"><img src="https://img.shields.io/badge/Lead_Artist-Teacup-DCA455?logo=blockbench&logoColor=white" alt="Assets"></a>
+ <a href="https://modrinth.com/user/GaXamillion"><img src="https://img.shields.io/badge/Supporting_Artist-GaXamillion-3E230E?logo=blockbench&logoColor=white" alt="Assets"></a>
 </div>
 
 ___
