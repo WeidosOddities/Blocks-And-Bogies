@@ -62,37 +62,15 @@ Hold Crouch and right click the bogie block with an empty hand
 
 **Showcase:**
 <div>
-<img align="left" width="47%" src="https://cdn.modrinth.com/data/cached_images/678c3afc0ff9a2bea95d12672175180338a94a7a.png"><img align="right" width="47%" src="https://cdn.modrinth.com/data/cached_images/425739aab231a200edf971e2cd1ed7572754f7f3_0.webp">
+<img align="center" width="100%" src="https://cdn.modrinth.com/data/j4ARnQwY/images/44a751d83f8cfaac1892fb4221626356c6a6846f.png">
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 ---
 
 **Want some building materials? Check out [Pretty In Pink](https://modrinth.com/mod/pretty-in-pink)!**
 <div>
-<img align="left" width="47%" src="https://cdn.modrinth.com/data/cached_images/59222b7a160cf16b01a39864a47c27e0555d7bfe.png"><img align="right" width="47%" src="https://cdn.modrinth.com/data/cached_images/34b3597e025643581727c15711cb60fc76d605e9.png">
+<img align="center" width="100%" src="https://cdn.modrinth.com/data/cached_images/34b3597e025643581727c15711cb60fc76d605e9.png">
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
     
 ___
 ## License
