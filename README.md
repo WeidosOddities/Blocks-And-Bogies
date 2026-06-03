@@ -15,58 +15,84 @@
 </div>
 
 ___
-## Blocks & Bogies is a Create addon that adds an abundance of different bogie styles to choose from, it also adds a selection UI so you can fine tune exactly what style you prefer.
+## Create: Blocks & Bogies
+**Blocks & Bogies is a Create addon that adds an abundance of different bogie styles to choose from, accessible through an added selection UI so you can fine tune exactly what style you prefer.**
 
-## Driver Bogies:
-    - Walschaerts Large
-        - 0-4-0XL
-        - 0-6-0EL
-        - 0-6-0ES
-        - 0-2-0L, 0-4-0L, 0-6-0L, 0-8-0L, 0-10-0L, 0-12-0L
-        - 0-4-0S, 0-6-0S, 0-8-0S, 0-10-0S, 0-12-0S
+---
 
-    - Walschaerts Extra Large
-        - 0-4-0XL
-        - 0-6-0EL
-        - 0-6-0ES
-        - 0-2-0L, 0-4-0L, 0-6-0L, 0-8-0L, 0-10-0L
-        - 0-4-0S, 0-6-0S, 0-8-0S, 0-10-0S
+**Textures/models by: [teacup](https://www.youtube.com/@t__cup), GaXamillion**\
+**Developer: [Weido's Oddities](https://www.youtube.com/@weidos.oddities)**\
+**Font by: [pinkmachine](https://www.youtube.com/@pinkmachine0047)**
 
-    - Gearless Large
-        - 0-4-0XL
-        - 0-6-0EL
-        - 0-6-0ES
-        - 0-2-0L, 0-4-0L, 0-6-0L, 0-8-0L, 0-10-0L, 0-12-0L
-        - 0-4-0S, 0-6-0S, 0-8-0S, 0-10-0S, 0-12-0S
+![Variants!](https://cdn.modrinth.com/data/cached_images/d7355e65c6bf1f3f75c0a7079bf4b854b5855c6a.png)
 
-    - Gearless Extra Large
-        - 0-4-0XL
-        - 0-6-0EL
-        - 0-6-0ES
-        - 0-2-0L, 0-4-0L, 0-6-0L, 0-8-0L, 0-10-0L
-        - 0-4-0S, 0-6-0S, 0-8-0S, 0-10-0S
+---
 
-    - Scotch Yoke Large
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0, 0-12-0
+Types of Bogies Added:
+> - Walschaerts L/XL
+> 
+> - Scotch Yoke L/XL
+> 
+> - Pistonless L/XL
+> 
+> - Gearless L/XL
+>
+> - Trailing Small
+> 
+> - Standard Small
+>  
+> - More to Come...
 
-    - Scotch Yoke Extra Large
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0
+---
 
-    - Pistonless Large
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0, 0-12-0
+## FAQ:
+"Do I need Steam n Rails as well?"
+No, this mod doesn't require SNR to function. You will still need Create though
 
-    - Pistonless Extra Large
-        - 0-6-0E
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0
+"Will there be a 0.5.1 port?"
+No, just no, Too much was changed internally, trying to port this mod to 0.5.1 would give me a brain aneurism
 
+”Will you add narrow/broad gauge bogies?”
+No - narrow and broad gauge are Steam n Rails territory, and as such will not be added to BnB
 
-## Truck Bogies:
-    - Standard
-        - 0-2-0E
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0
+"How do I open the bogie menu?"
+Hold Crouch and right click the bogie block with an empty hand
 
-    - Trailing
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0
+---
+
+**Showcase:**
+<div>
+<img align="left" width="47%" src="https://cdn.modrinth.com/data/cached_images/678c3afc0ff9a2bea95d12672175180338a94a7a.png"><img align="right" width="47%" src="https://cdn.modrinth.com/data/cached_images/425739aab231a200edf971e2cd1ed7572754f7f3_0.webp">
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+---
+
+**Want some building materials? Check out [Pretty In Pink](https://modrinth.com/mod/pretty-in-pink)!**
+<div>
+<img align="left" width="47%" src="https://cdn.modrinth.com/data/cached_images/59222b7a160cf16b01a39864a47c27e0555d7bfe.png"><img align="right" width="47%" src="https://cdn.modrinth.com/data/cached_images/34b3597e025643581727c15711cb60fc76d605e9.png">
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     
 ___
 ## License
