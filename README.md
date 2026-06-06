@@ -10,13 +10,13 @@
 </div>
 <div align="center">
 	<a href="https://www.youtube.com/@weidos.oddities"><img src="https://img.shields.io/badge/Developer-Weido%27s_Oddities-945931?logo=youtube&logoColor=white" alt="Developer"></a>
-	<a href="https://www.youtube.com/@t__cup"><img src="https://img.shields.io/badge/Lead_Artist-Teacup-DCA455?logo=blockbench&logoColor=white" alt="Assets"></a>
+	<a href="https://www.youtube.com/@t__cup"><img src="https://img.shields.io/badge/Lead_Artist-teacup-DCA455?logo=blockbench&logoColor=white" alt="Assets"></a>
  <a href="https://modrinth.com/user/GaXamillion"><img src="https://img.shields.io/badge/Supporting_Artist-GaXamillion-3E230E?logo=blockbench&logoColor=white" alt="Assets"></a>
 </div>
 
 ___
 ## Create: Blocks & Bogies
-**Blocks & Bogies is a Create addon that adds an abundance of different bogie styles to choose from, accessible through an added selection UI so you can fine tune exactly what style you prefer.**
+**Blocks & Bogies is a Create addon that adds an abundance of different bogie styles to choose from, accessible through an added customisation UI so you can fine tune exactly what style you prefer.**
 
 ---
 
