@@ -1,67 +1,72 @@
 <div align="center">
-  <img src="icon.png" width="192" height="192" alt="Logo of mod">
-  <h1>Blocks & Bogies</h1>
-	<a href=""><img src="https://img.shields.io/badge/Avalable_For-1.21.1-blue" alt="Supported Versions"></a>
-	<a href="https://github.com/WeidosOddities/blocks-and-bogies/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red" alt="License"></a>
-	<a href="https://discord.gg/AenU6BcFSW"><img src="https://img.shields.io/discord/1398879261296689162?style=flat&label=Discord&color=5865f2" alt="License"></a>
-    <a href="https://modrinth.com/mod/blocks-bogies"><img src="https://img.shields.io/modrinth/dt/blocks-bogies?logo=modrinth&label=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth"></a>
-    <a href="https://www.curseforge.com/minecraft/mc-mods/create-blocks-bogies"><img src="https://img.shields.io/curseforge/dt/1317252?logo=curseforge&label=&suffix=%20&style=flat&color=242629&labelColor=F16436&logoColor=1c1c1c" alt="CurseForge"></a>
+  <img src="icon.png" width="256" height="256" alt="Logo of mod">
+  	<h1>Blocks & Bogies</h1>
+	<a href=""><img src="https://img.shields.io/badge/Available_For-1.21.1%2F1.20.1-6FACD5" alt="Supported Versions"></a>
+	<a href="https://github.com/WeidosOddities/blocks-and-bogies/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-4F95CD" alt="License"></a>
+	<a href="https://github.com/WeidosOddities/blocks-and-bogies/releases"><img src="https://img.shields.io/github/v/tag/WeidosOddities/Blocks-And-Bogies?label=Version&color=366C9B" alt="Version"></a>
+	<a href="https://discord.gg/AenU6BcFSW"><img src="https://img.shields.io/discord/1398879261296689162?logo=Discord&logoColor=white&label=Discord&color=5865F2" alt="License"></a>
+    <a href="https://modrinth.com/mod/blocks-bogies"><img src="https://img.shields.io/modrinth/dt/blocks-bogies?logo=Modrinth&logoColor=white&label=Modrinth&color=00B363" alt="Modrinth"></a>
+    <a href="https://www.curseforge.com/minecraft/mc-mods/create-blocks-bogies"><img src="https://img.shields.io/curseforge/dt/1317252?style=flat&logo=CurseForge&logoColor=white&label=CurseForge&color=F16436" alt="CurseForge"></a>
+</div>
+<div align="center">
+	<a href="https://www.youtube.com/@weidos.oddities"><img src="https://img.shields.io/badge/Developer-Weido%27s_Oddities-945931?logo=youtube&logoColor=white" alt="Developer"></a>
+	<a href="https://www.youtube.com/@t__cup"><img src="https://img.shields.io/badge/Lead_Artist-teacup-DCA455?logo=blockbench&logoColor=white" alt="Assets"></a>
+ <a href="https://modrinth.com/user/GaXamillion"><img src="https://img.shields.io/badge/Supporting_Artist-GaXamillion-3E230E?logo=blockbench&logoColor=white" alt="Assets"></a>
 </div>
 
 ___
-## Blocks & Bogies is a Create addon that adds an abundance of different bogie styles to choose from, it also adds a selection UI so you can fine tune exactly what style you prefer.
+## Create: Blocks & Bogies
+**Blocks & Bogies is a Create addon that adds an abundance of different bogie styles to choose from, accessible through an added customisation UI so you can fine tune exactly what style you prefer.**
 
-## Driver Bogies:
-    - Walschaerts Large
-        - 0-4-0XL
-        - 0-6-0EL
-        - 0-6-0ES
-        - 0-2-0L, 0-4-0L, 0-6-0L, 0-8-0L, 0-10-0L, 0-12-0L
-        - 0-4-0S, 0-6-0S, 0-8-0S, 0-10-0S, 0-12-0S
+---
 
-    - Walschaerts Extra Large
-        - 0-4-0XL
-        - 0-6-0EL
-        - 0-6-0ES
-        - 0-2-0L, 0-4-0L, 0-6-0L, 0-8-0L, 0-10-0L
-        - 0-4-0S, 0-6-0S, 0-8-0S, 0-10-0S
+**Textures/models by: [teacup](https://www.youtube.com/@t__cup), GaXamillion**\
+**Developer: [Weido's Oddities](https://www.youtube.com/@weidos.oddities)**\
+**Font by: [pinkmachine](https://www.youtube.com/@pinkmachine0047)**
 
-    - Gearless Large
-        - 0-4-0XL
-        - 0-6-0EL
-        - 0-6-0ES
-        - 0-2-0L, 0-4-0L, 0-6-0L, 0-8-0L, 0-10-0L, 0-12-0L
-        - 0-4-0S, 0-6-0S, 0-8-0S, 0-10-0S, 0-12-0S
+![Variants!](https://cdn.modrinth.com/data/cached_images/d7355e65c6bf1f3f75c0a7079bf4b854b5855c6a.png)
 
-    - Gearless Extra Large
-        - 0-4-0XL
-        - 0-6-0EL
-        - 0-6-0ES
-        - 0-2-0L, 0-4-0L, 0-6-0L, 0-8-0L, 0-10-0L
-        - 0-4-0S, 0-6-0S, 0-8-0S, 0-10-0S
+---
 
-    - Scotch Yoke Large
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0, 0-12-0
+Types of Bogies Added:
+> - Walschaerts L/XL
+> 
+> - Scotch Yoke L/XL
+> 
+> - Pistonless L/XL
+> 
+> - Gearless L/XL
+>
+> - Trailing Small
+> 
+> - Standard Small
+>  
+> - More to Come...
 
-    - Scotch Yoke Extra Large
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0
+---
 
-    - Pistonless Large
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0, 0-12-0
+## FAQ:
+"Do I need Steam n Rails as well?"
+No, this mod doesn't require SNR to function. You will still need Create though
 
-    - Pistonless Extra Large
-        - 0-6-0E
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0
+"Will there be a 0.5.1 port?"
+No, just no, Too much was changed internally, trying to port this mod to 0.5.1 would give me a brain aneurism
 
+”Will you add narrow/broad gauge bogies?”
+No - narrow and broad gauge are Steam n Rails territory, and as such will not be added to BnB
 
-## Truck Bogies:
-    - Standard
-        - 0-2-0E
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0, 0-10-0
+"How do I open the bogie menu?"
+Hold Crouch and right click the bogie block with an empty hand
 
-    - Trailing
-        - 0-2-0, 0-4-0, 0-6-0, 0-8-0
-    
+---
+
+**Showcase:**
+<div>
+<img align="center" width="100%" src="https://cdn.modrinth.com/data/j4ARnQwY/images/44a751d83f8cfaac1892fb4221626356c6a6846f.png">
+</div>
+
+---
+
 ___
 ## License
 
