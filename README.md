@@ -4,7 +4,7 @@
 	<a href=""><img src="https://img.shields.io/badge/Available_For-1.21.1%2F1.20.1-6FACD5" alt="Supported Versions"></a>
 	<a href="https://github.com/WeidosOddities/blocks-and-bogies/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-4F95CD" alt="License"></a>
 	<a href="https://github.com/WeidosOddities/blocks-and-bogies/releases"><img src="https://img.shields.io/github/v/tag/WeidosOddities/Blocks-And-Bogies?label=Version&color=366C9B" alt="Version"></a>
-	<a href="https://discord.gg/AenU6BcFSW"><img src="https://img.shields.io/discord/1398879261296689162?logo=Discord&logoColor=white&label=Discord&color=5865F2" alt="License"></a>
+	<a href="https://discord.com/invite/Q49sWkdN2n"><img src="https://img.shields.io/discord/1398879261296689162?logo=Discord&logoColor=white&label=Discord&color=5865F2" alt="License"></a>
     <a href="https://modrinth.com/mod/blocks-bogies"><img src="https://img.shields.io/modrinth/dt/blocks-bogies?logo=Modrinth&logoColor=white&label=Modrinth&color=00B363" alt="Modrinth"></a>
     <a href="https://www.curseforge.com/minecraft/mc-mods/create-blocks-bogies"><img src="https://img.shields.io/curseforge/dt/1317252?style=flat&logo=CurseForge&logoColor=white&label=CurseForge&color=F16436" alt="CurseForge"></a>
 </div>
