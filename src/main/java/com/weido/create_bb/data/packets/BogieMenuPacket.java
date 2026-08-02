@@ -43,6 +43,7 @@ public abstract class BogieMenuPacket implements CustomPacketPayload {
         @Override
         @OnlyIn(Dist.CLIENT)
         public void handle(LocalPlayer player) {
+            if (player.isSpectator()) return;
             ScreenOpener.open(new BogieStyleSelectionScreen(pos));
         }
     }
