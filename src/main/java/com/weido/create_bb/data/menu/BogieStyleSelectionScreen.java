@@ -4,6 +4,8 @@ import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import com.simibubi.create.AllBogeyStyles;
@@ -15,9 +17,12 @@ import com.simibubi.create.foundation.gui.widget.IconButton;
 import com.simibubi.create.foundation.gui.widget.ScrollInput;
 import com.weido.create_bb.data.menu.Entry.StyleEntryManager;
 import com.weido.create_bb.data.packets.BogieStylePacket;
+import net.createmod.catnip.gui.widget.AbstractSimiWidget;
 import net.createmod.catnip.platform.CatnipServices;
 import net.createmod.catnip.gui.AbstractSimiScreen;
 import net.createmod.catnip.render.CachedBuffers;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -99,6 +104,10 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
                 updateSelectedBogey();
                 updateSizeSelection();
             });
+
+        typeButton.getToolTip().addAll(List.of(
+                Component.translatable("create_bb.menu.type").withStyle(s -> s.withColor(AbstractSimiWidget.HEADER_RGB.getRGB())),
+                Component.translatable("create_bb.menu.click_toggle").withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC)));
 
         variantScroll = new VariantScrollInput(buttonRightPos, buttonTopPos, 142, buttonHeight)
             .setState(firstTime ? 0 : BogeyStyleMenuState.getLastVariant());
@@ -508,18 +517,18 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
         ValveGearScrollInput valveGearInput = (ValveGearScrollInput) valvegearScroll;
         LengthScrollInput lengthInput = (LengthScrollInput) lengthScroll;
 
-        Component typeText = Component.translatable("create_bb.menu.type").append(currentType.getDisplayText());
+        Component typeText = Component.translatable("create_bb.menu.type_prefix", currentType.getDisplayText());
         renderButtonText(graphics, typeButton, typeText);
 
-        Component variantText = Component.translatable("create_bb.menu.variant").append(variantInput.variants[variantScroll.getState()].getDisplayText());
+        Component variantText = Component.translatable("create_bb.menu.variant_prefix", variantInput.variants[variantScroll.getState()].getDisplayText());
         renderScrollText(graphics, variantScroll, variantText);
         disabledScroll(graphics, variantScroll, variantInput.variants.length);
 
-        Component valveGearText = Component.translatable("create_bb.menu.valve_gear").append(valveGearInput.valveGears[valvegearScroll.getState()].getDisplayText());
+        Component valveGearText = Component.translatable("create_bb.menu.valve_gear_prefix", valveGearInput.valveGears[valvegearScroll.getState()].getDisplayText());
         renderScrollText(graphics, valvegearScroll, valveGearText);
         disabledScroll(graphics, valvegearScroll, valveGearInput.valveGears.length);
 
-        Component axleText = Component.translatable("create_bb.menu.axle_count").append(String.valueOf(axleCountScroll.getState()));
+        Component axleText = Component.translatable("create_bb.menu.axle_count_prefix", String.valueOf(axleCountScroll.getState()));
         renderScrollText(graphics, axleCountScroll, axleText);
         disabledScroll(graphics, axleCountScroll, ((AxleCountScrollInput) axleCountScroll).getMaxAxles() == ((AxleCountScrollInput) axleCountScroll).getMinAxles() ? 1 : 0);
 
