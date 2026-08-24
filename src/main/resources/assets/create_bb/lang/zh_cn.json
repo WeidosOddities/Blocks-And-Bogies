@@ -1,17 +1,13 @@
 {
-  "create_bb.menu.title": "自定义转向架",
-
+  "create_bb.menu.title": "Bogie Customization",
   "create_bb.tooltips.rotation": "转向架已旋转！",
   "create_bb.tooltips.switch_to_bogey_menu": "打开汽鸣铁道菜单",
   "create_bb.tooltips.switch_to_bb_menu": "打开方块与转向架菜单",
-
   "create_bb.menu.bogie_style": "转向架样式选择",
   "create_bb.menu.selected_bogie": "已选择转向架：%s",
-
   "create_bb.menu.scroll_selection": "滚动以选择",
   "create_bb.menu.no_options_available": "无可用选项",
   "create_bb.menu.scroll_change_speed": "滚动以调整速度",
-
   "create_bb.menu.type": "转向架：",
   "create_bb.menu.variant": "样式：",
   "create_bb.menu.valve_gear": "阀动装置：",
@@ -19,19 +15,15 @@
   "create_bb.menu.size": "尺寸：",
   "create_bb.menu.length": "变体：",
   "create_bb.menu.speed": "速度：",
-
   "create_bb.menu.size.large": "大型",
   "create_bb.menu.size.small": "小型",
   "create_bb.menu.size.extra_large": "超大",
-
   "create_bb.variant.long": "长型",
   "create_bb.variant.short": "短型",
   "create_bb.variant.standard": "标准",
   "create_bb.variant.trailing": "从轮",
-
   "create_bb.type.driver": "动轮",
   "create_bb.type.truck": "导轮",
-
   "create_bb.valve_gear.none": "无",
   "create_bb.valve_gear.gearless": "无齿轮",
   "create_bb.valve_gear.rodless": "无连杆",
@@ -40,24 +32,19 @@
   "create_bb.valve_gear.rotary_poppet": "旋转提升阀",
   "create_bb.valve_gear.scotch_yoke": "止转轭",
   "create_bb.valve_gear.southern": "南方阀",
-
   "create_bb.length.standard": "默认",
   "create_bb.length.extended": "加长",
   "create_bb.length.offset": "偏移",
   "create_bb.length.spaced": "间隔",
-
   "create_bb.bogies.style.single_axle_trailing": "小型0-2-0从动转向架",
   "create_bb.bogies.style.double_axle_trailing": "小型0-4-0从动转向架",
   "create_bb.bogies.style.triple_axle_trailing": "小型0-6-0从动转向架",
   "create_bb.bogies.style.quadruple_axle_trailing": "小型0-8-0从动转向架",
-
   "create_bb.bogies.style.single_axle_offset": "小型单轴偏移",
-
   "create_bb.bogies.style.single_axle_bogie": "小型单轴标准",
   "create_bb.bogies.style.triple_axle_bogie": "小型0-6-0标准",
   "create_bb.bogies.style.quadruple_axle_bogie": "小型0-8-0标准",
   "create_bb.bogies.style.quintuple_axle_bogie": "小型0-10-0标准",
-
   "create_bb.bogies.style.single_axle_pistonless": "0-2-0无活塞",
   "create_bb.bogies.style.double_axle_pistonless": "0-4-0无活塞",
   "create_bb.bogies.style.triple_axle_extended_pistonless": "0-6-0加长无活塞",
@@ -65,7 +52,6 @@
   "create_bb.bogies.style.quadruple_axle_pistonless": "0-8-0无活塞",
   "create_bb.bogies.style.quintuple_axle_pistonless": "0-10-0无活塞",
   "create_bb.bogies.style.sextuple_axle_pistonless": "0-12-0无活塞",
-
   "create_bb.bogies.style.single_axle_rodless": "0-2-0无连杆",
   "create_bb.bogies.style.double_axle_rodless": "0-4-0无连杆",
   "create_bb.bogies.style.triple_axle_extended_rodless": "0-6-0加长无连杆",
@@ -73,14 +59,12 @@
   "create_bb.bogies.style.quadruple_axle_rodless": "0-8-0无连杆",
   "create_bb.bogies.style.quintuple_axle_rodless": "0-10-0无连杆",
   "create_bb.bogies.style.sextuple_axle_rodless": "0-12-0无连杆",
-
   "create_bb.bogies.style.single_axle_scotch_yoke": "0-2-0止转轭",
   "create_bb.bogies.style.double_axle_scotch_yoke": "0-4-0止转轭",
   "create_bb.bogies.style.triple_axle_scotch_yoke": "0-6-0止转轭",
   "create_bb.bogies.style.quadruple_axle_scotch_yoke": "0-8-0止转轭",
   "create_bb.bogies.style.quintuple_axle_scotch_yoke": "0-10-0止转轭",
   "create_bb.bogies.style.sextuple_axle_scotch_yoke": "0-12-0止转轭",
-
   "create_bb.bogies.style.single_axle_long": "0-2-0无齿轮长型",
   "create_bb.bogies.style.double_axle_long": "0-4-0无齿轮长型",
   "create_bb.bogies.style.double_axle_extra_long": "0-4-0无齿轮超长型",
@@ -89,14 +73,12 @@
   "create_bb.bogies.style.quadruple_axle_long": "0-8-0无齿轮长型",
   "create_bb.bogies.style.quintuple_axle_long": "0-10-0无齿轮长型",
   "create_bb.bogies.style.sextuple_axle_long": "0-12-0无齿轮长型",
-
   "create_bb.bogies.style.double_axle_short": "0-4-0无齿轮短型",
   "create_bb.bogies.style.triple_axle_short": "0-6-0无齿轮短型",
   "create_bb.bogies.style.triple_axle_extended_short": "0-6-0无齿轮加长短型",
   "create_bb.bogies.style.quadruple_axle_short": "0-8-0无齿轮短型",
   "create_bb.bogies.style.quintuple_axle_short": "0-10-0无齿轮短型",
   "create_bb.bogies.style.sextuple_axle_short": "0-12-0无齿轮短型",
-
   "create_bb.bogies.style.single_axle_walschaerts_long": "0-2-0华氏阀长型",
   "create_bb.bogies.style.double_axle_walschaerts_long": "0-4-0华氏阀长型",
   "create_bb.bogies.style.double_axle_walschaerts_extra_long": "0-4-0华氏阀超长型",
@@ -105,7 +87,6 @@
   "create_bb.bogies.style.quadruple_axle_walschaerts_long": "0-8-0华氏阀长型",
   "create_bb.bogies.style.quintuple_axle_walschaerts_long": "0-10-0华氏阀长型",
   "create_bb.bogies.style.sextuple_axle_walschaerts_long": "0-12-0华氏阀长型",
-
   "create_bb.bogies.style.double_axle_walschaerts_short": "0-4-0华氏阀短型",
   "create_bb.bogies.style.triple_axle_walschaerts_extended_short": "0-6-0华氏阀加长短型",
   "create_bb.bogies.style.triple_axle_walschaerts_short": "0-6-0华氏阀短型",
