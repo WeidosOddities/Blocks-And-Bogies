@@ -1,7 +1,7 @@
 {
   "create_bb.menu.title": "Bogie Customization",
   "create_bb.tooltips.rotation": "Візок розвернуто!",
-  "create_bb.tooltips.switch_to_bogey_menu": "Натисність, щоб розгорнути меню",
+  "create_bb.tooltips.switch_to_bogey_menu": "Open Steam 'n' Rails Menu",
   "create_bb.tooltips.switch_to_bb_menu": "Open Blocks & Bogies Menu",
   "create_bb.menu.bogie_style": "Обрати вигляд візка",
   "create_bb.menu.selected_bogie": "Обрати візок: %s",
