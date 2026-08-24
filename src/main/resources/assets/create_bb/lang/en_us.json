@@ -11,7 +11,9 @@
   "create_bb.menu.scroll_selection": "Scroll to Select",
   "create_bb.menu.no_options_available": "No Options Available",
   "create_bb.menu.scroll_change_speed": "Scroll to Change Speed",
+  "create_bb.menu.click_toggle": "Click to Toggle",
 
+  "create_bb.menu.type": "Bogie Type",
   "create_bb.menu.variant": "Style",
   "create_bb.menu.valve_gear": "Valve Gear",
   "create_bb.menu.axle_count": "Axle Count",
