@@ -1,6 +1,6 @@
 {
   "create_bb.menu.title": "Bogie Customization",
-  "create_bb.tooltips.switch_to_bogey_menu": "打开汽鸣铁道菜单",
+  "create_bb.tooltips.switch_to_bogey_menu": "Click to Toggle Menus",
   "create_bb.tooltips.rotation": "转向架已旋转！",
   "create_bb.menu.bogie_style": "转向架样式选择",
   "create_bb.menu.selected_bogie": "已选择转向架：%s",
