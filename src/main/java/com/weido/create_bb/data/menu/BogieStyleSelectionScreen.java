@@ -515,18 +515,18 @@ public class BogieStyleSelectionScreen extends AbstractSimiScreen {
         ValveGearScrollInput valveGearInput = (ValveGearScrollInput) valvegearScroll;
         LengthScrollInput lengthInput = (LengthScrollInput) lengthScroll;
 
-        Component typeText = Component.translatable("create_bb.menu.type").append(currentType.getDisplayText());
+        Component typeText = Component.translatable("create_bb.menu.type_prefix", currentType.getDisplayText());
         renderButtonText(graphics, typeButton, typeText);
 
-        Component variantText = Component.translatable("create_bb.menu.variant").append(variantInput.variants[variantScroll.getState()].getDisplayText());
+        Component variantText = Component.translatable("create_bb.menu.variant_prefix", variantInput.variants[variantScroll.getState()].getDisplayText());
         renderScrollText(graphics, variantScroll, variantText);
         disabledScroll(graphics, variantScroll, variantInput.variants.length);
 
-        Component valveGearText = Component.translatable("create_bb.menu.valve_gear").append(valveGearInput.valveGears[valvegearScroll.getState()].getDisplayText());
+        Component valveGearText = Component.translatable("create_bb.menu.valve_gear_prefix", valveGearInput.valveGears[valvegearScroll.getState()].getDisplayText());
         renderScrollText(graphics, valvegearScroll, valveGearText);
         disabledScroll(graphics, valvegearScroll, valveGearInput.valveGears.length);
 
-        Component axleText = Component.translatable("create_bb.menu.axle_count").append(String.valueOf(axleCountScroll.getState()));
+        Component axleText = Component.translatable("create_bb.menu.axle_count_prefix", String.valueOf(axleCountScroll.getState()));
         renderScrollText(graphics, axleCountScroll, axleText);
         disabledScroll(graphics, axleCountScroll, ((AxleCountScrollInput) axleCountScroll).getMaxAxles() == ((AxleCountScrollInput) axleCountScroll).getMinAxles() ? 1 : 0);
 
