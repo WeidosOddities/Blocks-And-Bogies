@@ -38,7 +38,7 @@ public abstract class BogeyMenuScreenMixin {
                     AllIcons.I_DICE
             );
             switchButton.withCallback(() -> ScreenOpener.open(new BogieStyleSelectionScreen(targetPos)));
-            switchButton.setToolTip(Component.translatable("create_bb.tooltips.switch_to_bogey_menu").withStyle(s -> s.withColor(AbstractSimiWidget.HEADER_RGB.getRGB())));
+            switchButton.setToolTip(Component.translatable("create_bb.tooltips.switch_to_bb_menu").withStyle(s -> s.withColor(AbstractSimiWidget.HEADER_RGB.getRGB())));
 
             JankWidgetRenderer.addRenderableWidgetReflect(self, switchButton);
         }
